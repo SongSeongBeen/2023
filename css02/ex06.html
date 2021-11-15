@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="ko"> <!-- 한국어문서만 검색할때, 음성으로 할때 한국어 음성지원 -->
+    <head>
+        <meta charset="UTF-8"> <!-- 브라우저가 문서를 해석할때 필요한 정보 -->
+        <title>스타일시트</title>
+        <!-- 스타일시트자리 -->
+        <style>
+            .box{
+                width: 120px;
+                height: 30px;
+                text-align: center;
+                padding: 5px 0px;
+                cursor: pointer;
+            }
+
+            .div-round-all {
+                border-radius: 7px;
+            }
+
+            .black {
+                background-color: #979292;
+                border: 2px solid #2b2a2a;
+            }
+
+            .red {
+                background-color: #df8090;
+                border: 2px solid #913242;
+            }
+
+            .blue {
+                background-color: #54a0df;
+                border: 2px solid #a1bcdb;
+                display: table-cell;
+                vertical-align: middle; 
+            }
+
+            button {
+                width: 100px;
+                background-color: #FF0000;
+                border: 1px;
+            }
+
+            .btn-login {
+                display: inline-block;
+                width: 100px;
+                height: 50px;
+
+                border: 1px solid #000000;
+                background-color: #FF0000;
+                text-align: center;
+            }
+
+            .blue:hover {
+                border: 1px solid #000000;
+                background-color: #FF0000;
+            }
+        
+            .black:hover {
+                color: #fffafa; 
+                text-decoration: underline;
+            }
+
+            .red:hover {
+                color: #d4fa00;
+                 text-decoration: underline
+                 ;}
+
+            .blue:hover {
+                color: #07e72d; 
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="box black div-round-all">장바구니</div>
+        <br>
+        <div class="box red div-round-all">카트바로가기</div>
+        <br>
+        <div class="box blue div-round-all">저장버튼</div>
+        <br>
+        <button type="submit">저장버튼</button>
+        <br>
+        <br>
+        <a class="btn-login" href="">로그인</a>
+    </body>
+
+</html>

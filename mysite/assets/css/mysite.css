@@ -1,0 +1,208 @@
+@charset "UTF-8";
+
+/* 전체 공통 설정 */
+body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6,
+input, fieldset, legend, p, select, table, th, td, tr,
+textarea, button, form{
+    margin: 0px; padding: 0px;
+}
+
+body {
+    font-family: "맑은 고딕", 돋움, 굴림;
+    font-size: 12px;
+}
+
+ul, ol {
+    list-style-type: none;
+}
+
+a:link {color: #000000; text-decoration: none;}
+a:visited {color: #000000; text-decoration: none;} 
+a:hover {color: #FF0000; text-decoration: underline;} /*마우스 올렸을때 빨간색 */
+a:active {color: #0000FF; text-decoration: underline;} /*마우스 키를 눌렀을때 */
+
+/* text  font style */
+.f-xl {font-size: 20px;}
+.f-l {font-size: 16px;}
+.f-s {font-size: 10px;}
+.b {font-weight: bold;}
+
+  /* clearfix */
+.clearfix{*zoom:1;}
+.clearfix:before, .clearfix:after {display: block; content: ""; line-height: 0;}
+.clearfix:after {clear: both;}
+
+
+/* 레이아웃 */
+
+#wrap {
+    width: 1000px;
+    margin: 0px auto;
+}
+
+#wrap #header {
+    /* background-color: #FFFFFF;
+    border: 1px solid #FFFFFF;  */
+    margin: 10px 0px;
+    border-bottom: 1px solid #A6A6A6;
+}
+
+#wrap #nav {
+    /* background-color: #00FF00; */
+    border-bottom: 1px solid #A6A6A6
+}
+
+#wrap #footer {
+    background-color: #DDDDDD;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+}
+
+/* 컨텐츠 영역 > 2page 레이아웃 */
+
+#contents2 #aside {
+    float: left;
+}
+
+#contents2 #main {
+    float: left;
+}
+
+/* ----------------------------------- */
+
+/* header 상세 */
+
+#header>h1 {
+    float: left;
+    margin: 10px 0px 20px 0px;
+}
+
+#header>h1>a {
+    font-size: 35px;
+    color: #79B30B;
+    margin: 10px 0px 0px 0px;
+}
+
+#header>ul {
+    float: right;
+    margin: 40px 0px 0px 0px;
+}
+
+#header>ul>li {
+    float: left;
+    margin: 0px 0px 0px 20px;
+}
+
+
+/* nav 상세 */
+
+#wrap #nav>ul {
+    margin: 10px 0px;
+}
+
+#nav>ul>li {
+    width: 250px;
+    float: left;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/* contents 상세 */
+/* -----contents 메인----- */
+#contents #profile-img {
+    float: left;
+    width: 300px;
+    margin: 0px 20px;
+    /* margin: 10px 10px 10px 10px; */
+}
+/* ------------------------ */
+#contents #greetin {
+    float: left;
+}
+
+/* 1 page 가로 1단배치*/
+
+#wrap #contents {
+    /* background-color: #FF00FF; */
+    padding: 20px 10px;
+}
+
+/* 2 page 가로 2단배치*/
+#wrap #contents2 {
+    /* background-color: #FF00FF; */
+    padding: 20px 0px 20px 0px;
+}
+/* 2 page 가로 2단배치 > aside*/
+#wrap #contents2 #aside{
+    width: 180px;
+    margin: 0px 20px 0px 0px;
+    float: left;
+}
+
+/* 2 page content2 상세 (aside) */
+#wrap #contents2 #aside h2 {
+    background-color: #DDDDDD;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px 0px 15px 0px;
+    margin: 0px 0px 5px 0px;
+}
+
+#wrap #contents2 #aside ul>li {
+    font-size: 15px;
+    border: 1px solid #000000;
+    padding: 5px 5px 5px 5px;
+    margin: 0px 0px 5px 0px;
+}
+
+
+/* 2 page content2 상세 (main) */
+
+#wrap #contents2 #main {
+    width: 798px;
+}
+
+#wrap #contents2 #main #main-header {
+    border-bottom: 1px solid #000000;
+    padding: 15px 0px 10px 0px;
+    margin:  0px 0px 10px 0px;
+}
+
+#wrap #contents2 #main #main-header h3 {
+    font-size: 20px;
+    font-weight: bold;
+    float: left;
+}
+
+#wrap #contents2 #main #main-header ul {
+    float: right;
+    margin:  10px 0px 0px 0px;
+}
+
+#wrap #contents2 #main #main-header ul>li {
+    float: left;
+}
+
+
+#wrap #contents2 #main #main-header ul>li:after {
+    content: ">";
+    margin: 0px 2px 0px 2px
+}
+
+#wrap #contents2 #main #main-header ul>li.last:after {
+    content: "";
+}
+
+
+
+/* footer 상세 */
+
+
+
+
+
+
+
