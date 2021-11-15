@@ -29,6 +29,10 @@ public class Ex20 {
 		
 		System.out.print("동전의 총합은 " + abcd + " 원 입니다.");
 		
+		System.out.println("깃허브 테스트-버전02");
+		
+		System.out.println("깃허브 테스트-버전02");
+		
 		
 		
 		sc.close();
