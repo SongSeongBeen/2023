@@ -15,7 +15,7 @@ public class Ex04 {
 
 		System.out.println("이름을 입력해 주세요");
 		System.out.print("이름:");
-		String name = sc.nextLine(); // 황일영 엔터
+		String name = sc.nextLine(); // 송성빈 엔터
 
 		System.out.println("당신의 이름은 " + name + " 나이는 " + age + " 입니다.");
 
