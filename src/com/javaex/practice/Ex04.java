@@ -12,7 +12,7 @@ public class Ex04 {
 		System.out.print("나이: ");
 		int age = sc.nextInt();
 
-		if (65 > age && age > 18) {
+		if (65 > age && age > 18) {// 부등호 신경 65미만 19이상
 			System.out.print("1번그룹 입니다.");
 		} else {
 			System.out.print("2번그룹 입니다.");

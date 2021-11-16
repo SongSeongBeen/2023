@@ -16,11 +16,11 @@ public class Ex08 {
 		System.out.print("숫자3: ");
 		int c = sc.nextInt();
 
-		if (a < b && a < c) {
+		if (a < b && a < c) {// a가 b,c보다 작다
 			System.out.print("가장작은수는 " + a + " 입니다.");
-		} else if (b < a && b < c) {
+		} else if (b < a && b < c) {//b가 a,c보다 작다
 			System.out.print("가장작은수는 " + b + " 입니다.");
-		} else if (c < a && c < b) {
+		} else if (c < a && c < b) {//c가 a,b보다 작다
 			System.out.print("가장작은수는 " + c + " 입니다.");
 		} 
 		sc.close();
