@@ -7,7 +7,7 @@ public class Ex14 {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-
+		
 		System.out.print("가로를 입력하세요: ");
 		double width = sc.nextDouble();
 		sc.nextLine(); // 하나 더 써줘서 개행문자 넘기기

@@ -8,6 +8,7 @@ public class Ex18 {
 
 //		try (Scanner sc = new Scanner(System.in)) {}
 		Scanner sc = new Scanner(System.in);
+		
 		System.out.print("화씨: ");
 		double f = sc.nextDouble();
 

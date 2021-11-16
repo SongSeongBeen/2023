@@ -16,12 +16,15 @@ public class Ex20 {
 		System.out.print("500원 개수: ");
 		int a = sc.nextInt();
 		sc.nextLine();
+		
 		System.out.print("100원 개수: ");
 		int b = sc.nextInt();
 		sc.nextLine();
+		
 		System.out.print("50원  개수: ");
 		int c = sc.nextInt();
 		sc.nextLine();
+		
 		System.out.print("10원  개수: ");
 		int d = sc.nextInt();
 		sc.nextLine();

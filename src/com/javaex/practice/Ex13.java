@@ -11,9 +11,9 @@ public class Ex13 {
 		System.out.print("환전할 원화를 입력하세요: ");
 
 		double usd = sc.nextDouble();
-		double usd1 = 1230.95;
+//		double usd1 = 1230.95;
 
-		System.out.print("받으실 달러는" + usd / usd1);
+		System.out.print("받으실 달러는" + usd / 1230.95);
 
 		sc.close();
 	}
