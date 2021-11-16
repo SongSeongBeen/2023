@@ -11,7 +11,6 @@ public class Ex10_2 {
 		System.out.println("과목을 선택하세요");
 		System.out.println("1.자바 2.C 3.C++ 4.파이썬");
 		System.out.print("과목번호 : ");
-		
 		int a = sc.nextInt();
 		
 		if (a==1) {
@@ -31,4 +30,5 @@ public class Ex10_2 {
 		}
 		sc.close();
 	}
+	
 }

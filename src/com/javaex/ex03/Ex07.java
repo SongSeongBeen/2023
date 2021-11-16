@@ -7,8 +7,8 @@ public class Ex07 {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-		System.out.print("점수를 입력하세요: ");
 		
+		System.out.print("점수를 입력하세요: ");
 		int a = sc.nextInt();
 //		boolean b = (90>a && a >= 80);
 //		boolean c = (80>a && a >= 70);
@@ -38,7 +38,7 @@ public class Ex07 {
 		else {
 			System.out.print("F등급");
 		}
-
 		sc.close();
 	}
+	
 }

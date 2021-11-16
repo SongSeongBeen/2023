@@ -9,7 +9,6 @@ public class Ex11 {
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("월을 입력하세요");
-		
 		int month = sc.nextInt();
 		
 		switch(month) {
@@ -25,9 +24,6 @@ public class Ex11 {
 		default:
 			System.out.println("31일");
 			break;
-			
-		
-		
 		/*
 		case 1:
 			System.out.println("31일 입니다");

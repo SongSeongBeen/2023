@@ -10,7 +10,6 @@ public class Ex03 {
 
 		System.out.println("숫자를 입력해 주세요");
 		System.out.print("숫자: ");
-
 		int point = sc.nextInt();
 
 		if (point > 0) {
@@ -24,4 +23,5 @@ public class Ex03 {
 		}
 		sc.close();
 	}
+
 }

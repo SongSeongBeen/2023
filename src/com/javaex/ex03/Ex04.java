@@ -9,8 +9,8 @@ public class Ex04 {
 		Scanner sc = new Scanner(System.in);
 
 		System.out.print("근무시간: ");
-
 		int time = sc.nextInt();
+		
 		int undermoney = time * 10000;
 		int overmoney = (8 * 10000) + ((time - 8) * 12000);
 
@@ -22,4 +22,5 @@ public class Ex04 {
 		}
 		sc.close();
 	}
+
 }
