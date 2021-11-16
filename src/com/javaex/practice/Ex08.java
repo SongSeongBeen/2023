@@ -22,9 +22,7 @@ public class Ex08 {
 			System.out.print("가장작은수는 " + b + " 입니다.");
 		} else if (c < a && c < b) {
 			System.out.print("가장작은수는 " + c + " 입니다.");
-		} else {
-
-		}
+		} 
 		sc.close();
 	}
 

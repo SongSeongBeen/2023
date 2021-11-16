@@ -25,8 +25,6 @@ public class Ex05 {
 		} else if (weight > standard) {
 			System.out.println("과체중입니다.");
 			System.out.println("표준체중: " + standard);
-		} else {
-
 		}
 		sc.close();
 	}
