@@ -11,7 +11,7 @@ public class Ex07 {
 		
 		int a = sc.nextInt();
 
-		if (a >= 90) {
+		if      (a >= 90) {
 			System.out.print("A등급");
 		} 
 		else if (a >= 80) {
