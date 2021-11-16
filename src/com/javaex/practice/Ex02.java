@@ -1,4 +1,4 @@
-package com.javaex.practice01;
+package com.javaex.practice;
 
 public class Ex02 {
 	
