@@ -3,7 +3,7 @@ package com.javaex.practice;
 public class Ex08 {
 
 	public static void main(String[] args) {
-
+		
 //		int x, y = 0;
 		int x = 0, y = 0;
 //		int x = 0;

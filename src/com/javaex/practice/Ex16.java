@@ -7,6 +7,7 @@ public class Ex16 {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
+		
 		System.out.print("상품가격: ");
 		int price = sc.nextInt();
 		sc.nextLine();

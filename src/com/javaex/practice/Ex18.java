@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Ex18 {
 
 	public static void main(String[] args) {
-
 //		try (Scanner sc = new Scanner(System.in)) {}
 		Scanner sc = new Scanner(System.in);
 		
