@@ -12,20 +12,16 @@ public class Ex10_2 {
 		System.out.println("1.자바 2.C 3.C++ 4.파이썬");
 		System.out.print("과목번호 : ");
 		int a = sc.nextInt();
-		
-		if (a==1) {
+
+		if (a == 1) {
 			System.out.print("R101호 ");
-		}
-		else if(a==2) {
+		} else if (a == 2) {
 			System.out.print("R202호 ");
-		}
-		else if(a==3) {
+		} else if (a == 3) {
 			System.out.print("R303호 ");
-		}
-		else if(a==4) {
+		} else if (a == 4) {
 			System.out.print("R404호 ");
-		}
-		else {
+		} else {
 			System.out.print("상담원에게 문의하세요 ");
 		}
 		sc.close();

@@ -14,31 +14,27 @@ public class Ex07 {
 //		boolean c = (80>a && a >= 70);
 //		boolean d = (70>a && a >= 60);
 
-		if      (a >= 90) {
+		if (a >= 90) {
 			System.out.print("A등급");
-		} 
-		else if (a >= 80){
-			  //(b)
-			  //(a >= 80)
-			  //(90>a && a >= 80)
+		} else if (a >= 80) {
+			// (b)
+			// (a >= 80)
+			// (90>a && a >= 80)
 			System.out.print("B등급");
-		} 
-		else if (a >= 70) {
-			  //(c)
-		      //(a >= 70)
-			  //(80>a && a >= 70)
+		} else if (a >= 70) {
+			// (c)
+			// (a >= 70)
+			// (80>a && a >= 70)
 			System.out.print("C등급");
-		} 
-		else if (a >= 60) {
-			  //(d)
-		      //(a >= 60)
-			  //(70>a && a >= 60)
+		} else if (a >= 60) {
+			// (d)
+			// (a >= 60)
+			// (70>a && a >= 60)
 			System.out.print("D등급");
-		} 
-		else {
+		} else {
 			System.out.print("F등급");
 		}
 		sc.close();
 	}
-	
+
 }

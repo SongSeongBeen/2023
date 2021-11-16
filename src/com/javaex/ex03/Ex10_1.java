@@ -11,8 +11,8 @@ public class Ex10_1 {
 		System.out.println("1.자바 2.C 3.C++ 4.파이썬");
 		System.out.print("과목번호 : ");
 		int a = sc.nextInt();
-		
-		switch(a) {
+
+		switch (a) {
 		case 1:
 			System.out.print("101호입니다.");
 			break;

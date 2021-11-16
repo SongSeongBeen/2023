@@ -14,11 +14,9 @@ public class Ex03 {
 
 		if (point > 0) {
 			System.out.println("양수");
-		} 
-		else if (point < 0) {
+		} else if (point < 0) {
 			System.out.println("음수");
-		} 
-		else {
+		} else {
 			System.out.println("0");
 		}
 		sc.close();

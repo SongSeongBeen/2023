@@ -13,8 +13,7 @@ public class Ex02 {
 
 		if (num >= 60) {// true 일때만
 			System.out.println("합격입니다.");
-		} 
-		else {// false 일때만
+		} else {// false 일때만
 			System.out.println("불합격입니다.");
 		}
 		sc.close();
