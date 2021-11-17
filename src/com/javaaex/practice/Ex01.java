@@ -6,7 +6,7 @@ public class Ex01 {
 
 		System.out.println("while문");
 		int index = 0;
-		while (index < 3) { // 두번
+		while (index < 3) { // 0부터 2까지
 			System.out.println("index=" + index);
 			index++;
 		}
@@ -14,7 +14,7 @@ public class Ex01 {
 		// index1
 		// index2
 		System.out.println("for문");
-		for (int order = 0; order < 3; order++) { // 두번
+		for (int order = 0; order < 3; order++) { // 0부터 2까지
 			System.out.println("index=" + index);
 		}
 		// order0
