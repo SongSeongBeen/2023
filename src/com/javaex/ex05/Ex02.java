@@ -18,6 +18,7 @@ public class Ex02 {
 		System.out.println(intArray[2]);
 		System.out.println(intArray[3]);
 		System.out.println(intArray[4]);
+		
 	}
 
 }

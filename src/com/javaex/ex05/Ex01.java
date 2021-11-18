@@ -33,7 +33,6 @@ public class Ex01 {
 //		ball[2] = ((int)(Math.random()*45))+1;
 //		ball[3] = ((int)(Math.random()*45))+1;
 //		ball[4] = ((int)(Math.random()*45))+1;
-		
 //		ball[5] = ((int)(Math.random()*45))+1;
 		
 //		
