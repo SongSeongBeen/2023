@@ -12,4 +12,5 @@ public class Ex10 {
 			System.out.println(i);
 		}
 	}
+	
 }

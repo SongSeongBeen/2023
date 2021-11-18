@@ -23,6 +23,7 @@ public class Ex12 {
 		 * 
 		 * sc.close();
 		 */
+		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("숫자를 입력하세요.[0이면 종료]");
 		

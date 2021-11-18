@@ -10,7 +10,6 @@ public class Ex11 {
 //			continue;	
 //			}
 //			System.out.println(x);
-		
 		for(int x=1; x<=20; x++) {
 			
 			if(x%2==0 || x%3==0) {
