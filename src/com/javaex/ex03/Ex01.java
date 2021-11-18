@@ -17,4 +17,5 @@ public class Ex01 {
 		}
 		sc.close();
 	}
+	
 }
