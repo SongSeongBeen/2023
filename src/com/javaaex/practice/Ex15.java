@@ -2,7 +2,7 @@ package com.javaaex.practice;
 
 import java.util.Scanner;
 
-public class Ex13 {
+public class Ex15 {
 	
 	public static void main(String[] args) {
 
@@ -10,14 +10,13 @@ public class Ex13 {
 		
 		System.out.print("숫자를 입력하세요: ");
 		int num = sc.nextInt();
+	                
+		for(int i =1; i<=num; i++) {
 		
-		int sum = 0;
-		
-		for (int i = 1; i <= num; i++) {// i는 입력한 수 까지만
-			sum+=i;//sum=sum+i   //0=0+1
-		}                        //1=1+2 ... 3=3+3 
-		System.out.println("합계:" + sum);
-
+			if(num%i==0) {/// 입력한 수 나누기 1부터 증가하는 수 값은 약수이다
+				System.out.println(i);    //// 증가하는 수 약수만 표시
+			}
+		}
 		sc.close();
 	}
 	
