@@ -1,4 +1,4 @@
-package com.javaaex.practice;
+package com.javaex.practice;
 
 public class Ex09 {
 	
