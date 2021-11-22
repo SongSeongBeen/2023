@@ -15,7 +15,6 @@ public class Ex20 {
 		int random = 20;
 		
 		while(true) {
-
 				System.out.print(">>");
 				int num = sc.nextInt();
 				
@@ -27,8 +26,6 @@ public class Ex20 {
 					System.out.println("맞았습니다.");
 					break;
 				}
-			
-
 			System.out.print("게임을 종료하시겠습니까?(y/n) >>");
 			String a = sc.next();                   //여기 부분 다시 생각해보기
 			System.out.println("=====================");
@@ -37,6 +34,7 @@ public class Ex20 {
 			sc.close();
 			}
 	}
+	
 }
 	
 

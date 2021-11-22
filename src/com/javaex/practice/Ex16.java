@@ -19,7 +19,6 @@ public class Ex16 {
 			if(b==0) {   // 걸러서 5의 배수만
 				c++;
 				sum+=i;    
-				
 			}
 		}
 		System.out.println("5의 배수의 개수: " + c);

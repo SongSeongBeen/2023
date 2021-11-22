@@ -7,10 +7,8 @@ public class Ex09 {
 		for(int y=1; y<=10; y++) { //세로
 			
 			for(int x=0; x<10; x++) { // 가로
-				
 				System.out.print(y+x+"\t");
 			}
-			
 			System.out.println("");
 		}
 	}
