@@ -12,23 +12,26 @@ public class Goods {
 	private String name;
 	private int price;
 //메소드
-    public void setName(String n){//담는다
-    this.name = n;
-    }	
-    public String getName(){   //내보낸다
-        return name;
-        }
-    public void setPrice(int p) {
-    	this.price = p;
-    }
-    public int getPrice() {
-    	return price;
-    }
+	public void setName(String n) {// 담는다
+		this.name = n;
+	}
+
+	public String getName() { // 내보낸다
+		return name;
+	}
+
+	public void setPrice(int p) {
+		this.price = p;
+	}
+
+	public int getPrice() {
+		return price;
+	}
  //일반메소드
-    public void showinfo() {
-    	System.out.println("상품명 : " + name);
-    	System.out.println("가격 : " + price);
-    	System.out.println("---------------------------");
-    }
-    			
+	public void showinfo() {
+		System.out.println("상품명 : " + name);
+		System.out.println("가격 : " + price);
+		System.out.println("---------------------------");
+	}
+
 }

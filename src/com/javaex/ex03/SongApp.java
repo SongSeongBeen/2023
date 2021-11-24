@@ -1,9 +1,9 @@
 package com.javaex.ex03;
 
 public class SongApp {
-	
+
 	public static void main(String[] args) {
-		
+
 		Song iu = new Song();
 		iu.setArtist("아이유");
 		iu.setTitle("좋은날");
@@ -11,9 +11,9 @@ public class SongApp {
 		iu.setYear(2010);
 		iu.setTrack(3);
 		iu.setComposer("이수민");
-		
+
 		iu.showinfo();
-		
+
 		Song bigbang = new Song();
 		bigbang.setArtist("BIGBANG");
 		bigbang.setTitle("거짓말");
@@ -21,9 +21,9 @@ public class SongApp {
 		bigbang.setYear(2007);
 		bigbang.setTrack(2);
 		bigbang.setComposer("G-DRAGON");
-		
+
 		bigbang.showinfo();
-		
+
 		Song jbj = new Song();
 		jbj.setArtist("버스커버스커");
 		jbj.setTitle("벚꽃엔딩");
@@ -31,7 +31,7 @@ public class SongApp {
 		jbj.setYear(2012);
 		jbj.setTrack(4);
 		jbj.setComposer("장범준");
-		
+
 		jbj.showinfo();
 		
 		//System.out.println(iu.toString()); 내부값 볼수있다.
