@@ -21,7 +21,9 @@ public class GoodsApp {
 	cup.setPrice(2000);
 	
 	cup.showinfo();
-	
+	}
+
+}
 	
 	
 //	System.out.println(camera.getName());
@@ -31,15 +33,6 @@ public class GoodsApp {
 	
 //	camera.showinfo();    //지정 한번에 출력
 
-	
-
-	
-	
-		
-	}
-
-}
-		
 //	Goods camera = new Goods(); // 기본자료형이 아니라 따라서 있을 주소값 입력
 //	camera.name = "상품이름: "+"니콘, "+"가격:";
 //	camera.price = 400000; 
