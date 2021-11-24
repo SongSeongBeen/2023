@@ -46,10 +46,15 @@ public class Song {
 		return track;
 	}
 	
-	public void showinfo() {
+	public void showinfo() {   //showinfo 좀더 다양하게 출력가능 마지막 출력용
 		System.out.println(artist+ ", " + title + "(" + album+ ", " + year+ ", " + track+"번 track, "+ composer+" 작곡)");
 	}
-	
+//	@Override  (alt+shift+s) --> to String  //확인용 출력
+//	public String toString() {
+//		return "Song [title=" + title + ", artist=" + artist + ", album=" + album + ", composer=" + composer + ", year="
+//				+ year + ", track=" + track + "]";
+//	}
+//	
 	
 	
 }

@@ -13,14 +13,14 @@ public class Goods {
 	private int price;
 //메소드
     public void setName(String n){//담는다
-    name = n;
+    this.name = n;
     }	
     public String getName(){   //내보낸다
         return name;
         }
     
     public void setPrice(int p) {
-    	price = p;
+    	this.price = p;
     }
     public int getPrice() {
     	return price;
