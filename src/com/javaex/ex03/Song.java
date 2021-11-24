@@ -50,6 +50,8 @@ public class Song {
 		System.out.println(
 				artist + ", " + title + "(" + album + ", " + year + ", " + track + "번 track, " + composer + " 작곡)");
 	}
+	
+}
 //	@Override  (alt+shift+s) --> to String  //확인용 출력
 //	public String toString() {
 //		return "Song [title=" + title + ", artist=" + artist + ", album=" + album + ", composer=" + composer + ", year="
@@ -57,5 +59,4 @@ public class Song {
 //	}
 //	
 	
-	
-}
+

@@ -33,7 +33,7 @@ public class SongApp {
 		jbj.setComposer("장범준");
 
 		jbj.showinfo();
-		
+
 		//System.out.println(iu.toString()); 내부값 볼수있다.
 	}
 	
