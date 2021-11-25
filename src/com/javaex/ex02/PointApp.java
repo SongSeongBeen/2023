@@ -15,9 +15,9 @@ public class PointApp {
 		// second.setY(23);
 		p02.draw();
 
-		Point p03 = new Point(100); // 생성자로 할때
-		p03.setY(101);
-		p03.draw();
+		Point p03 = new Point(55, 65); // 생성자로 할때
+		p03.draw(true);
+		p03.draw(false);
 	}
 
 }
