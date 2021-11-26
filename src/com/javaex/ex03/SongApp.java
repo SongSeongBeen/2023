@@ -12,7 +12,7 @@ public class SongApp {
 		iu.setTrack(3);
 		iu.setComposer("이수민");
 
-		iu.showinfo();
+		iu.showInfo();
 
 		Song bigbang = new Song();
 		bigbang.setArtist("BIGBANG");
@@ -22,7 +22,7 @@ public class SongApp {
 		bigbang.setTrack(2);
 		bigbang.setComposer("G-DRAGON");
 
-		bigbang.showinfo();
+		bigbang.showInfo();
 
 		Song jbj = new Song();
 		jbj.setArtist("버스커버스커");
@@ -32,7 +32,7 @@ public class SongApp {
 		jbj.setTrack(4);
 		jbj.setComposer("장범준");
 
-		jbj.showinfo();
+		jbj.showInfo();
 
 		//System.out.println(iu.toString()); 내부값 볼수있다.
 	}

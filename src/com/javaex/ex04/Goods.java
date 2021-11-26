@@ -34,7 +34,7 @@ public class Goods {
 	}
 
 	// 메소드 일반
-    //public void showinfo() {   // 출력용
+    //public void showInfo() {   // 출력용
 	
 	@Override
 	public String toString() { // 입력내용 확인용 출력

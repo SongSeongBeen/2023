@@ -46,7 +46,7 @@ public class Song {
 		return track;
 	}
     //일반메소드	
-	public void showinfo() { // showinfo 좀더 다양하게 출력가능 마지막 출력용
+	public void showInfo() { // showinfo 좀더 다양하게 출력가능 마지막 출력용
 		System.out.println(
 				artist + ", " + title + "(" + album + ", " + year + ", " + track + "번 track, " + composer + " 작곡)");
 	}

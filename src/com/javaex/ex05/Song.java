@@ -99,7 +99,7 @@ public class Song {
 	}
 
 	//메소드 일반
-	public void showinfo() {   // 출력용    draw() 
+	public void showInfo() {   // 출력용    draw() 
 		System.out.println(artist+ ", " + title + "(" + album+ ", " + year+ ", " + track+"번 track, "+ composer+" 작곡)");
 	
 	
@@ -109,6 +109,7 @@ public class Song {
 //				+ year + ", track=" + track + "]";
 		
 	}
+	
 	
 	
 	

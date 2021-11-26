@@ -14,11 +14,11 @@ public class SongApp {
 	
 		
 		//아이유 출력
-		iu.showinfo();
+		iu.showInfo();
 		//빅뱅출력
-		bigbang.showinfo();
+		bigbang.showInfo();
 		//장범준출력
-		jbj.showinfo();
+		jbj.showInfo();
 	}
 
 }

@@ -38,7 +38,7 @@ public class Goods {
 	}
 
 	// 일반 메소드
-//	public void showinfo() { //마지막 출력용
+//	public void showInfo() { //마지막 출력용
 //		System.out.println(name+price+totalCount);
 //	}
 	@Override

@@ -8,19 +8,19 @@ public class GoodsApp {
 	camera.setName("니콘");	
 	camera.setPrice(400000);
 	
-	camera.showinfo();
+	camera.showInfo();
 	
 	Goods notebook = new Goods();
 	notebook.setName("LG그램");	
 	notebook.setPrice(900000);
 	
-	notebook.showinfo();
+	notebook.showInfo();
 	
 	Goods cup = new Goods();
 	cup.setName("머그컵");	
 	cup.setPrice(2000);
 	
-	cup.showinfo();
+	cup.showInfo();
 	}
 
 }
