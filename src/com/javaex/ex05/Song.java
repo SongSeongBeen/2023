@@ -38,8 +38,8 @@ public class Song {
 //	}
 //	
 //	public Song(String title, String artist, String album, String composer) {
-//		this(title, artist, album, composer, "");
-//
+//	*****	this(title, artist, album, composer, ""); //생성자 한번에 순선대로 기본형도 맞아야 한다****
+
 //	}
 //
 //	public Song(String title, String artist, String album, String composer, String year) {
