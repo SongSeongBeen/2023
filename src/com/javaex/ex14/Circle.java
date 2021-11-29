@@ -26,7 +26,7 @@ public class Circle extends Shape{
 	
 	//메소드
 	public void draw() {
-		System.out.println("면색:"+ super.getLineColor() + " 선색:" + super.getFillColor() + "반지름:" + radius + " 원을 그렸습니다" );
+		System.out.println("면색:"+ super.getLineColor() + " 선색:" + super.getFillColor() + " 반지름:" + radius + " (원을 그렸습니다.)" );
 	}
 
 }

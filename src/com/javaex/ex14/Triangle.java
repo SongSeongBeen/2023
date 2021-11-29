@@ -33,7 +33,7 @@ public class Triangle extends Shape{
 				+ ", getFillColor()=" + getFillColor() + "]";
 	}
 	public void draw() {
-		System.out.println("선색:" + super.getLineColor() + " 면색:" + super.getFillColor() + " 가로:" + width + " 세로:" + height+" 삼각형을 그렸습니다.");
+		System.out.println("선색:" + super.getLineColor() + " 면색:" + super.getFillColor() + " 가로:" + width + " 세로:" + height+" (삼각형을 그렸습니다.)");
 	}
 
 	

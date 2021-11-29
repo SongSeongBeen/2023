@@ -35,14 +35,14 @@ public class Rectangle extends Shape{
 	}
 	//일반메소드
 
-	@Override
-	public String toString() { //부모쪽에서 안쓸때 이름만 같게 해준다 
-		return "Rectangle [width=" + width + ", height=" + height + ", getLineColor=" + getLineColor()
-				+ ", getFillColor=" + getFillColor() + "]";
-	}
+//	@Override
+//	public String toString() { //부모쪽에서 안쓸때 이름만 같게 해준다 
+//		return "Rectangle [width=" + width + ", height=" + height + ", getLineColor=" + getLineColor()
+//				+ ", getFillColor=" + getFillColor() + "]";
+//	}
 	
 	public void draw() {
-		System.out.println(" 선색: "+ super.getLineColor() + " 면색: " + super.getFillColor() + " 가로: " + width + " 세로: " + height + "사각형을 그렸습니다." );
+		System.out.println("선색:" + super.getLineColor() + " 면색:" + super.getFillColor() + " 가로:" + width + " 세로: " + height + " (사각형을 그렸습니다.)" );
 	}
 	
 }

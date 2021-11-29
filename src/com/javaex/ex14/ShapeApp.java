@@ -22,8 +22,8 @@ public class ShapeApp {
 		
 		////사각형을 관리할 배열을 만든다 (주소)
 		rArray[0] = r01;
-		rArray[1] = r01;
-		rArray[2] = r01;
+		rArray[1] = r02;
+		rArray[2] = r03;
 		
 		for(int i=0; i<rArray.length; i++) {
 			rArray[i].draw();
@@ -37,8 +37,8 @@ public class ShapeApp {
 		Circle[]cArray = new Circle[3];
 		//원
 		Circle c01 = new Circle("빨강", "노랑", 15);
-		Circle c02 = new Circle("빨강", "노랑", 20);
-		Circle c03 = new Circle("빨강", "노랑", 10);
+		Circle c02 = new Circle("파랑", "빨강", 20);
+		Circle c03 = new Circle("초록", "파랑", 10);
 		
 		
 		//원 배열 관리(주소)
@@ -52,9 +52,9 @@ public class ShapeApp {
 		//배열
 		Triangle[] tArray = new Triangle[3];
 		//삼각형
-		Triangle t01 = new Triangle("빨강", "파랑", 10,10);
-		Triangle t02 = new Triangle("빨강", "파랑", 10,10);
-		Triangle t03 = new Triangle("빨강", "파랑", 10,10);
+		Triangle t01 = new Triangle("빨강", "파랑", 20,20);
+		Triangle t02 = new Triangle("파랑", "초록", 10,15);
+		Triangle t03 = new Triangle("노랑", "파랑", 15,10);
 		
 		tArray[0] = t01;
 		tArray[1] = t02;
