@@ -1,4 +1,4 @@
-package com.javaex.ex14;
+package com.javaex.ex15;
 
 public class Triangle extends Shape{
 	//필드

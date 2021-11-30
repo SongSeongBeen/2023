@@ -21,6 +21,7 @@ public class ColorPoint extends Point {
 	}
 	
 	//일반 메소드
+	
 	public void showInfo(){
 		System.out.println("색상 " + color);
 	}
@@ -29,5 +30,4 @@ public class ColorPoint extends Point {
 		System.out.println("x=" + super.getX() + "y=" + super.getY()+ "색상 " + color);
 	}
 
-	
 }
