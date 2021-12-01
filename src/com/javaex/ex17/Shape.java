@@ -43,7 +43,7 @@ public abstract class Shape {
 //		return result;
 //	}
 	
-	public abstract double area(); //추상 메소드 제목만 있는상태 쓸려면 자식에게 값입력해주기
+	public abstract double area(); //추상 메소드 제목만 있는상태 쓸려면 자식에게 입력해주기
 	//오버라이드 됐을때 완성이 된다
 		
 }
