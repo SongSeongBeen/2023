@@ -18,6 +18,8 @@ public class Goods {
 
 	public String getName() { // 내보낸다
 		return name;
+		
+		
 	}
 
 	public void setPrice(int p) {
