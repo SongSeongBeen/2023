@@ -1,6 +1,7 @@
 package com.javaex.ex02;
 
 public class Sparrow extends Bird {
+
 	
 //	// 필드
 //	private String sing;
@@ -45,5 +46,6 @@ public class Sparrow extends Bird {
 	public void sing() {
 		System.out.println("참새(" + super.getName() + ")가 소리내어 웁니다.");
 	}
+
 
 }

@@ -1,6 +1,7 @@
 package com.javaex.ex02;
 
 public abstract class Bird {
+
 	// 필드
     private String name;
     //생성자
