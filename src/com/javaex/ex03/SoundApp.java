@@ -11,7 +11,7 @@ public class SoundApp {
 
 	public static void printSound(Soundable soundable) {
 		// 출력조건
-				System.out.println(soundable.sound());
+		System.out.println(soundable.sound());
 				
 		// 배열
 //    	Soundable[] sArray = new Soundable[4];
