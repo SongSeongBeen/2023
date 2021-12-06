@@ -10,6 +10,7 @@ public class MyList<T> {   /// T로 묶어서 관리
 
 	// 생성자
 
+	@SuppressWarnings("unchecked")
 	public MyList() {
 		this.oArray = (T[])new Object[3]; //       T[]new 배열이라 형변환 하는 형식으로 해줘야 한다.
 		this.crtPos = 0;
