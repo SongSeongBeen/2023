@@ -15,7 +15,7 @@ public class WrapperApp {
 		System.out.println(i);
 		System.out.println(s);
 		System.out.println(b);
-		
+
 		int num01 = 10;
 		int num02 = 7;
 		int intResult = num01 + num02;
