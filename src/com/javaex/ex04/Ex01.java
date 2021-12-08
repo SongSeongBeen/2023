@@ -12,19 +12,19 @@ public class Ex01 {
 		Point p03 = new Point(8,2);
 
 		//섞어쓰기한 이유 공부하기
-		List<Point> pList = new ArrayList<Point>(); //섞어 쓰기 않하면 다 쓸수있다 ArrayList<Point>
+		List<Point> pList = new ArrayList<Point>(); //섞어 쓰기 안하면 다 쓸수있다 ArrayList<Point>
 		//List<Point> pList = new LinkedList<Point>();
 		pList.add(p01);
 		pList.add(p02);
 		pList.add(p03);
 		
-		System.out.println(pList.size());  //방의개수
+		System.out.println(pList.size());  //size방의개수
 		
 		System.out.println(pList.get(1).getX());
 		System.out.println(pList.get(1).toString());
 		
 		//전체출력
-		for(int i=0; i<pList.size(); i++) { //방의개수로 설정
+		for(int i=0; i<pList.size(); i++) { //size방의개수로 범위지정
 			System.out.println(pList.get(i).toString());
 		}
 		System.out.println("==========================");

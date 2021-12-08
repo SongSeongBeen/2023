@@ -16,7 +16,6 @@ public class CircleList {
 	
 	//메소드gs --- 생략
 	
-	
 	//메소드일반 ---세부사항 설정
 	//배열에 crtPos 증가값 설정
 	public void add(Circle c) {
