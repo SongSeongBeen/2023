@@ -9,8 +9,8 @@ public class Ex01 {
 
 	public static void main(String[] args) throws Exception {
 		
-		InputStream in = new FileInputStream("C:\\JavaStudy\\file\\img.jpg"); //생성자에 파일위치를 써야한다.
-		OutputStream out = new FileOutputStream("C:\\JavaStudy\\file\\byteimg.jpg");
+		InputStream in = new FileInputStream("C:\\javaStudy\\file\\img.jpg"); //생성자에 파일위치를 써야한다.
+		OutputStream out = new FileOutputStream("C:\\javaStudy\\file\\byteimg.jpg");
 			 
 		byte[] buff = new byte[1234]; //byte로 정해줌
 		while(true) {
