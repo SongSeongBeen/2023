@@ -41,11 +41,12 @@ public class PhoneApp {
 				String put = sc.nextLine();
 				String[] sArray = put.split(" ");
 
-				String name = sArray[0];
-				String  hp = sArray[1];
-				String  company = sArray[2];
+//				String name = sArray[0];
+//				String  hp = sArray[1];
+//				String  company = sArray[2];
+//				Person p01 = new Person(name, hp, company);
 				
-				Person p01 = new Person(name, hp, company);
+				Person p01 = new Person(sArray[0], sArray[1], sArray[2]);
 				pList.add(p01);
 			}
 			for(Person f:pList) {
