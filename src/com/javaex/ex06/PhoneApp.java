@@ -29,7 +29,7 @@ public class PhoneApp {
 			
 			for(int i=0; i<3; i++) {
 				String put = sc.nextLine();
-				String[] sArray = put.split(" ");
+				String[] sArray = put.split(",");
 
 				Person f = new Person(sArray[0], sArray[1], sArray[2]);
 				
@@ -39,7 +39,7 @@ public class PhoneApp {
 			
 			for(int i=0; i<1; i++) {
 				String put = sc.nextLine();
-				String[] sArray = put.split(" ");
+				String[] sArray = put.split(",");
 
 //				String name = sArray[0];
 //				String  hp = sArray[1];
