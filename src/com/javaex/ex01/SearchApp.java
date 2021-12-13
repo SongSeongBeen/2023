@@ -52,57 +52,65 @@ public class SearchApp {
 				break;
 			}
 			
-			switch(num) {
-			
-			case 1: //리스트 메모장으로 받아서 출력
+			switch (num) {
+
+			case 1: // 리스트 메모장으로 받아서 출력
 				System.out.println("<1.리스트>");
 				showInfo(pList);
-				break;
-				
-			case 2: //등록해서 메모장으로 저장까지
-				//이름
+				continue;
+
+			case 2: // 등록해서 메모장으로 저장까지
+				// 이름
 				System.out.println("<2.등록>");
 				System.out.print(">이름 : ");
 				sc.nextLine();
 				String name = sc.nextLine();
-				//핸드폰
+				// 핸드폰
 				System.out.print(">휴대전화 : ");
 				String hp = sc.nextLine();
-				//회사
+				// 회사
 				System.out.print(">회사전화 : ");
 				String company = sc.nextLine();
-				//저장
-				Search p02 = new Search(name, hp, company); //p01이랑 다르게 추가
-				pList.add(p02); //리스트추가
-				//저장경로
+				// 저장
+				Search p02 = new Search(name, hp, company); // p01이랑 다르게 추가
+				pList.add(p02); // 리스트추가
+				// 저장경로
 				Writer in = new FileWriter("F:\\javaStudy\\miniprofile\\PhoneDB.txt");
 				BufferedReader bw = new BufferedReader(list);
-				
+
 				System.out.println("[등록되었습니다.]");
 				showInfo(pList);
 				in.close();
 				bw.close();
-				break;
-				
-			case 3: //메모장에 있는거 불러서 삭제?
+				continue;
+
+			case 3: // 메모장에 있는거 불러서 삭제?
 				System.out.print("<3.삭제>");
 				System.out.print(">번호 : ");
 				int remove = sc.nextInt();
 				pList.remove(--remove);
 				System.out.print("[삭제되었습니다.]");
-				break;
-				
-			case 4: //검색
+				showInfo(pList);
+				continue;
+
+			case 4: // 검색
 				System.out.println("시스템 업데이트중입니다.");
-				break;
+				continue;
 				
-			default: //계속반복
+			case 5:
+				System.out.println("**********************************************");
+				System.out.println("**********************************************");
+				System.out.println("**                 감사합니다                  **");
+				System.out.println("**********************************************");
+				System.out.println("**********************************************");
+				break;
+
+			default: // 계속반복
 				System.out.println("[메뉴번호가 없습니다.(다시 선택해 주세요)]");
 				continue;
-				}
-			
-		
-			sc.close();	
+			}
+
+			sc.close();
 		}
 	
 	}
