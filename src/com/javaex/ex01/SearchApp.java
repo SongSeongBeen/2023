@@ -12,16 +12,16 @@ import java.util.Scanner;
 
 public class SearchApp {
 
-	public static void main(String[] args) throws IOException { //예외처리
+	public static void main(String[] args) throws IOException { // 예외처리
 		Scanner sc = new Scanner(System.in);
 		System.out.println("**********************************************");
- 		System.out.println("**             전화번호 관리 프로그램            **");
+		System.out.println("**             전화번호 관리 프로그램            **");
 		System.out.println("**********************************************");
 		System.out.println(" ");
-		
+
 		Reader list = new FileReader("F:\\javaStudy\\miniprofile\\PhoneDB.txt");
 		BufferedReader br = new BufferedReader(list);
-		
+
 		List<Search> pList = new ArrayList<Search>();
 		while (true) {
 			String str = br.readLine();
@@ -32,31 +32,29 @@ public class SearchApp {
 			Search p01 = new Search(sArray[0], sArray[1], sArray[2]);
 			pList.add(p01);
 		}
-		br.close();
 	
-		while (true) {
+		//계속돌고 값탈출 re=false;
+		boolean re = true;
+		
+		while (re) {
+
 			System.out.println("----------------------------------------------");
 			System.out.println("| 1.리스트 | 2.등록  | 3.삭제  | 4.검색  | 5.종료  |");
 			System.out.println("----------------------------------------------");
-			
+
 			System.out.print(">메뉴번호:");
-			int num = sc.nextInt(); 
-			
-			if (num==5) { //5번 받으면 다른거 할필요 없이 그냥 종료 
-				System.out.println("**********************************************");
-				System.out.println("**********************************************");
-				System.out.println("**                 감사합니다                  **");
-				System.out.println("**********************************************");
-				System.out.println("**********************************************");
-				break;
-			}
+			int num = sc.nextInt();
+
 			switch (num) {
 			case 1: // 리스트 메모장으로 받아서 출력
 				System.out.println("<1.리스트>");
 				showInfo(pList);
-				continue;
+				break;
 
 			case 2: // 등록해서 메모장으로 저장까지
+				Writer in = new FileWriter("F:\\javaStudy\\miniprofile\\PhoneDB.txt");
+				BufferedReader bw = new BufferedReader(list);
+				
 				// 이름
 				System.out.println("<2.등록>");
 				System.out.print(">이름 : ");
@@ -72,14 +70,12 @@ public class SearchApp {
 				Search p02 = new Search(name, hp, company); // p01이랑 다르게 추가
 				pList.add(p02); // 리스트추가
 				// 저장경로
-				Writer in = new FileWriter("F:\\javaStudy\\miniprofile\\PhoneDB.txt");
-				BufferedReader bw = new BufferedReader(list);
 
 				System.out.println("[등록되었습니다.]");
 				showInfo(pList);
-				in.close();
+				in.flush();
 				bw.close();
-				continue;
+				break;
 
 			case 3: // 메모장에 있는거 불러서 삭제?
 				System.out.print("<3.삭제>");
@@ -88,18 +84,24 @@ public class SearchApp {
 				pList.remove(--remove);
 				System.out.println("[삭제되었습니다.]");
 				showInfo(pList);
-				continue;
+				break;
 
 			case 4: // 검색
 				System.out.println("시스템 업데이트중입니다.");
-				continue;
+				break;
+			case 5:
+				System.out.println("**********************************************");
+				System.out.println("**                프로그램 종료                **");
+				System.out.println("**********************************************");
+				re=false;
+				break;
 				
 			default: // 계속반복
 				System.out.println("[메뉴번호가 없습니다.(다시 선택해 주세요)]");
-				continue;
 			}
-			
+
 		}
+		br.close();
 		sc.close();
 	}
 
@@ -109,7 +111,5 @@ public class SearchApp {
 					+ pList.get(i).getCompany());
 		}
 	}
-	
-	
-	
+
 }
