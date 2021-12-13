@@ -37,7 +37,9 @@ public class Person {
 	public String toString() {
 		return "Person [name=" + name + ", hp=" + hp + ", company=" + company + "]";
 	}
-	
+	public String bwrite() {
+		return name + "," + hp + "," + company;
+	}
 	public void showInfo() {
 		System.out.println("이름: " + name + "\n" +"핸드폰: " + hp + "\n" + "회사: " + company + "\n");
 	}
