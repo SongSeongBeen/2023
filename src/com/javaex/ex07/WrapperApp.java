@@ -41,6 +41,7 @@ public class WrapperApp {
 		int r01 = i05.parseInt("12345");
 		System.out.println(r01);
 		*/
+		
 		//잘못쓴 예
 		
 		int r01 = Integer.parseInt("12345");
