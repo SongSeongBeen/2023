@@ -1,4 +1,4 @@
-package echo.ex01;
+package echo.ex02;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -9,6 +9,7 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.util.Scanner;
 
 public class Client {
 	
@@ -33,19 +34,34 @@ public class Client {
 		
 		//2.메세지 받기용 스트림
 		InputStream is = socket.getInputStream();
-		InputStreamReader isr =  new InputStreamReader(is, "UTF-8"); // 보낼떄 번역 언어지정
-		BufferedReader br = new BufferedReader(isr);
+		InputStreamReader isr =  new InputStreamReader(is, "UTF-8"); // 캐스팅하지않아도 문자로 받을 수 있다 (보낼때 번역 언어지정)
+		BufferedReader br = new BufferedReader(isr);//선언 
+		
+		//Scanner(키보드 입력용)
+		Scanner sc = new Scanner(System.in);
+		
+		//반복구간 설정
+		while(true) {
+			String str = sc.nextLine();
+			
+			if("/q".equals(str)) { // str.equals("/q") 주가 없을 가능성이 있어 null piont ("/q".equals(str))
+				System.out.println("종료키 입력");
+				break;
+			}
 		
 		//1.보낼 메세지 내용
-		String str = "안녕하세요";
 		bw.write(str);
 		bw.newLine();//줄바꿈으로 끝났다.
-		bw.flush();//가득채웠다. 
-		
+		bw.flush();//남아있는 데이터를 모두 출력시킴 
+	
 		//2.메세지 받기
 		String reMag = br.readLine();
 		System.out.println("server:["+reMag+"}");
+		}
 		
+		System.out.println("================================");
+		System.out.println("<클라이언트 종료 되었습니다>");
+		sc.close();
 		bw.close();
 		socket.close();
 	}
