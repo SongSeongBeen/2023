@@ -19,7 +19,6 @@ public class SearchApp {
 		System.out.println("**********************************************");
 		System.out.println(" ");
 		
-		
 		Reader list = new FileReader("F:\\javaStudy\\miniprofile\\PhoneDB.txt");
 		BufferedReader br = new BufferedReader(list);
 		
@@ -34,7 +33,7 @@ public class SearchApp {
 			pList.add(p01);
 		}
 		br.close();
-		
+	
 		while (true) {
 			System.out.println("----------------------------------------------");
 			System.out.println("| 1.리스트 | 2.등록  | 3.삭제  | 4.검색  | 5.종료  |");
@@ -43,17 +42,15 @@ public class SearchApp {
 			System.out.print(">메뉴번호:");
 			int num = sc.nextInt(); 
 			
-			if(num==5) {
+			if (num==5) { //5번 받으면 다른거 할필요 없이 그냥 종료 
 				System.out.println("**********************************************");
 				System.out.println("**********************************************");
-		 		System.out.println("**                 감사합니다                  **");
+				System.out.println("**                 감사합니다                  **");
 				System.out.println("**********************************************");
 				System.out.println("**********************************************");
 				break;
 			}
-			
 			switch (num) {
-
 			case 1: // 리스트 메모장으로 받아서 출력
 				System.out.println("<1.리스트>");
 				showInfo(pList);
@@ -89,7 +86,7 @@ public class SearchApp {
 				System.out.print(">번호 : ");
 				int remove = sc.nextInt();
 				pList.remove(--remove);
-				System.out.print("[삭제되었습니다.]");
+				System.out.println("[삭제되었습니다.]");
 				showInfo(pList);
 				continue;
 
@@ -97,22 +94,13 @@ public class SearchApp {
 				System.out.println("시스템 업데이트중입니다.");
 				continue;
 				
-			case 5:
-				System.out.println("**********************************************");
-				System.out.println("**********************************************");
-				System.out.println("**                 감사합니다                  **");
-				System.out.println("**********************************************");
-				System.out.println("**********************************************");
-				break;
-
 			default: // 계속반복
 				System.out.println("[메뉴번호가 없습니다.(다시 선택해 주세요)]");
 				continue;
 			}
-
-			sc.close();
+			
 		}
-	
+		sc.close();
 	}
 
 	public static void showInfo(List<Search> pList) {
