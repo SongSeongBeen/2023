@@ -14,7 +14,9 @@ import java.util.Scanner;
 public class SearchApp {
 
 	public static void main(String[] args) throws IOException { // 예외처리
+		
 		Scanner sc = new Scanner(System.in);
+		
 		System.out.println("**********************************************");
 		System.out.println("**             전화번호 관리 프로그램            **");
 		System.out.println("**********************************************");
@@ -53,8 +55,6 @@ public class SearchApp {
 				break;
 
 			case 2: // 등록해서 메모장으로 저장까지
-				
-		
 				// 이름
 				System.out.println("<2.등록>");
 				System.out.print(">이름 : ");
@@ -88,7 +88,8 @@ public class SearchApp {
 				break;
 
 			case 4: // 검색
-				System.out.println("시스템 업데이트중입니다.");
+				search(pList, sc);
+				
 				break;
 			case 5:
 				System.out.println("**********************************************");
@@ -100,7 +101,6 @@ public class SearchApp {
 			default: // 계속반복
 				System.out.println("[메뉴번호가 없습니다.(다시 선택해 주세요)]");
 			}
-
 		}
 		br.close();
 		sc.close();
@@ -113,12 +113,11 @@ public class SearchApp {
 		for (Search print : pList) {			
 			bw.write(print.bwrite());
 			bw.newLine();
-			
 		}
 		in.flush();
 		bw.close();
 	}	
-	
+
 	public static void showInfo(List<Search> pList) {
 		for (int i = 0; i < pList.size(); i++) {
 			System.out.println((i + 1) + ". " + pList.get(i).getName() + " " + pList.get(i).getHp() + " "
@@ -126,4 +125,36 @@ public class SearchApp {
 		}
 	}
 
+	public static void search(List<Search> pList, Scanner sc) {
+		System.out.println();
+		System.out.println("검색할 정보(이름,전화번호,회사번호)를 입력하세요");
+		System.out.print("입  력 >> ");
+		sc.nextLine();
+		String input = sc.nextLine();
+		
+		for(int i =0; i<pList.size(); i++) {
+			
+		if(pList.get(i).getName().contains(input)) {
+			System.out.println("이   름 : " + pList.get(i).getName());
+			System.out.println("휴 대 폰 : " + pList.get(i).getHp());
+			System.out.println("회사전화 : " + pList.get(i).getCompany());
+			
+		} else if(pList.get(i).getHp().contains(input)){
+			System.out.println("이   름 : " + pList.get(i).getName());
+			System.out.println("휴 대 폰 : " + pList.get(i).getHp());
+			System.out.println("회사전화 : " + pList.get(i).getCompany());
+			
+		} else if(pList.get(i).getCompany().contains(input)) {
+			System.out.println("이   름 : " + pList.get(i).getName());
+			System.out.println("휴 대 폰 : " + pList.get(i).getHp());
+			System.out.println("회사전화 : " + pList.get(i).getCompany());
+			
+		} else if(pList.get(i).getName().equals(input)){
+			System.out.println("검색 정보가 없습니다.");
+		}
+		
+		}
+		System.out.println("검색 작업 완료....");
+	 }
+	
 }

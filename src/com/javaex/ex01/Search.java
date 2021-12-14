@@ -53,4 +53,6 @@ public class Search {
 	public String bwrite() {
 		return name + "," + hp + "," + company;
 	}
+	
+
 }
