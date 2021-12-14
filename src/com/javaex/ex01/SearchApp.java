@@ -139,21 +139,19 @@ public class SearchApp {
 				System.out.println("휴 대 폰 : " + pList.get(i).getHp());
 				System.out.println("회사전화 : " + pList.get(i).getCompany());
 				
-			} else if(pList.get(i).getHp().contains(input)){
-				System.out.println("이   름 : " + pList.get(i).getName());
-				System.out.println("휴 대 폰 : " + pList.get(i).getHp());
-				System.out.println("회사전화 : " + pList.get(i).getCompany());
+//			} else if(pList.get(i).getHp().contains(input)){
+//				System.out.println("이   름 : " + pList.get(i).getName());
+//				System.out.println("휴 대 폰 : " + pList.get(i).getHp());
+//				System.out.println("회사전화 : " + pList.get(i).getCompany());
+//				
+//			} else if(pList.get(i).getCompany().contains(input)) {  
+//				System.out.println("이   름 : " + pList.get(i).getName());
+//				System.out.println("휴 대 폰 : " + pList.get(i).getHp());
+//				System.out.println("회사전화 : " + pList.get(i).getCompany());
 				
-			} else if(pList.get(i).getCompany().contains(input)) {
-				System.out.println("이   름 : " + pList.get(i).getName());
-				System.out.println("휴 대 폰 : " + pList.get(i).getHp());
-				System.out.println("회사전화 : " + pList.get(i).getCompany());
-				break;
-			} else if(pList.get(i).getName()!=(input)){
+			} else {
 				System.out.println("검색 정보가 없습니다.");
-				
 			}
-			
 		}
 		System.out.println("검색 작업 완료....");
 	 }
