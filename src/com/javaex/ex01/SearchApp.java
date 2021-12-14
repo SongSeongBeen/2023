@@ -132,31 +132,37 @@ public class SearchApp {
 		sc.nextLine();
 		String input = sc.nextLine();
 		
-		for(int i =0; i<pList.size(); i++) {
-			String serchName = pList.get(i).getName();
-			if(serchName .contains(input)) {
-				System.out.print(i+1 +".");
-				System.out.print("이   름 : " + pList.get(i).getName()+"\t");
-				System.out.print("휴 대 폰 : " + pList.get(i).getHp()+"\t");
-				System.out.print("회사전화 : " + pList.get(i).getCompany()+"\t");
+		boolean abc = false;
+		
+		for (int i = 0; i < pList.size(); i++) {// 반복문으로 배열에 입력한 이름이 있는지.
+			if (pList.get(i).getName().contains(input)) {// 입력한 값의 배열일때.
+				//찾기(이름)
+				System.out.print(i + 1 + ".");
+				System.out.print("이   름 : " + pList.get(i).getName() + "\t");
+				System.out.print("휴 대 폰 : " + pList.get(i).getHp() + "\t");
+				System.out.print("회사전화 : " + pList.get(i).getCompany() + "\t");
 				System.out.println(" ");
-				//찾기(휴대폰)
-//			} else if(pList.get(i).getHp().contains(input)){
-//				System.out.println("이   름 : " + pList.get(i).getName());
-//				System.out.println("휴 대 폰 : " + pList.get(i).getHp());
-//				System.out.println("회사전화 : " + pList.get(i).getCompany());
-//				//찾기(회사번호)
-//			} else if(pList.get(i).getCompany().contains(input)) {  
-//				System.out.println("이   름 : " + pList.get(i).getName());
-//				System.out.println("휴 대 폰 : " + pList.get(i).getHp());
-//				System.out.println("회사전화 : " + pList.get(i).getCompany());
-				
-//			} if(serchName != input) {
-//				System.out.println("검색 정보가 없습니다.");
-//				
+				abc = true;
+				// 찾기(휴대폰)
+			} else if(pList.get(i).getHp().contains(input)){
+				System.out.print(i + 1 + ".");
+				System.out.print("이   름 : " + pList.get(i).getName() + "\t");
+				System.out.print("휴 대 폰 : " + pList.get(i).getHp() + "\t");
+				System.out.print("회사전화 : " + pList.get(i).getCompany() + "\t");
+				System.out.println(" ");
+				//찾기(회사번호)
+			} else if(pList.get(i).getCompany().contains(input)) {  
+				System.out.print(i + 1 + ".");
+				System.out.print("이   름 : " + pList.get(i).getName() + "\t");
+				System.out.print("휴 대 폰 : " + pList.get(i).getHp() + "\t");
+				System.out.print("회사전화 : " + pList.get(i).getCompany() + "\t");
+				System.out.println(" ");
 			}
 		}
+		if (abc == false) {
+			System.out.println("검색 정보가 없습니다.");
+		}
 		System.out.println("검색 작업 완료....");
-	 }
-	
+	}
+
 }
