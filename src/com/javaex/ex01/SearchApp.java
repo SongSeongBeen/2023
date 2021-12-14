@@ -1,6 +1,7 @@
 package com.javaex.ex01;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -19,7 +20,7 @@ public class SearchApp {
 		System.out.println("**********************************************");
 		System.out.println(" ");
 
-		Reader list = new FileReader("F:\\javaStudy\\miniprofile\\PhoneDB.txt");
+		Reader list = new FileReader("C:\\javaStudy\\file\\PhoneDB.txt");
 		BufferedReader br = new BufferedReader(list);
 
 		List<Search> pList = new ArrayList<Search>();
@@ -52,9 +53,8 @@ public class SearchApp {
 				break;
 
 			case 2: // 등록해서 메모장으로 저장까지
-				Writer in = new FileWriter("F:\\javaStudy\\miniprofile\\PhoneDB.txt");
-				BufferedReader bw = new BufferedReader(list);
 				
+		
 				// 이름
 				System.out.println("<2.등록>");
 				System.out.print(">이름 : ");
@@ -73,15 +73,16 @@ public class SearchApp {
 
 				System.out.println("[등록되었습니다.]");
 				showInfo(pList);
-				in.flush();
-				bw.close();
+				aList(pList);
 				break;
 
 			case 3: // 메모장에 있는거 불러서 삭제?
+				
 				System.out.print("<3.삭제>");
 				System.out.print(">번호 : ");
 				int remove = sc.nextInt();
 				pList.remove(--remove);
+				aList(pList);
 				System.out.println("[삭제되었습니다.]");
 				showInfo(pList);
 				break;
@@ -104,7 +105,20 @@ public class SearchApp {
 		br.close();
 		sc.close();
 	}
-
+	
+	public static void aList(List<Search> pList) throws IOException {
+		Writer in = new FileWriter("C:\\javaStudy\\file\\PhoneDB.txt"); //빨대 꼽으면 데이터가 날아간다
+		BufferedWriter bw = new BufferedWriter(in);
+		
+		for (Search print : pList) {			
+			bw.write(print.bwrite());
+			bw.newLine();
+			
+		}
+		in.flush();
+		bw.close();
+	}	
+	
 	public static void showInfo(List<Search> pList) {
 		for (int i = 0; i < pList.size(); i++) {
 			System.out.println((i + 1) + ". " + pList.get(i).getName() + " " + pList.get(i).getHp() + " "

@@ -9,6 +9,10 @@ public class Search {
 	private String company;
 
 	// 생성자
+	public Search() {
+
+	}
+
 	public Search(String name, String hp, String company) {
 		this.name = name;
 		this.hp = hp;
@@ -46,4 +50,7 @@ public class Search {
 		return "Search [name=" + name + ", hp=" + hp + ", company=" + company + "]";
 	}
 
+	public String bwrite() {
+		return name + "," + hp + "," + company;
+	}
 }
