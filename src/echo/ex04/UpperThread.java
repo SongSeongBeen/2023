@@ -9,7 +9,7 @@ public class UpperThread extends Thread{//독립적 실행(출장 보내겠다.)
 	@Override
 	public void run() {//void 리던 불필요
 		//상황에 따라 일처리 하는 속도가 다르다
-		for(char ch='a'; ch<='z'; ch++) {
+		for(char ch='A'; ch<='Z'; ch++) {
 			System.out.println(ch);
 			try {
 				Thread.sleep(1000);
