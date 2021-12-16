@@ -11,10 +11,10 @@ public class Ex01 {   //***bin*** - ***bout***
 
 	public static void main(String[] args) throws Exception {
 		
-		InputStream in = new FileInputStream("C:\\JavaStudy\\file\\img.jpg");
+		InputStream in = new FileInputStream("F:\\JavaStudy\\file\\img.jpg");
 		BufferedInputStream bin = new BufferedInputStream(in);   //다른 기능이 더있다. //BufferedInputStream 자동으로 배열 영역을 지정해준다.
 		
-		OutputStream out = new FileOutputStream("C:\\JavaStudy\\file\\byteimg.jpg");
+		OutputStream out = new FileOutputStream("F:\\JavaStudy\\file\\byteimg.jpg");
 		BufferedOutputStream bout = new BufferedOutputStream(out);
 		
 		while(true) {
