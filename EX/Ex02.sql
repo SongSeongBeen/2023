@@ -17,15 +17,18 @@ where department_id =100;
 
 --문자함수--LOWER(컬럼명)--UPPER(컬럼명)--
 select first_name,  --자동으로 숫자 1 2 3 표기
-       lower(first_name) l_first_name,
-       upper(first_name) u_first_name
+       upper(first_name) u_first_name,         --대문자 변환
+       lower(first_name) l_first_name,         --소문자 변환
+       initcap((first_name) l_first_name       --첫글자만 대문자 변환
 from employees
 where department_id = 100;
 
 --문자함수--SUBSTR(컬럼명, 시작위치, 글자수)
 select first_name,
-       substr (first_name,1,3), --왼쪽 -> 오른쪽으로검색해서 글자수 만큼 추출
-       substr (first_name,-3,2) --오른쪽 -> 왼쪽 검색 후 왼쪽->오른쪽으로 글자수 추출
+       substr (first_name, 1,3), --왼쪽 -> 1번째 글자부터 4개 자르기
+       substr (first_name, 1), --왼쪽 -> 1번째 글자부터 끝까지 자르기
+       substr (first_name, -3), --오른쪽 -> 뒤에서 3번째 글자부터 끝까지 자르기
+       substr (first_name, -3,2) --오른쪽 -> 뒤에서 3번째 글자부터 2글자자르기
 from employees
 where department_id = 100;
 
