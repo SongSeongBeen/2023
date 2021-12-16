@@ -56,6 +56,7 @@ select  employee_id 사원번호, --as 제외하고 사용
         email as 이메일,
         hire_date as 입사일
 from    employees;
+
 --연결 연산자(concatenation)로 컬럼 붙이기
 select  first_name, last_name
 from    employees;
@@ -68,7 +69,7 @@ from employees;
 
 --산술 연산자 사용
 select first name, 
-salary 월급 --월급
+       salary 월급 --월급
 from employees;
 
 select first name, salary, salary*12 연봉--연봉
@@ -140,7 +141,9 @@ and     hire_date <= '05/12/31';
 select  first_name,
         salary
 from    employees
-where   salary between 14000 and 17000; --작은값 부터 큰값까지 순서 지키기
+                                           -- 작은값 부터 큰값까지 순서 지키기
+where   salary between 14000 and 17000     -- 이하 이상
+and     salary not between 14000 and 17000 -- 미만 초과로 제외
 
 --IN 연산자로 여러 조건을 검사하기     
 select  *
@@ -168,21 +171,30 @@ select  first_name,
 from    employees
 where   first_name like 'L%'; --L(%포함하고있는) 다 찾다.
 
+--LOWER()대소문자 구분 없이 찾기
+select  first_name,
+        salary
+from    employees
+where   lower(first_name) like 'L%'; --L(%포함하고있는) 다 찾다.
+
 --이름에am 을포함한사원의이름과연봉을출력하세요
 select  first_name,
         salary
 from    employees
 where   first_name like '%am%'; --앞뒤 상관없이 찾다.
+
 --이름의두번째글자가a 인사원의이름과연봉을출력하세요
 select  first_name,
         salary
 from    employees
 where   first_name like '_a%'; --_(언더바)한번am 
+
 --이름의네번째글자가a 인사원의이름을출력하세요
 select  first_name,
         salary
 from    employees
 where   first_name like '____a%'; --_(언더바)am 네번
+
 --이름이4글자인사원중끝에서두번째글자가a인사원의이름을출력하세요
 select  first_name,
         salary
@@ -201,51 +213,52 @@ where   salary between 13000 and 15000;
 select  first_name,
         salary,
         commission_pct
-from  employees
-where  commission_pct is null;
+from    employees
+where   commission_pct is null;
 
 --예제
 --커미션비율이있는사원의이름과연봉커미션비율을출력하세요
 select  first_name,
         salary
-from  employees
-where  commission_pct is not null;
+from    employees
+where   commission_pct is not null;
+
 --담당매니저가없고커미션비율이없는직원의이름을출력하세요
 select  first_name,
         salary
-from  employees
-where  cmanager_id is null
-and commission is null;
+from    employees
+where   cmanager_id is null
+and     commission is null;
 
 --ORDER BY 절
 select *
-from  employees
+from   employees
 order by salary desc;   -- desc(내림차순) -큰거부터 작은거  
                        -- asc(오름차순) - 작은거부터 큰거                   
 select *
-from  employees
+from   employees
 order by salary asc, first_name asc; --급여 오름차순 --이름 오른차순
 
 select *
-from  employees
-where salary >= 9000
+from   employees
+where  salary >= 9000
 order by salary asc;
 
 select department_id,
        salary,
        first_name
-from employees
+from   employees
 order by department_id asc;  --오름차순
 
 select first_name,
        salary
-from employees
-where salary >= 10000
+from   employees
+where  salary >= 10000
 order by salary desc;        --내림차순
 
 select department_id,
        salary,
        first_name
-from employees
+from   employees
 order by department_id asc, salary desc;
 
