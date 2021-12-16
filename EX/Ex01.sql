@@ -2,6 +2,11 @@
 select 문
  select 절
  from절
+
+–DML ( Data Manipulation Language): 데이터조작어로검색및수정하기위한수단제공SELECT, INSERT, UPDATE, DELETE
+–DDL ( Data Definition Language ): 데이터구조를생성, 변경, 삭제등의기능을제공CREATE, ALTER, DROP, RENAME
+–DCL ( Data Control Language ): 데이터에대한권한관리및트랜잭션제어GRANT, REVOKE
+
 */
 --직원테이블 전체 조회
 select  * 
