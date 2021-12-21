@@ -142,9 +142,11 @@ and em.job_id = jh.job_id;
 지역구분(regions)의 이름(resion_name)까지 전부 출력해 보세요.
 (11건)
 */
-select em.department_id 부서번호,
+select de.department_id 부서번호,
        de.department_name 부서명,
        de.manager_id 매니저이름,
+       em.first_name 이름,
+       lo.location_id 도시아이디,
        lo.city 위치한도시,
        coun.country_name 나라명,
        re.region_id 지역구분,
