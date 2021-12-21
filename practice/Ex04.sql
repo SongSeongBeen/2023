@@ -51,3 +51,32 @@ order by salary asc;
 (state_province), 나라아이디 (country_id) 를 출력하세요
 (1건)
 */
+--Steven 정보
+select em.first_name || last_name 이름,
+       de.department_name 부서명,
+       lo.location_id 도시아이디,
+       lo.street_address 거리명,
+       lo.postal_code 우편번호,
+       lo.city 도시명,
+       lo.state_province 주,
+       lo.country_id 나라아이디
+from employees em,departments de, locations lo
+where first_name || last_name = 'StevenKing'
+and em.department_id = de.department_id
+and de.location_id = lo.location_id;
+--식조합
+select -- em.first_name || last_name 이름,
+       lo.location_id 도시아이디,
+       lo.street_address 거리명,
+       lo.postal_code 우편번호,
+       lo.city 도시명,
+       lo.state_province 주,
+       lo.country_id 나라아이디
+from   departments de, locations lo
+    -- employees em
+where  de.location_id = lo.location_id
+    -- and first_name || last_name = 'StevenKing'
+and    de.department_id in (select de.department_id
+                            from employees em, departments de
+                            where first_name || last_name = 'StevenKing'
+                            and em.department_id = de.department_id);
