@@ -106,3 +106,4 @@ FROM user_tables;
 
 --현재시간입력됨
 --INSERT INTO board VALUES (1, ‘게시판제목', ＇본문내용‘, SYSDATE ); --sysdate
+
