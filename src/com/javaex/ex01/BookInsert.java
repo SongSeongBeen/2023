@@ -1,4 +1,4 @@
-package com.javaex.ex02;
+package com.javaex.ex01;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -31,23 +31,29 @@ public class BookInsert {
 		    query += " values(seq_author_id.nextval, ?, ?, ?, ? ) ";   //--> 물음표로 설정
 		    System.out.println(query);
 		    
-		    
-		    
 		    //문자열 쿼리문으로 만들기
 		    pstmt = conn.prepareStatement(query);          //--> 쿼리문으로 설정
 		    
 		    //바인딩
-		    pstmt.setString(1, "우리들의 일그러진 영웅");   //첫번째 물음표의 데이터
-		    pstmt.setString(2, "다림");//두번째 물음표의 데이터
-		    pstmt.setString(3, "1998-02-22");
-		    pstmt.setString(4, "1");
+		    pstmt.setString(1, "순정만화");   //첫번째 물음표의 데이터
+		    pstmt.setString(2, "재미주의");//두번째 물음표의 데이터
+		    pstmt.setString(3, "2011-08-03");
+		    pstmt.setInt(4, 5);
 		    
-		  
 		    //실행
 		    int count = pstmt.executeUpdate(); //쿼리문 실행
+		    System.out.println(count + "건이 저장되었습니다.");
+		    
+		    pstmt.setString(1, "오직두사람");   //첫번째 물음표의 데이터
+		    pstmt.setString(2, "문학동네");//두번째 물음표의 데이터
+		    pstmt.setString(3, "2017-05-04");
+		    pstmt.setInt(4, 6);
+		    
+		    //실행
+		    int count2 = pstmt.executeUpdate(); //쿼리문 실행
 			
 		    // 4.결과처리
-		    System.out.println(count + "건이 저장되었습니다.");
+		    System.out.println(count2 + "건이 저장되었습니다.");
 		    
 		    
 		} catch (ClassNotFoundException e) {
