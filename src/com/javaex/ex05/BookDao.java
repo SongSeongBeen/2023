@@ -8,8 +8,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.javaex.ex02.AuthorVo;
-
 public class BookDao {
 	
 		public void bookInsert(String title, String pubs, String pubdate, int authorId) {
