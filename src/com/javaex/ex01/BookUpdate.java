@@ -27,10 +27,13 @@ public static void main(String[] args) {
 			//문자열 만들기 --> ? 주의                   	//query = query+ "문자열"
 		                                                    //--> 물음표로 설정
  			String query ="";                               //띄워쓰기 간격 잘보기
- 			query += " update author ";
- 			query += " set author_name = ?, ";
- 			query += "     author_desc = ? ";
- 			query += " where author_id = ? ";
+ 			query += " update book ";
+ 			query += " set book_id = ?, ";
+ 			query += "     title = ?, ";
+ 			query += "     pubs = ?, ";
+ 			query += "     pub_date = ?, ";
+ 			query += "     author_id = ? ";
+ 			query += " where book_id = ? ";
  			System.out.println(query);
  															
 		    //문자열 쿼리문으로 만들기
@@ -38,9 +41,12 @@ public static void main(String[] args) {
 		    pstmt = conn.prepareStatement(query);
  			
 		    //바인딩
-		    pstmt.setString(1, "김문열");         //첫번째 물음표의 데이터
-		    pstmt.setString(2, "삼국지 작가");    //두번째 물음표의 데이터
-		    pstmt.setInt(3, 1);                   //세번째 물음표의 데이터 숫자로만 했다 Int
+		    pstmt.setInt(1, 6); 
+		    pstmt.setString(2, "삼국지");         //첫번째 물음표의 데이터
+		    pstmt.setString(3, "민음사");  
+		    pstmt.setString(4, "2020-03-01"); 
+		    pstmt.setInt(5, 2); //두번째 물음표의 데이터
+		    pstmt.setInt(6, 8);                   //세번째 물음표의 데이터 숫자로만 했다 Int
 
 		    
 		    //실행

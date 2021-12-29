@@ -49,7 +49,7 @@ public class BookSelect {
 		    while(rs.next()) {
             	
             	int book_id=rs.getInt("book_id");                  //sql 별명으로도 가능     
-            	String title = rs.getString("title");     // 변수이름 = 컬럼명
+            	String title = rs.getString("title");              // 변수이름 = 컬럼명
             	String pubs = rs.getString("pubs");
             	String pub_date = rs.getString("pub_date");
             	int author_id = rs.getInt("author_id");
