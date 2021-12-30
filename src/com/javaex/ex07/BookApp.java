@@ -4,7 +4,7 @@ import java.util.List;
 
 public class BookApp {
 
-	public static void maint(String[] args) {
+	public static void main(String[] args) {
 
 		List<BookVo> List;
 
@@ -35,16 +35,17 @@ public class BookApp {
 //		bookDao.bookInsert(vo08);
 
 		// 작가수정
-		BookVo bookVo = new BookVo(1, 3, "26년(수정)", "재미주의(수정)", "2012-02-04(수정)", 5);
-		bookDao.bookUpdate(1, bookVo);
+		BookVo bookVo = new BookVo(2, "26년(수정)", "재미주의(수정)", "2012-02-04", 2);
+		bookDao.bookUpdate(9, bookVo);
 
+		
 		System.out.println("---------------------------------------------------------------------");
 
 		List = bookDao.bookSelect();
 		for (int i = 0; i < List.size(); i++) {
 			BookVo Vo = List.get(i);
 			System.out.println(Vo.getBookId() + "," + Vo.getTitle() + "," + Vo.getPubs() + "," + Vo.getPubDate() + ","
-					+ Vo.getAuthorId());
+					+ Vo.getAuthorId()+","+ Vo.getAuthorName()+","+Vo.getAuthorDesc());
 		}
 
 		System.out.println("---------------------------------------------------------------------");

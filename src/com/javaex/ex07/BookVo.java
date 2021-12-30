@@ -21,7 +21,7 @@ public class BookVo {
 		this.authorId = authorId;
 	}
 	
-	public BookVo(int index, int bookId, String title, String pubs, String pubDate, int authorId) {
+	public BookVo(int bookId, String title, String pubs, String pubDate, int authorId) {
 		this.bookId = bookId;
 		this.title = title;
 		this.pubs = pubs;

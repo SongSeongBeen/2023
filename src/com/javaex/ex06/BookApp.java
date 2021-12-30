@@ -2,10 +2,9 @@ package com.javaex.ex06;
 
 import java.util.List;
 
-
 public class BookApp {
 	
-	public static void maint(String[] args) {
+	public static void main(String[] args) {
 		
 		List<BookVo>List;
 		BookDao bookDao = new BookDao();

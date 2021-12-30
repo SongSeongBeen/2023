@@ -135,7 +135,7 @@ public class BookDao {
 		
 	}
 	
-	public void bookUpdate(int index, BookVo bookVo) { //(수정내용 작성)
+	public void bookUpdate(int index,BookVo bookVo) { //(수정내용 작성)
 		
 		// 1. JDBC 드라이버 (Oracle) 로딩 2. Connection 얻어오기
 		this.getConnection();
