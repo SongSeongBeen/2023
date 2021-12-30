@@ -13,11 +13,11 @@ public class BookVo {
 	public BookVo() {
 	}
 	
-	public BookVo(int bookId, String title, String pubs, String pubdate, int authorId) {
+	public BookVo(int bookId, String title, String pubs, String pubDate, int authorId) {
 		this.bookId = bookId;
 		this.title = title;
 		this.pubs = pubs;
-		this.pubDate = pubdate;
+		this.pubDate = pubDate;
 		this.authorId = authorId;
 	}
 	
@@ -44,7 +44,7 @@ public class BookVo {
 		return pubs;
 	}
 
-	public String getPubdate() {
+	public String getPubDate() {
 		return pubDate;
 	}
 
@@ -72,8 +72,8 @@ public class BookVo {
 		this.pubs = pubs;
 	}
 
-	public void setPubdate(String pubdate) {
-		this.pubDate = pubdate;
+	public void setPubDate(String pubDate) {
+		this.pubDate = pubDate;
 	}
 
 	public void setAuthorId(int authorId) {

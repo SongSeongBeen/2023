@@ -32,7 +32,7 @@ public class BookApp {
 		List = bookDao.bookSelect();
 	    for(int i=0; i<List.size(); i++) {
         	BookVo Vo = List.get(i);
-        	System.out.println(Vo.getBookId()+","+Vo.getTitle()+","+Vo.getPubs()+","+Vo.getPubdate()+","+Vo.getAuthorId());
+        	System.out.println(Vo.getBookId()+","+Vo.getTitle()+","+Vo.getPubs()+","+Vo.getPubDate()+","+Vo.getAuthorId());
         }
 	    
 	    System.out.println("---------------------------------------------------------------------");

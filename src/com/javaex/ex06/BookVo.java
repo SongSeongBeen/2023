@@ -5,21 +5,28 @@ public class BookVo {
 	private int bookId;
 	private String title;
 	private String pubs;
-	private String pubdate;
-	private String authorId;
+	private String pubDate;
+	private int authorId;
 	private String authorName;
-	private String authorDesc;  //-->조인한 결과값 까지 같이 입력
-	
+	private String authorDesc; // -->조인한 결과값 까지 같이 입력
+
 	public BookVo() {
 
 	}
-	public BookVo(int bookId, String title, String pubs, String pubdate, String authorId, String authorName,
-			String authorDesc) {
+	
+	public BookVo(String title, String pubs, String pubDate, int authorId) {
+		this.title = title;
+		this.pubs = pubs;
+		this.pubDate = pubDate;
+		this.authorId = authorId;
+	}
 
+	public BookVo(int bookId, String title, String pubs, String pubDate, int authorId, String authorName,
+			String authorDesc) {
 		this.bookId = bookId;
 		this.title = title;
 		this.pubs = pubs;
-		this.pubdate = pubdate;
+		this.pubDate = pubDate;
 		this.authorId = authorId;
 		this.authorName = authorName;
 		this.authorDesc = authorDesc;
@@ -37,11 +44,11 @@ public class BookVo {
 		return pubs;
 	}
 
-	public String getPubdate() {
-		return pubdate;
+	public String getPubDate() {
+		return pubDate;
 	}
 
-	public String getAuthorId() {
+	public int getAuthorId() {
 		return authorId;
 	}
 
@@ -65,11 +72,11 @@ public class BookVo {
 		this.pubs = pubs;
 	}
 
-	public void setPubdate(String pubdate) {
-		this.pubdate = pubdate;
+	public void setPubDate(String pubDate) {
+		this.pubDate = pubDate;
 	}
 
-	public void setAuthorId(String authorId) {
+	public void setAuthorId(int authorId) {
 		this.authorId = authorId;
 	}
 
@@ -83,16 +90,9 @@ public class BookVo {
 
 	@Override
 	public String toString() {
-		return "BookVo [bookId=" + bookId + ", title=" + title + ", pubs=" + pubs + ", pubdate=" + pubdate
+		return "BookVo [bookId=" + bookId + ", title=" + title + ", pubs=" + pubs + ", pubdate=" + pubDate
 				+ ", authorId=" + authorId + ", authorName=" + authorName + ", authorDesc=" + authorDesc + "]";
 	}
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 }

@@ -1,4 +1,4 @@
-package com.javaex.ex05;
+package com.javaex.ex06;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,7 +10,7 @@ import java.util.List;
 
 public class BookDao {
 	
-		public void bookInsert(String title, String pubs, String pubDate, int authorId) {
+		public void bookInsert(BookVo bookVo) {
 
         // 0. import java.sql.*;
         Connection conn = null;
@@ -39,10 +39,10 @@ public class BookDao {
 		    
 		    //바인딩
 		    //바인딩
-		    pstmt.setString(1, title);   //첫번째 물음표의 데이터
-		    pstmt.setString(2, pubs);//두번째 물음표의 데이터
-		    pstmt.setString(3, pubDate);
-		    pstmt.setInt(4, authorId);
+		    pstmt.setString(1, bookVo.getTitle());   //첫번째 물음표의 데이터
+		    pstmt.setString(2, bookVo.getPubs());//두번째 물음표의 데이터
+		    pstmt.setString(3, bookVo.getPubDate());
+		    pstmt.setInt(4, bookVo.getAuthorId());
 		    
 		    //실행
 		    int count = pstmt.executeUpdate();
@@ -129,7 +129,7 @@ public class BookDao {
 		}
 	}
 	
-	public void bookUpdate(int index, int bookId, String title, String pubs, String pubDate, int authorId) { //(수정내용 작성)
+	public void bookUpdate(int index, BookVo bookVo) { //(수정내용 작성)
 		
 		// 0. import java.sql.*;
 				Connection conn = null;
@@ -160,11 +160,11 @@ public class BookDao {
 		    pstmt = conn.prepareStatement(query);
  			
 		    //바인딩
-		    pstmt.setInt(1, bookId); 
-		    pstmt.setString(2, title);        
-		    pstmt.setString(3, pubs);  
-		    pstmt.setString(4, pubDate); 
-		    pstmt.setInt(5, authorId); 
+		    pstmt.setInt(1, bookVo.getBookId()); 
+		    pstmt.setString(2, bookVo.getTitle());        
+		    pstmt.setString(3, bookVo.getPubs());  
+		    pstmt.setString(4, bookVo.getPubDate()); 
+		    pstmt.setInt(5, bookVo.getAuthorId()); 
 		    pstmt.setInt(6, index); 
 		  
 		    //실행
