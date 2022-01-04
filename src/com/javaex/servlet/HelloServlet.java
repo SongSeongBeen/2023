@@ -22,6 +22,7 @@ public class HelloServlet extends HttpServlet {
     //메소드 일반
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//코드작성
+		
 		PrintWriter out = response.getWriter();
 		out.println("<!DOCTYPE html>");
 		out.println("<html>");

@@ -21,7 +21,7 @@ public class GugudanServlet extends HttpServlet {
 		int dan = Integer.parseInt(request.getParameter("dan"));
 		//파라미터 값 꺼내기
 		PrintWriter out = response.getWriter();
-		for(int i=0; i<=9; i++) {
+		for(int i=1; i<=9; i++) {
 		out.print("<table border='1'>");
 		out.print("		<tr>");
 		out.print("			<td>"+ dan +"</td>");
