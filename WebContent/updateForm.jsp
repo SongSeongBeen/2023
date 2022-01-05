@@ -32,10 +32,10 @@
 			<form action="./update.jsp" method="get">
 			<input type="hidden" name="personId" value="<%= personVo.getPersonId() %>"/><br>
 		     	<table border="1">
-		     			<tr >
-		     				<th align="left">이름(name)</th>
-		     				<th ><input type="text" style="text-align:center;" name="name" value="<%= personVo.getName() %>"/></th>
-		     			</tr>
+	     			<tr >
+	     				<th align="left">이름(name)</th>
+	     				<th ><input type="text" style="text-align:center;" name="name" value="<%= personVo.getName() %>"/></th>
+	     			</tr>
 		    		<tr>
 		     			<th align="left">핸드폰(hp)</th>
 		     			<th><input type="text" style="text-align:center;" name="hp" value="<%= personVo.getHp() %>"/></th>
@@ -49,9 +49,9 @@
 		     			<th><%= personVo.getPersonId() %></th>
 		     		</tr>
 		     	</table>
-		     		<div style="margin:5px 0px 0px 260px;">
-		     			<button type="submit"> 수정 </button>
-		     		</div>
+	     		<div style="margin:5px 0px 0px 260px;">
+	     			<button type="submit"> 수정 </button>
+	     		</div>
 	     	</form>
      	
 	</body>
