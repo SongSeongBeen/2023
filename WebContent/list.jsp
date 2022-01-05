@@ -26,25 +26,30 @@
 		<p>입력한 정보 내역입니다.</p>
 		<br>
 		<% 
-		for(int i=0; i<personList.size(); i++ ){
+		for(PersonVo personVo : personList){
 		%>	
 			<table border="1">
 				<tr>
 					<td>이름(name)</td>
-					<td><%=personList.get(i).getName()%></td>
+					<td><%=personVo.getName()%></td>
 				</tr>
 				<tr>
 					<td>핸드폰(hp)</td>
-					<td><%=personList.get(i).getHp()%></td>
+					<td><%=personVo.getHp()%></td>
 				</tr>
 				<tr>
 					<td>회사(company)</td>
-					<td><%=personList.get(i).getCompany()%></td>
+					<td><%=personVo.getCompany()%></td>
 				</tr>
-			</table>
-			<br>
-		<% }%>
-		
-		<a href="http://localhost:8088/phonebook1/writeForm.jsp">전화번호 등록</a>
+				<tr>
+					<td><a href="./update.jsp">[수정]</a></td>
+					<td><a href="./delete.jsp?id=<%=personVo.getPersonId()%>">[삭제]</a></td>
+				</tr>
+   			</table>
+			
+		<% } %>
+		<br>
+		<br>
+		<a href="./writeForm.jsp">전화번호 등록</a>
 	</body>
 </html>
