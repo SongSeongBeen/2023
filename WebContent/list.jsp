@@ -44,8 +44,7 @@
 					<td><a href="./updateForm.jsp?id=<%=personVo.getPersonId()%>">[수정]</a></td>
 					<td><a href="./delete.jsp?id=<%=personVo.getPersonId()%>">[삭제]</a></td>
 				</tr>
-   			</table>
-			
+   			</table>	
 		<% } %>
 		<br>
 		<br>
