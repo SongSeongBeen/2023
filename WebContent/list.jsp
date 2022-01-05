@@ -9,7 +9,6 @@
 	List<PersonVo> personList = phoneDao.getPersonList();
 %>
     
-    
 <!DOCTYPE html>
 
 <html>
@@ -42,7 +41,7 @@
 					<td><%=personVo.getCompany()%></td>
 				</tr>
 				<tr>
-					<td><a href="./update.jsp">[수정]</a></td>
+					<td><a href="./updateForm.jsp?id=<%=personVo.getPersonId()%>">[수정]</a></td>
 					<td><a href="./delete.jsp?id=<%=personVo.getPersonId()%>">[삭제]</a></td>
 				</tr>
    			</table>
