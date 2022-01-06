@@ -3,10 +3,11 @@
 <%@ page import="com.javaex.dao.PhoneDao"%>
 
 <%
-	int personId =  Integer.parseInt(request.getParameter("id"));
+
 	String name = request.getParameter("name");
 	String hp = request.getParameter("hp");
 	String company = request.getParameter("company");
+	int personId =  Integer.parseInt(request.getParameter("id"));
 	
 	PersonVo personVo= new PersonVo(personId, name, hp, company);
 	
@@ -15,7 +16,7 @@
 	//저장
 	phoneDao.personUpdate(personVo);
 	
-
 	//리다이렉트
 	response.sendRedirect("./list.jsp");
+
 %>

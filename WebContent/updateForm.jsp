@@ -6,7 +6,6 @@
 <%
  	//파라미터 형변환
 	int personId = Integer.parseInt(request.getParameter("id"));
-	
 	PersonVo personVo = new PhoneDao().getPerson(personId);
 %>
 
@@ -30,7 +29,7 @@
      	</p>
      	
 			<form action="./update.jsp" method="get">
-			<input type="hidden" name="personId" value="<%= personVo.getPersonId() %>"/><br>
+			<input type="hidden" name="id" value="<%= personVo.getPersonId() %>"/><br>
 		     	<table border="1">
 	     			<tr >
 	     				<th align="left">이름(name)</th>
@@ -49,9 +48,8 @@
 		     			<th><%= personVo.getPersonId() %></th>
 		     		</tr>
 		     	</table>
-	     		<div style="margin:5px 0px 0px 260px;">
-	     			<button type="submit"> 수정 </button>
-	     		</div>
+	     			<button type="submit" style="margin: 5px 0px 0px 0px;"onclick="location.href='list.jsp' "> 뒤로 </button>
+	     			<button type="submit" style="margin: 5px 0px 0px 215px;"> 수정 </button>
 	     	</form>
      	
 	</body>
