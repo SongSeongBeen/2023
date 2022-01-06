@@ -5,8 +5,8 @@
 
 <%
  	//파라미터 형변환
-	int personId = Integer.parseInt(request.getParameter("id"));
-	PersonVo personVo = new PhoneDao().getPerson(personId);
+	int id = Integer.parseInt(request.getParameter("id"));
+	PersonVo personVo = new PhoneDao().getPerson(id);
 %>
 
 <!DOCTYPE html>
