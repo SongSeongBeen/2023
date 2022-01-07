@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -22,7 +21,7 @@
      	이름(name) <input type="text" name="name" value=""> <br>
      	핸드폰(hp) <input type="text" name="hp" value=""> <br>
      	회사(compnay) <input type="text" name="company" value=""> <br>
-     	<input type="text" name="action" value="write">
+     	<input type="hidden" name="action" value="write">
      	<button type="submit">등록</button>
      	</form>
 	</body>

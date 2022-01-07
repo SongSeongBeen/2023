@@ -15,6 +15,7 @@ import com.javaex.vo.PersonVo;
 
 
 @WebServlet("/pbc")
+@SuppressWarnings("serial")//부모클래스에 객체가 있기때문
 public class PhonebookController extends HttpServlet {
 	//private static final long serialVersionUID = 1L; long 필드 식별자(하나씩 던저주면 판단)
 
@@ -26,26 +27,32 @@ public class PhonebookController extends HttpServlet {
 		System.out.println("PhonebookController");
 
 		String act = request.getParameter("action");
-		List<PersonVo> personList = new PhoneDao().getPersonList();
+		//String write = request.getParameter("write");
+		//String writeForm = request.getParameter("writeForm");
 
 		if ("list".equals(act)) {
 			System.out.println("action=list");
+			
+			List<PersonVo> personList = new PhoneDao().getPersonList();
+			
 			// System.out.print(personList);
 			// html과 list 섞어서 표현
 			// servlet로 표현이 복잡 -->jsp 이용
 
 			// 포워드
-
 			request.setAttribute("pList", personList); // 주소만 준거다
+			
 			// ^^^^^ setAttribute(값입력) ex("pList", personList);
 			RequestDispatcher re = request.getRequestDispatcher("/WEB-INF/list.jsp");
 			re.forward(request, response);
+	//입력 	
 		} else if ("writeForm".equals(act)) {
 			System.out.println("action=writeForm");
 
-			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/writeForm");
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/writeForm.jsp");
 			rd.forward(request, response);
-
+			
+	//저장	
 		} else if ("write".equals(act)) {
 			System.out.println("action=write");
 			
@@ -53,16 +60,51 @@ public class PhonebookController extends HttpServlet {
 			String name = request.getParameter("name");
 			String hp = request.getParameter("hp");
 			String company = request.getParameter("company");
+			
 			//vo로 만든다
 			PersonVo personVo = new PersonVo(name, hp, company); 
+			
 			//dao 메모리 올린다. //dao.insert(vo);
 			new PhoneDao().personInsert(personVo);
 			
 			//리다이렉트 (포워트x) //바로 엔터까지 처준다.
 			response.sendRedirect("/phonebook2/pbc?action=list");
+			
+	//지우기
+		} else if ("delete".equals(act)){
+			//파라미터 형변환
+			System.out.println("action=delete");
+			int id =  Integer.parseInt(request.getParameter("id"));
+			new PhoneDao().personDelete(id);
+			
+			response.sendRedirect("/phonebook2/pbc?action=list");
 		
+			
+    //업데이트 폼
+		} else if ("updateForm".equals(act)){ 
+			System.out.println("action=updateForm");
+			
+			int id = Integer.parseInt(request.getParameter("id"));
+			PersonVo personVo = new PhoneDao().getPerson(id);
+			request.setAttribute("pV", personVo); //주소만 준다
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/updateForm.jsp");
+			rd.forward(request, response);
+	//업데이트 입력
+		} else  if("update".equals(act)) {
+			System.out.println("action=update");
+			
+			
+			String name = request.getParameter("name");
+			String hp = request.getParameter("hp");
+			String company = request.getParameter("company");
+			int id =  Integer.parseInt(request.getParameter("id"));
+			PersonVo personVo= new PersonVo(id, name, hp, company);
+			//PhoneDao를 메모리에 올린다. //저장
+			new PhoneDao().personUpdate(personVo);
+			response.sendRedirect("/phonebook2/pbc?action=list");
+			
 		} else {
-			System.out.println("파라미터값 없음");
+			System.out.println("파라미터값 없음");	
 		}
 
 	}

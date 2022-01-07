@@ -5,6 +5,12 @@
 
 <%
  	//파라미터 형변환
+	//System.out.println("확인용");
+
+	//String name = request.getParameter("name");
+	//String hp = request.getParameter("hp");
+	//String company = request.getParameter("company");
+	
 	int id = Integer.parseInt(request.getParameter("id"));
 	PersonVo personVo = new PhoneDao().getPerson(id);
 %>
@@ -28,7 +34,7 @@
      		아래항목을 수정하고 "수정"  버튼을 클릭하세요.
      	</p>
      	
-			<form action="./update.jsp" method="get">
+			<form action="/phonebook2/pbc" method="get">
 			<input type="hidden" name="id" value="<%= personVo.getPersonId() %>"/><br>
 		     	<table border="1">
 	     			<tr >
@@ -50,6 +56,7 @@
 		     	</table>
 	     			<button type="submit" style="margin: 5px 0px 0px 0px;"onclick="location.href='list.jsp' "> 뒤로 </button>
 	     			<button type="submit" style="margin: 5px 0px 0px 215px;"> 수정 </button>
+	     			<input type="hidden" name="action" value="update">
 	     	</form>
      	
 	</body>
