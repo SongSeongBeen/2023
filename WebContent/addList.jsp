@@ -19,7 +19,7 @@
 	
 	<body>
 	<!-- 등록 폼영역 -->
-	<form action="./add.jsp" method="get">
+	<form action="add.jsp" method="get">
 		<table border="1" width="500px">
 			<tr>
 				<td>이름</td>

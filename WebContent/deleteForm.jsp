@@ -4,7 +4,6 @@
 
 <%
 	int no =  Integer.parseInt(request.getParameter("no"));
-	String password = request.getParameter("password");
 %>
 
 <!DOCTYPE html>
@@ -17,9 +16,9 @@
 	
 	<body>
 		<br>
-		<form action="./delete.jsp" method="post">
-		        <input  type="hidden" name="name" value="<%= no %>"> 
-	            비밀번호<input name="password" type="password"> 
+		<form action="delete.jsp" method="get">
+		        <input  type="hidden" name="no" value="<%= no %>"> 
+	         	비밀번호 <input  type="password" name="password" value=""> 
 			    <button type="submit"> 확인 </button>
 		</form>
 		<br>
