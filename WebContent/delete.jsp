@@ -8,7 +8,7 @@
 	//삭제
 	new GuestbookDao().guestbookDelete(no, password);
 	//GuestbookDao guestbookDao = new GuestbookDao();
-	//guestbookDao.guestbookDelete(no);
+	//guestbookDao.guestbookDelete(no, password);
 	System.out.println("확인용"); 
 	
 	//리다이렉트
