@@ -54,7 +54,7 @@
 		     			<th><%= personVo.getPersonId() %></th>
 		     		</tr>
 		     	</table>
-	     			<button type="submit" style="margin: 5px 0px 0px 0px;"onclick="location.href='list.jsp' "> 뒤로 </button>
+	     			<button type="submit" style="margin: 5px 0px 0px 0px;"onclick="location.href='/phonebook2/pbc?action=list' "> 뒤로 </button>
 	     			<button type="submit" style="margin: 5px 0px 0px 215px;"> 수정 </button>
 	     			<input type="hidden" name="action" value="update">
 	     	</form>
