@@ -7,7 +7,7 @@
 
 
 <%		
-	//@SuppressWarnings("unchecked") //지정한 형식이 개체만 포함될 것이라는 확신이들면
+	@SuppressWarnings("unchecked") //지정한 형식이 개체만 포함될 것이라는 확신이들면
 	//request의 auttribute 영역의 리스트를 가져온다 dao에서 가져오는거 아님                       //꺼내온다
 	List<PersonVo> personList = (List<PersonVo>)request.getAttribute("pList"); 
 %>
