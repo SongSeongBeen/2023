@@ -13,9 +13,8 @@
 		<h2>전화번호 리스트</h2>
 		<P>입력한 정보 내역입니다.</P>
 	
-		<c:forEach items="${pList}" var="personVo"  varStatus="status">
 		<table border="1">	
-		
+			<c:forEach items="${pList}" var="personVo"  varStatus="status">
 			<tr>
 				<td>${"이름(name)"}</td>
 				<td>${personVo.name}</td>
@@ -33,9 +32,9 @@
 				
 				<td><a href="/phonebook2/pbc?action=delete&id=${personVo.personId}">삭제</a></td>
 			</tr>
+			</c:forEach>
 		</table>
 		
-		</c:forEach>
 		<br>
 	
 			<a href="/phonebook2/pbc?action=writeForm">추가번호 등록</a>
