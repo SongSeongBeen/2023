@@ -35,7 +35,7 @@
      	</p>
      	
 			<form action="/phonebook2/pbc" method="get">
-			<input type="hidden" name="id" value="<%= personVo.getPersonId() %>"/><br>
+			<input type="hidden" name="id" value="${param.id} "/><br>
 		     	<table border="1">
 	     			<tr >
 	     				<th align="left">이름(name)</th>

@@ -30,23 +30,9 @@ public class PhonebookController extends HttpServlet {
 		//String write = request.getParameter("write");
 		//String writeForm = request.getParameter("writeForm");
 
-		if ("list".equals(act)) {
-			System.out.println("action=list");
-			
-			List<PersonVo> personList = new PhoneDao().getPersonList();
-			
-			// System.out.print(personList);
-			// html과 list 섞어서 표현
-			// servlet로 표현이 복잡 -->jsp 이용
-
-			// 포워드
-			request.setAttribute("pList", personList); // 주소만 준거다
-			
-			// ^^^^^ setAttribute(값입력) ex("pList", personList);
-			RequestDispatcher re = request.getRequestDispatcher("/WEB-INF/list.jsp");
-			re.forward(request, response);
+		
 	//입력 	
-		} else if ("writeForm".equals(act)) {
+	 	if ("writeForm".equals(act)) {
 			System.out.println("action=writeForm");
 
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/writeForm.jsp");
@@ -102,9 +88,23 @@ public class PhonebookController extends HttpServlet {
 			//PhoneDao를 메모리에 올린다. //저장
 			new PhoneDao().personUpdate(personVo);
 			response.sendRedirect("/phonebook2/pbc?action=list");
-			
+	//리스트		
 		} else {
-			System.out.println("파라미터값 없음");	
+			System.out.println("action=list");
+			
+			List<PersonVo> personList = new PhoneDao().getPersonList();
+			
+			// System.out.print(personList);
+			// html과 list 섞어서 표현
+			// servlet로 표현이 복잡 -->jsp 이용
+
+			// 포워드
+			request.setAttribute("pList", personList); // 주소만 준거다
+			
+			// ^^^^^ setAttribute(값입력) ex("pList", personList);
+			RequestDispatcher re = request.getRequestDispatcher("/WEB-INF/list.jsp");
+			re.forward(request, response);
+
 		}
 
 	}
