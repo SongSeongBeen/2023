@@ -45,21 +45,29 @@
 		
 					<div id="board">
 						<div id="writeForm">
-							<form action="#" method="get">
+							<form action="/mysite/bod" method="get">
 								<!-- 제목 -->
 								<div class="form-group">
 									<label class="form-text" for="txt-title">제목</label>
-									<input type="text" id="txt-title" name="" value="" placeholder="제목을 입력해 주세요">
+									<input type="text" id="txt-title" name="title" placeholder="제목을 입력해 주세요">
 								</div>
 							
 								<!-- 내용 -->
 								<div class="form-group">
-									<textarea id="txt-content"></textarea>
+									<textarea id="txt-content" name="content"></textarea>
 								</div>
 								
-								<a id="btn_cancel" href="">취소</a>
-								<button id="btn_add" type="submit" >등록</button>
-								
+								<c:choose>
+									<c:when test="${empty authUser}">
+										<a id="btn_cancel" href="./user?action=loginForm">글쓰기는 로그인 후 이용 가능합니다.</a>
+									</c:when>
+									<c:otherwise>
+										<a id="btn_cancel" href="./bod">취소</a>
+										<button id="btn_add" type="submit" >등록</button>
+									</c:otherwise>
+								</c:choose>
+								<input type="hidden" name="no" value="sessionScope.authUser.no">
+								<input type="hidden" name="action" value="write">
 							</form>
 							<!-- //form -->
 						</div>

@@ -26,9 +26,9 @@
 
 		<div id="nav">
 			<ul class="clearfix">
-				<li><a href="./bcl?action=">입사지원서</a></li>
-				<li><a href="./bcl?action=list">게시판</a></li>
-				<li><a href="./bcl?action=">갤러리</a></li>
+				<li><a href="./bod?action=">입사지원서</a></li>
+				<li><a href="./bod?action=list">게시판</a></li>
+				<li><a href="./bod?action=">갤러리</a></li>
 				<li><a href="./gbc?action=addList">방명록</a></li>
 			</ul>
 		</div>

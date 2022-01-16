@@ -117,14 +117,17 @@ values(seq_board_no.nextval, '안녕하세요', '만나서 반갑습니다', '0'
 
 commit;
 
-select  us.no no,
+select  bo.no no,
         bo.title title,
         bo.content content,
         us.name name,
         bo.hit hit,
-        to_char(bo.reg_date, 'YYYY-MM-DD hh:mi:ss') reg_date
+        to_char(bo.reg_date, 'YYYY-MM-DD hh:mi:ss') reg_date,
+        bo.user_no user_no
 from board bo, users us
-where bo.no = us.no;
+where bo.user_no = us.no
+order by reg_date desc;
+
 
 
 

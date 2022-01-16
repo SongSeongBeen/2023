@@ -66,8 +66,7 @@ public class GuestbookController extends HttpServlet {
 			
 			// 포워드
 			request.setAttribute("gList", guestbookList); // 주소만 준거다
-			
-			// ^^^^^ setAttribute(값입력) ex("pList", personList);
+
 			WebUtil.forward(request, response, "/WEB-INF/views/guestbook/addList.jsp");
 		}
 		

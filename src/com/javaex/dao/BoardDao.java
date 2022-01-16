@@ -11,13 +11,15 @@ import java.util.List;
 import com.javaex.vo.BoardVo;
 
 public class BoardDao {
-//공통영역	
+		//공통영역	
 		// 필드
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-
+		BoardVo boardVo = null;
+		
 		int count = 0;
+		int userNo = 0;
 
 		private String driver = "oracle.jdbc.driver.OracleDriver";
 		private String url = "jdbc:oracle:thin:@localhost:1521:xe";
@@ -66,19 +68,19 @@ public class BoardDao {
 			try {
 				// 3. SQL문 준비 / 바인딩 / 실행
 				String query = "";
-				query += " select  us.no no, ";
-				query += " bo.title title, ";
-				query += " bo.content content, ";
-				query += " us.name name, ";
-				query += " bo.hit hit, ";
-				query += " to_char(bo.reg_date, 'YYYY-MM-DD hh:mi:ss') reg_date ";
+				query += " select  bo.no no, ";
+				query += "         bo.title title, ";
+				query += "         bo.content content, ";
+				query += "         us.name name, ";
+				query += "         bo.hit hit, ";
+				query += "         to_char(bo.reg_date, 'YYYY-MM-DD hh:mi:ss') reg_date, ";
+				query += "         bo.user_no user_no ";
 				query += " from board bo, users us ";
-				query += " where bo.no = us.no ";
+				query += " where bo.user_no = us.no ";
+				query += " order by reg_date desc ";
 				//System.out.println(query);
 
 				pstmt = conn.prepareStatement(query); // 쿼리로 만들기
-
-				//바인딩 생략? 없음
 
 				rs = pstmt.executeQuery(); // 쿼리문 실행
 
@@ -90,8 +92,9 @@ public class BoardDao {
 					String name = rs.getString("name");
 					int  hit = rs.getInt("hit");
 					String reg_date = rs.getString("reg_date");
+					int  userNo= rs.getInt("user_no");
 					
-					BoardVo boardVo = new BoardVo(no, title, content, name, hit, reg_date);
+					BoardVo boardVo = new BoardVo(no, title, content, name, hit, reg_date, userNo);
 					boardList.add(boardVo);
 				}
 
@@ -101,6 +104,163 @@ public class BoardDao {
 			close();
 			return boardList;
 		} 		
+	
+//읽기
+		public BoardVo getboard(int num) {
 			
+			getConnection();
+			
+			try {
+				// 3. SQL문 준비 / 바인딩 / 실행
+				String query = "";
+				query += " select  bo.no no, ";
+				query += "		   bo.title title, ";
+				query += "         bo.content content, ";
+				query += "         us.name name, ";
+				query += "         bo.hit hit, ";
+				query += "         to_char(bo.reg_date, 'YYYY-MM-DD hh:mi:ss') reg_date, ";
+				query += "         bo.user_no user_no ";
+				query += " from board bo, users us ";
+				query += " where bo.no = us.no ";
+				query += " and bo.no = ? ";
+				//System.out.println(query);
+
+				pstmt = conn.prepareStatement(query); // 쿼리로 만들기
+
+				//바인딩
+				pstmt.setInt(1, num);// ?(물음표) 중 1번째, 순서중요
+
+				rs = pstmt.executeQuery(); // 쿼리문 실행
+
+				// 4.결과처리
+				while(rs.next()) {
+					int no = rs.getInt("no");  //별로으로 가능하다
+					String title = rs.getString("title");
+					String content = rs.getString("content");
+					String name = rs.getString("name");
+					int  hit = rs.getInt("hit");
+					String reg_date = rs.getString("reg_date");
+					int  userNo= rs.getInt("user_no");
+					
+					new BoardVo(no, title, content, name, hit, reg_date, userNo);
+
+				}
+			
+				// 3. SQL문 준비 / 바인딩 / 실행
+				query = ""; // 쿼리문 문자열만들기, ? 주의
+				query += " update board ";
+				query += " set    hit = hit+1 ";
+				query += " where userNo = ? ";
+
+				pstmt = conn.prepareStatement(query); // 쿼리로 만들기
+				
+				//바인딩
+				pstmt.setInt(1, userNo);// ?(물음표) 중 1번째, 순서중요
+				
+				count = pstmt.executeUpdate(); // 쿼리문 실행
+
+				// 4.결과처리
+				System.out.println(count + "조회수 1증가.");
+
+			} catch (SQLException e) {
+				System.out.println("error:" + e);
+			}
+
+			close();
+			return boardVo;
+		}
+//삭제		
+		public int boardDelete(int no) {
+			
+			getConnection();
+
+			try {
+				// 3. SQL문 준비 / 바인딩 / 실행
+				String query = ""; // 쿼리문 문자열만들기, ? 주의
+				query += " delete from board ";
+				query += " where no = ? ";
+				
+				pstmt = conn.prepareStatement(query); // 쿼리로 만들기
+
+				pstmt.setInt(1, no);// ?(물음표) 중 1번째, 순서중요
+
+				count = pstmt.executeUpdate(); // 쿼리문 실행
+
+				// 4.결과처리
+				System.out.println(count + "건 삭제되었습니다.");
+
+			} catch (SQLException e) {
+				System.out.println("error:" + e);
+			}
+			close();
+			return count;
+		}
 		
+//글쓰기
+		public int write(BoardVo boardVo) {
+
+			getConnection();
+
+			try {
+
+				// 3. SQL문 준비 / 바인딩 / 실행
+				String query = ""; // 쿼리문 문자열만들기, ? 주의
+				query += " insert into board ";
+				query += " values(seq_board_no.nextval, ?, ?, 0, sysdate, ?)";
+
+
+				pstmt = conn.prepareStatement(query); // 쿼리로 만들기
+
+				pstmt.setString(1, boardVo.getTitle()); // ?(물음표) 중 1번째, 순서중요
+				pstmt.setString(2, boardVo.getContent()); // ?(물음표) 중 2번째, 순서중요
+				pstmt.setInt(3, boardVo.getUserNo()); // ?(물음표) 중 3번째, 순서중요
+			
+				count = pstmt.executeUpdate(); // 쿼리문 실행
+
+				// 4.결과처리
+				System.out.println(count + "건 작성되었습니다.");
+
+			} catch (SQLException e) {
+				System.out.println("error:" + e);
+			}
+
+			close();
+			return count;
+		}
+//글수정
+		public int modify(BoardVo boardVo) {
+
+			getConnection();
+
+			try {
+
+				// 3. SQL문 준비 / 바인딩 / 실행
+				String query = ""; // 쿼리문 문자열만들기, ? 주의
+				query += " update board ";
+				query += " set    title = ? , ";
+				query += "        content = ? , ";
+				query += " where no= ? ";
+
+				pstmt = conn.prepareStatement(query); // 쿼리로 만들기
+
+				pstmt.setString(1, boardVo.getTitle()); // ?(물음표) 중 1번째, 순서중요
+				pstmt.setString(2, boardVo.getContent()); // ?(물음표) 중 2번째, 순서중요
+				pstmt.setInt(3, boardVo.getNo()); // ?(물음표) 중 3번째, 순서중요
+
+				count = pstmt.executeUpdate(); // 쿼리문 실행
+
+				// 4.결과처리
+				// System.out.println(count + "건 수정되었습니다.");
+
+			} catch (SQLException e) {
+				System.out.println("error:" + e);
+			}
+
+			close();
+			return count;
+		}	
+	
+
 }
+		
+

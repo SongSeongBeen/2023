@@ -13,15 +13,30 @@ public class BoardVo {
 		
 		public BoardVo() {
 		}
-	
-		public BoardVo(int no, String title, String content, String name, int hit, String regDate) {
+		
+		//쓰기
+		public BoardVo(String title, String content, int userNo) {
+			this.title = title;
+			this.content = content;
+			this.userNo = userNo;
+		}
+		
+		//수정
+		public BoardVo(int no, String title, String content) {
 			super();
 			this.no = no;
 			this.title = title;
 			this.content = content;
-			this.name = name;
+		}
+		
+		public BoardVo(int no, String title, String content, int hit, String regDate, int userNo) {
+			super();
+			this.no = no;
+			this.title = title;
+			this.content = content;
 			this.hit = hit;
 			this.regDate = regDate;
+			this.userNo = userNo;
 		}
 		
 		public BoardVo(int no, String title, String content, String name, int hit, String regDate, int userNo) {
