@@ -29,15 +29,17 @@ public class BoardVo {
 			this.content = content;
 		}
 		
-		public BoardVo(int no, String title, String content, int hit, String regDate, int userNo) {
+		public BoardVo(int no, String name, int hit, String regDate, String title, String content, int userNo) {
 			super();
 			this.no = no;
-			this.title = title;
-			this.content = content;
+			this.name = name;
 			this.hit = hit;
 			this.regDate = regDate;
+			this.title = title;
+			this.content = content;
 			this.userNo = userNo;
 		}
+
 		
 		public BoardVo(int no, String title, String content, String name, int hit, String regDate, int userNo) {
 			super();

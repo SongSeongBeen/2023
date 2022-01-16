@@ -67,17 +67,17 @@
 								<!-- 제목 -->
 								<div class="form-group">
 									<span class="form-text">제 목</span>
-									<span class="form-value">${boardVo.title}.</span>
+									<span class="form-value">${boardVo.title}</span>
 								</div>
 							
 								<!-- 내용 -->
 								<div id="txt-content">
-									<span class="form-value" >${boardVo.content}</span>
+									<span class="form-value" >${boardVo.content}내용</span>
 								</div>
 								<c:if test="${authUser.no == boardVo.userNo }">
-								<a id="btn_modify" href="">수정</a>
+								<a id="btn_modify" href="./bod?action=modifyForm&no=${boardVo.no}">수정</a>
 								</c:if>
-								<a id="btn_modify" href="/mystie/bod?action=list">목록</a>
+								<a id="btn_modify" href="./bod?action=list">목록</a>
 								
 							</form>
 							<!-- //form -->
