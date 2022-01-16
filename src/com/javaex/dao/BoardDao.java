@@ -250,8 +250,8 @@ public class BoardDao {
 				// 3. SQL문 준비 / 바인딩 / 실행
 				String query = ""; // 쿼리문 문자열만들기, ? 주의
 				query += " update board ";
-				query += " set    title = ? , ";
-				query += "        content = ? , ";
+				query += " set    title = ?, ";
+				query += "        content = ? ";
 				query += " where no= ? ";
 
 				pstmt = conn.prepareStatement(query); // 쿼리로 만들기

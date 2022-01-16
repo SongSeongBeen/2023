@@ -18,18 +18,14 @@
 			<c:import url="/WEB-INF/views/include/header.jsp"></c:import>
 			
 			<div id="container" class="clearfix">
-				<div id="aside">
-					<h2>회원</h2>
-					<ul>
-						<li>회원정보수정</li>
-						<li>로그인</li>
-						<li>회원가입</li>
-					</ul>
-				</div>
+			
+				<!-- //aside -->
+				<c:import url="/WEB-INF/views/include/aside.jsp"></c:import>
 				<!-- //aside -->
 	
 				<div id="content">
 				
+					 <!-- //content-head -->
 					<div id="content-head">
 						<h3>회원정보수정</h3>
 						<div id="location">

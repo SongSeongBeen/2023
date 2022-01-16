@@ -19,13 +19,9 @@
 			<!-- header + nav -->
 	
 			<div id="container" class="clearfix">
-				<div id="aside">
-					<h2>게시판</h2>
-					<ul>
-						<li><a href="">일반게시판</a></li>
-						<li><a href="">댓글게시판</a></li>
-					</ul>
-				</div>
+			
+				<!-- //aside -->
+				<c:import url="/WEB-INF/views/include/aside.jsp"></c:import>
 				<!-- //aside -->
 	
 				<div id="content">
@@ -74,13 +70,12 @@
 							
 								<!-- 내용 -->
 								<div class="form-group">
-									<textarea id="txt-content" name="content" >
-										${boardVo.content}
-									</textarea>
+									<textarea id="txt-content" name="content" >${boardVo.content}</textarea>
 								</div>
 								
 								<a id="btn_cancel" href="./bod?action=read&no=${boardVo.no}">취소</a>
 								<button id="btn_modify" type="submit" >수정</button>
+								<input type="text" name="no" value="${boardVo.no}">
 								<input type="text" name="action" value="modify">
 							</form>
 							<!-- //form -->
