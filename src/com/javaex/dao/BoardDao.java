@@ -154,7 +154,7 @@ public class BoardDao {
 			return boardVo;
 		}
 //조회수 증가		
-		public int hit(int no) {
+		public void hit(int no) {
 			getConnection();
 			
 			try {
@@ -180,7 +180,6 @@ public class BoardDao {
 				System.out.println("error:" + e);
 			}
 			close();
-			return count;
 		}
 		
 //삭제		
@@ -264,7 +263,7 @@ public class BoardDao {
 				count = pstmt.executeUpdate(); // 쿼리문 실행
 
 				// 4.결과처리
-				// System.out.println(count + "건 수정되었습니다.");
+				System.out.println(count + "건 수정되었습니다.");
 
 			} catch (SQLException e) {
 				System.out.println("error:" + e);
