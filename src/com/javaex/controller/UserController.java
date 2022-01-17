@@ -44,7 +44,11 @@ public class UserController extends HttpServlet {
 //조인폼		
 		}else if("loginForm".equals(act)){
 			System.out.println("action=loginForm");	
-			WebUtil.forward(request, response, "/WEB-INF/views/user/loginForm.jsp");	
+			WebUtil.forward(request, response, "/WEB-INF/views/user/loginForm.jsp");
+//글쓰기로그인			
+		}else if("writeLoginForm".equals(act)){
+			System.out.println("action=writeloginForm");	
+			WebUtil.forward(request, response, "/WEB-INF/views/user/writeLoginForm.jsp");
 			
 //회원가입 완료 폼		
 		}else if("joinOk".equals(act)){
@@ -76,6 +80,33 @@ public class UserController extends HttpServlet {
 				//id,password를 담아 비교할 공간을 만든다(한웹에서만 허용) 여러게 만들수있다.
 				session.setAttribute("authUser", authVo);
 				WebUtil.redirect(request, response, "/mysite/main");
+			}
+//로그인	
+		}else if("writelogin".equals(act)){
+			System.out.println("action=login");
+			
+			String id = request.getParameter("id");
+			String password = request.getParameter("password");
+			
+			UserDao userDao  = new UserDao();
+			//변수를 새로 만들어 넣는다
+			UserVo authVo = userDao.getUser(id, password);
+			//System.out.println(authVo);
+			//서버에 세션을 만든다
+			
+//null = 로그인실패
+			if(authVo == null) {
+				System.out.println("login실패");
+				
+				WebUtil.redirect(request, response, "/mysite/user?action=loginForm&result=fail");
+//로그인 성공
+			}else {
+				System.out.println("로그인성공");
+				
+				HttpSession session = request.getSession();
+				//id,password를 담아 비교할 공간을 만든다(한웹에서만 허용) 여러게 만들수있다.
+				session.setAttribute("authUser", authVo);
+				WebUtil.redirect(request, response, "./bod?action=writeForm");
 			}
 //로그아웃	
 		}else if("logout".equals(act)) {

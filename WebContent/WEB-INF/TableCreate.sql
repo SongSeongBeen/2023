@@ -22,7 +22,7 @@ nocache;
 
 --insert문 2개 male, female
 insert into users
-values (seq_users_no.nextval, 'hiy', '1234', '황일영', 'male');
+values (seq_users_no.nextval, 'myson', '1234', '손인혜', 'female');
 insert into users
 values (seq_users_no.nextval, 'lhl', '1234', '이효리', 'female');
 insert into users
@@ -113,7 +113,7 @@ insert into board
 values(seq_board_no.nextval, '안녕하세요', '만나서 반갑습니다', '0', sysdate, 4);
 
 insert into board
-values(seq_board_no.nextval, '안녕하세요', '만나서 반갑습니다', '0', sysdate, 1);
+values(seq_board_no.nextval, '안녕하세요', '만나서 반갑습니다', '0', sysdate, 5);
 
 commit;
 

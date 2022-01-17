@@ -41,7 +41,7 @@
 		
 					<div id="board">
 						<div id="read">
-							<form action="#" method="get">
+							<form action="./bod" method="get">
 								<!-- 작성자 -->
 								<div class="form-group">
 									<span class="form-text">작성자</span>
@@ -71,10 +71,11 @@
 									<span class="form-value">${boardVo.content}</span>
 								</div>
 								<c:if test="${authUser.no == boardVo.userNo }">
-								<a id="btn_modify" href="./bod?action=modifyForm&no=${boardVo.no}">수정</a>
+								<button id="btn_modify" type="submit">수정</button>
+								<input type="hidden" name="no" value="${boardVo.no}">
+								<input type="hidden" name="action" value="modifyForm">
 								</c:if>
 								<a id="btn_modify" href="./bod?action=list">목록</a>
-								
 							</form>
 							<!-- //form -->
 						</div>

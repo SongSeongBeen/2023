@@ -75,8 +75,8 @@
 								
 								<a id="btn_cancel" href="./bod?action=read&no=${boardVo.no}">취소</a>
 								<button id="btn_modify" type="submit" >수정</button>
-								<input type="text" name="no" value="${boardVo.no}">
-								<input type="text" name="action" value="modify">
+								<input type="hidden" name="no" value="${boardVo.no}">
+								<input type="hidden" name="action" value="modify">
 							</form>
 							<!-- //form -->
 						</div>
