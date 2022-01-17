@@ -81,7 +81,8 @@ public class UserController extends HttpServlet {
 				session.setAttribute("authUser", authVo);
 				WebUtil.redirect(request, response, "/mysite/main");
 			}
-//로그인	
+			
+//글쓰기에서 로그인 바로가기 -- 이것도 그냥 이렇게	
 		}else if("writelogin".equals(act)){
 			System.out.println("action=login");
 			

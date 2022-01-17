@@ -80,7 +80,7 @@ public class BoardController extends HttpServlet {
 			request.setAttribute("boardVo", boardVo);
 			WebUtil.forward(request, response, "/WEB-INF/views/board/read.jsp");
 			
-//게시판 읽기 조회수 -- 일단 이렇게 
+//게시판 읽기 조회수 -- 일단 이렇
 		}else if("readHit".equals(act)) {
 			System.out.println("action=read");
 			
