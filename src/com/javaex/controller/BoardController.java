@@ -75,9 +75,9 @@ public class BoardController extends HttpServlet {
 			
 			int no = Integer.parseInt(request.getParameter("no"));
 			
-			BoardVo boardVo = new BoardDao().getRead(no);
 			new BoardDao().hit(no);
-			
+			BoardVo boardVo = new BoardDao().getRead(no);
+
 			request.setAttribute("boardVo", boardVo);
 			WebUtil.forward(request, response, "/WEB-INF/views/board/read.jsp");
 	
