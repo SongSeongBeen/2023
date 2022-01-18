@@ -90,12 +90,15 @@
 									<li><a href="">10</a></li>
 									<li><a href="">▶</a></li>
 								</ul>
-								
-								
-								<div class="clear"></div>
 							</div>
-							<a id="btn_write" href="/mysite/bod?action=writeForm">글쓰기</a>
-						
+							<c:choose>
+								<c:when test="${empty authUser}">
+									<a href="./user?action=writeLoginForm" >글쓰기는 로그인 후 이용 가능합니다.</a>
+								</c:when>
+								<c:otherwise>
+									<a id="btn_write" href="/mysite/bod?action=writeForm">글쓰기</a>
+								</c:otherwise>
+							</c:choose>
 						</div>
 						<!-- //list -->
 					</div>

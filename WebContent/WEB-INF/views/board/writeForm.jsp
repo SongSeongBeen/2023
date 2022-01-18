@@ -52,16 +52,8 @@
 								<div class="form-group">
 									<textarea id="txt-content" name="content"></textarea>
 								</div>
-								
-								<c:choose>
-									<c:when test="${empty authUser}">
-										<a id="btn_cancel" href="./user?action=writeLoginForm">글쓰기는 로그인 후 이용 가능합니다.</a>
-									</c:when>
-									<c:otherwise>
-										<a id="btn_cancel" href="./bod">취소</a>
-										<button id="btn_add" type="submit" >등록</button>
-									</c:otherwise>
-								</c:choose>
+								<a id="btn_cancel" href="./bod">취소</a>
+								<button id="btn_add" type="submit" >등록</button>
 								<input type="hidden" name="no" value="${authUser.no}">
 								<input type="hidden" name="action" value="write">
 							</form>

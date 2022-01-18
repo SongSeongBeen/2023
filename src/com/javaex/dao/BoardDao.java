@@ -120,9 +120,9 @@ public class BoardDao {
 				query += "          bo.content content, ";
 				query += "          to_char(bo.reg_date, 'YYYY-MM-DD HH:MI') reg_date, ";
 				query += "          bo.user_no user_no";
-				query += " from     board bo, users us ";
-				query += " where    bo.user_no = us.no ";
-				query += " and		bo.no = ? ";
+				query += " from board bo, users us ";
+				query += " where bo.user_no = us.no ";
+				query += " and bo.no = ? ";
 
 				// 쿼리
 				pstmt = conn.prepareStatement(query);
