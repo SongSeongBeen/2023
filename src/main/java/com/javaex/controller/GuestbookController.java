@@ -2,6 +2,7 @@ package com.javaex.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -11,11 +12,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.javaex.dao.GuestbookDao;
 import com.javaex.vo.GuestbookVo;
 
+
+
 @Controller
 @RequestMapping(value="/book")
 public class GuestbookController {
 	//필드
 	
+	GuestbookDao guestbookDao = new GuestbookDao();
+	GuestbookVo guestbookVo = new GuestbookVo();
 	//생성자
 	
 	//메소드gs
@@ -27,7 +32,7 @@ public class GuestbookController {
 	public String gList(Model model) {
 			System.out.println("GuestbookController=addList");
 		
-		List<GuestbookVo> gList = new GuestbookDao().getList();
+		List<GuestbookVo> gList = guestbookDao.getList();
 		System.out.println(gList.toString());
 		
 		model.addAttribute("gList", gList);
@@ -40,7 +45,7 @@ public class GuestbookController {
 	public String add(@ModelAttribute GuestbookVo guestboookVo) {
 		System.out.println("GuestbookController=add");
 		
-		new GuestbookDao().guestInsert(guestboookVo);
+		guestbookDao.guestInsert(guestboookVo);
 	
 	return "redirect:./gList";
 }
@@ -50,8 +55,6 @@ public class GuestbookController {
 	public String deleteForm(@ModelAttribute GuestbookVo guestboookVo) {
 		System.out.println("GuestbookController=deleteForm");
 		
-		new GuestbookVo().getNo();
-	
 	return "deleteForm";
 }
 //삭제
@@ -59,7 +62,7 @@ public class GuestbookController {
 	public String delete(@ModelAttribute GuestbookVo guestboookVo) {
 		System.out.println("GuestbookController=delete");
 		
-		new GuestbookDao().guestbookDelete(guestboookVo);
+		guestbookDao.guestbookDelete(guestboookVo);
 	
 		return "redirect:./gList";
 }

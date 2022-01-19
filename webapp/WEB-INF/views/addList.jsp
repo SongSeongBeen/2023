@@ -10,6 +10,8 @@
 	</head>
 	
 	<body>
+	
+		<h1>[GuestBook3]</h1>
 	<!-- 등록 폼영역 -->
 	<form action="./add" method="get">
 		<table border="1" width="500px">
