@@ -9,7 +9,7 @@
 	</head>
 	
 	<body>
-		<h1>Phonebook3</h1>
+		<h1>[Phonebook3]</h1>
 		<h2>전화번호 리스트</h2>
 		<P>입력한 정보 내역입니다.</P>
 	

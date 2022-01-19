@@ -16,7 +16,8 @@ import com.javaex.vo.PersonVo;
 @RequestMapping(value = "/phone")
 public class PhoneController {
 		// 필드
-	
+		private PhoneDao personDao = new PhoneDao();
+		private PersonVo personVo = new PersonVo();
 		// 생성자
 	
 		// 메소드gs
@@ -27,7 +28,7 @@ public class PhoneController {
 		@RequestMapping(value = "/writeForm", method = { RequestMethod.GET, RequestMethod.POST })
 		public String writeForm() {
 				System.out.println("PhoneController=writeForm");
-				return "/WEB-INF/views/writeForm.jsp";
+				return "writeForm";
 		}
 
 //쓰기-확인	
@@ -36,7 +37,7 @@ public class PhoneController {
 		public String write(@ModelAttribute PersonVo personVo) {
 			System.out.println("PhoneController=write");
 	
-			new PhoneDao().personInsert(personVo);
+			personDao.personInsert(personVo);
 	
 			return "redirect:/phone/list";
 		}
@@ -46,13 +47,13 @@ public class PhoneController {
 		public String list(Model model) {
 			System.out.println("PhoneController=list");
 			// 다오에서 리스트를 가져온다
-			List<PersonVo> pList = new PhoneDao().getPersonList();
+			List<PersonVo> pList = personDao.getPersonList();
 			System.out.println(pList.toString());
 	
 			// 컨트롤러-->DS데이터를 보낸다
 			model.addAttribute("pList", pList);
 	
-			return "/WEB-INF/views/list.jsp";
+			return "list";
 		}
 
 //업데이트-폼
@@ -60,18 +61,18 @@ public class PhoneController {
 		public String updateForm(@RequestParam("personId") int personId, Model model) {
 			System.out.println("PhoneController=updateForm");
 			
-			PersonVo personVo = new PhoneDao().getPerson(personId);
+			personVo  = personDao.getPerson(personId);
 			
 			model.addAttribute("personVo", personVo);
 			
-			return "/WEB-INF/views/updateForm.jsp";
+			return "updateForm";
 		}
 
 //업데이트-확인
 		@RequestMapping(value = "/update", method = { RequestMethod.GET, RequestMethod.POST })
 		public String update(@ModelAttribute PersonVo personVo) {
 	
-			new PhoneDao().personUpdate(personVo);
+			personDao.personUpdate(personVo);
 	
 			return "redirect:/phone/list";
 		}
@@ -80,7 +81,7 @@ public class PhoneController {
 		@RequestMapping(value = "/delete", method = { RequestMethod.GET, RequestMethod.POST })
 		public String delete(@RequestParam("personId") int personId) {
 	
-			new PhoneDao().personDelete(personId);
+			personDao.personDelete(personId);
 	
 			return "redirect:/phone/list";
 		}
