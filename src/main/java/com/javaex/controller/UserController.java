@@ -19,39 +19,46 @@ public class UserController {
 	@RequestMapping(value="/loginForm", method= {RequestMethod.GET, RequestMethod.POST})
 	public String loginForm(@ModelAttribute UserVo userVo) {
 			System.out.println("loginForm");
-		userDao.getUser(userVo);
+				
 		return "/user/loginForm";
 	}
 	
-//로그인-폼
+//로그인-확인
 	@RequestMapping(value="/login", method= {RequestMethod.GET, RequestMethod.POST})
 	public String login(@ModelAttribute UserVo userVo) {
-			System.out.println("loginForm");
+			System.out.println("login");
 			
 		userDao.getUser(userVo);
 		
-		return "/user/loginForm";
+		return "redirect:/main";
 	}
-		
+
 //회원가입-폼	
 	@RequestMapping(value="/joinForm", method= {RequestMethod.GET, RequestMethod.POST})
 	public String joinForm() {
+			System.out.println("joinForm");
+		return "/user/joinForm";
+	}
+	
+//회원가입-확인
+	@RequestMapping(value="/join", method= {RequestMethod.GET, RequestMethod.POST})
+	public String join() {
 			System.out.println("join");
-		return "redirect:/main";
+		return "redirect:/loginForm";
 	}
 	
-//회원가입-확인
-	@RequestMapping(value="/joinOk", method= {RequestMethod.GET, RequestMethod.POST})
-	public String joinOk() {
-			System.out.println("joinOk");
-		return "/user/joinOk";
-	}
-	
-//회원가입-확인
+//회원정보수정
 	@RequestMapping(value="/modifyForm", method= {RequestMethod.GET, RequestMethod.POST})
 	public String modifyForm() {
 			System.out.println("modifyForm");
 		return "/user/modifyForm";
+	}
+	
+//회원정보수정-확인
+	@RequestMapping(value="/modify", method= {RequestMethod.GET, RequestMethod.POST})
+	public String modifyOk() {
+			System.out.println("modify");
+		return "redirect:/modifyForm";
 	}
 
 }

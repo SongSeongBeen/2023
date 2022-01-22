@@ -41,7 +41,7 @@
 		
 					<div id="user">
 						<div id="loginForm">
-							<form action="/mysite/user" method="get">
+							<form action="./login" method="get">
 		
 								<!-- 아이디 -->
 								<div class="form-group">
@@ -62,8 +62,6 @@
 								<div class="button-area">
 									<button type="submit" id="btn-submit">로그인</button>
 								</div>
-								<input type="hidden" name="action" value="login">
-								
 							</form>
 						</div>
 						<!-- //loginForm -->

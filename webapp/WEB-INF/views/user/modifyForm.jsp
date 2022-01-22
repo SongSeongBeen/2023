@@ -41,7 +41,7 @@
 		
 					<div id="user">
 						<div id="modifyForm">
-							<form action="/mysite/user" method="get">
+							<form action="./modifyForm" method="get">
 		
 								<!-- 아이디 -->
 								<div class="form-group">

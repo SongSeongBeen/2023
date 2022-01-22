@@ -43,8 +43,7 @@
 		
 					<div id="user">
 						<div id="joinForm">
-							<form action="/mysite/user" method="get">
-							<input type="hidden" name="action" value="join">
+							<form action="/mysite4/user/joinOk" method="get">
 								<!-- 아이디 -->
 								<div class="form-group">
 									<label class="form-text" for="input-uid">아이디</label> 
