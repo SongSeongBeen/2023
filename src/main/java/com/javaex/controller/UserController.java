@@ -1,63 +1,97 @@
 package com.javaex.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.javaex.dao.UserDao;
+import com.javaex.service.UserService;
 import com.javaex.vo.UserVo;
 
 @Controller
 public class UserController {
-	
+
 	@Autowired
-	private UserDao userDao;
+	private UserService userService;
 
 //로그인-폼
-	@RequestMapping(value="/loginForm", method= {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = "/loginForm", method = { RequestMethod.GET, RequestMethod.POST })
 	public String loginForm(@ModelAttribute UserVo userVo) {
-			System.out.println("loginForm");
-				
+		System.out.println("loginForm");
+
 		return "/user/loginForm";
 	}
-	
+
 //로그인-확인
-	@RequestMapping(value="/login", method= {RequestMethod.GET, RequestMethod.POST})
-	public String login(@ModelAttribute UserVo userVo) {
-			System.out.println("UserController.login()");
-			
-		UserVo authUser = userDao.selectUser(userVo);
+	@RequestMapping(value = "/login", method = { RequestMethod.GET, RequestMethod.POST })
+	public String login(@ModelAttribute UserVo userVo, HttpSession session) {
+		System.out.println("UserController.login()");
+
+		UserVo authUser = userService.login(userVo);
 		System.out.println(authUser);
-		return "redirect:/main";
+
+		// 로그인-성공
+		if (authUser != null) {
+			System.out.println("성공");
+			// 저장
+			session.setAttribute("authUser", authUser);
+			return "redirect:/main";
+			// 로그인-실패
+		} else {
+			System.out.println("실패");
+			return "redirect:/loginForm?result=fail";
+		}
+	}
+
+//로그아웃	
+	@RequestMapping(value = "/logout", method = { RequestMethod.GET, RequestMethod.POST })
+	public String logout(HttpSession session) {
+		System.out.println("logout");
+
+		session.removeAttribute("authUser");
+		session.invalidate();
+
+		return "redirect:/loginForm";
 	}
 
 //회원가입-폼	
-	@RequestMapping(value="/joinForm", method= {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = "/joinForm", method = { RequestMethod.GET, RequestMethod.POST })
 	public String joinForm() {
-			System.out.println("joinForm");
+		System.out.println("joinForm");
+
 		return "/user/joinForm";
 	}
-	
+
 //회원가입-확인
-	@RequestMapping(value="/join", method= {RequestMethod.GET, RequestMethod.POST})
-	public String join() {
-			System.out.println("join");
-		return "redirect:/loginForm";
+	@RequestMapping(value = "/join", method = { RequestMethod.GET, RequestMethod.POST })
+	public String join(@ModelAttribute UserVo userVo) {
+		System.out.println("join");
+
+		userService.join(userVo);
+
+		return "redirect:/loginOk";
 	}
-	
+
 //회원정보수정
-	@RequestMapping(value="/modifyForm", method= {RequestMethod.GET, RequestMethod.POST})
-	public String modifyForm() {
-			System.out.println("modifyForm");
+	@RequestMapping(value = "/modifyForm", method = { RequestMethod.GET, RequestMethod.POST })
+	public String modifyForm(HttpSession session, Model model) {
+		System.out.println("UserController.modifyForm()");
+		UserVo authUser = (UserVo) session.getAttribute("authUser");
+		UserVo userVo = userService.getUser(authUser.getNo());
+		model.addAttribute("UserVo", userVo);
 		return "/user/modifyForm";
 	}
-	
+
 //회원정보수정-확인
-	@RequestMapping(value="/modify", method= {RequestMethod.GET, RequestMethod.POST})
-	public String modifyOk() {
-			System.out.println("modify");
+	@RequestMapping(value = "/modify", method = { RequestMethod.GET, RequestMethod.POST })
+	public String modifyOk(@ModelAttribute UserVo userVo) {
+		System.out.println("modify");
+
+		userService.updateUser(userVo);
 		return "redirect:/modifyForm";
 	}
 

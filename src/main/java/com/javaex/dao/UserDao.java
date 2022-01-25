@@ -9,36 +9,42 @@ import com.javaex.vo.UserVo;
 @Repository
 public class UserDao {
 //공통영역	
-		@Autowired
-		private SqlSession sqlSession;
+	@Autowired
+	private SqlSession sqlSession;
 
 //공통영역		
-		
+
 //회원가입
-//		public int insert(UserVo userVo) {
-//	
-//	
-//		}
+	public int insertUser(UserVo userVo) {
+		System.out.println("UserDao.insertUser");
+
+		int count = sqlSession.insert("user.insertUser", userVo);
+		System.out.println(count + "명이 등록되었습니다");
+		return count;
+	}
+
 //로그인		
-		public UserVo selectUser(UserVo userVo) {
-			System.out.println("UserDao.selectUse r");
-			sqlSession.selectOne("user.selectUser", userVo);
-			
-			UserVo authUser = sqlSession.selectOne("UserVo", userVo);
-			
-			
-			return authUser;
-			
-		}
+	public UserVo selectUser(UserVo userVo) {
+		System.out.println("UserDao.selectUser");
+
+		sqlSession.selectOne("user.selectUser", userVo);
+		UserVo authUser = sqlSession.selectOne("user.selectUser", userVo);
+
+		return authUser;
+
+	}
+
 //회원 1명 번호로	
-//		public UserVo getUserNo(int num) {
-//			
-//		}
-		
+	public UserVo getUser(int no) {
+		return sqlSession.selectOne("user.getUser", no);
+	}
+
 // 회원정보 수정
-//		public int Update(UserVo userVo) {
-//
-//		}
+	public int updateUser(UserVo userVo) {
+		int count = sqlSession.update("user.updateUser", userVo);
+		System.out.println(count + "건이 수정되었습니다");
+		return count;
+	}
 
 }
 

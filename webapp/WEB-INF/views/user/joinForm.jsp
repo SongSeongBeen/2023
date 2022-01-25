@@ -4,10 +4,8 @@
 
 <html>
 	<head>
-		<meta charset="UTF-8">
-		<title>Insert title here</title>
-		<link href="/mysite4/assets/css/mysite.css" rel="stylesheet" type="text/css">
-		<link href="/mysite4/assets/css/user.css" rel="stylesheet" type="text/css">
+		<!-- title + css -->
+		<c:import url="/WEB-INF/views/head/stylesheet.jsp"></c:import>
 	</head>
 	
 	<body>
@@ -43,7 +41,7 @@
 		
 					<div id="user">
 						<div id="joinForm">
-							<form action="/mysite4/user/joinOk" method="get">
+							<form action="${pageContext.request.contextPath}/join" method="get">
 								<!-- 아이디 -->
 								<div class="form-group">
 									<label class="form-text" for="input-uid">아이디</label> 

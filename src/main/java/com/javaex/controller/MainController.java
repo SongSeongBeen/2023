@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class MainController {
-	
+
 	@RequestMapping(value = "/main", method = { RequestMethod.GET, RequestMethod.POST })
 	public String main() {
 		System.out.println("main");
 
 		return "/main/index";
-    }
+	}
 
 }

@@ -5,10 +5,8 @@
 
 <html>
 	<head>
-		<meta charset="UTF-8">
-		<title>Insert title here</title>
-		<link href="/mysite4/assets/css/mysite.css" rel="stylesheet" type="text/css">
-		<link href="/mysite4/assets/css/user.css" rel="stylesheet" type="text/css">
+		<!-- title + css -->
+		<c:import url="/WEB-INF/views/head/stylesheet.jsp"></c:import>
 	</head>
 	
 	<body>
