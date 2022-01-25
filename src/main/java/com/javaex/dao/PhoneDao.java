@@ -24,18 +24,18 @@ public class PhoneDao {
 //전화번호 추가	
 	public int personInsert(PersonVo personVo) {
 		System.out.println("PhoneDao.personInser");
-		int connt = sqlSession.insert("phonebook.insert", personVo);
-		System.out.println(connt +"건");
-		return connt;
+		int count = sqlSession.insert("phonebook.insert", personVo);
+		System.out.println(count+"건");
+		return count;
 		
 	}
 	
 //삭제
 	public int personDelete(int personId) {
 		System.out.println("PhoneDao.personDelete");
-		int connt = sqlSession.delete("phonebook.delete", personId);
-		System.out.println(connt +"건");
-		return connt;
+		int count = sqlSession.delete("phonebook.delete", personId);
+		System.out.println(count +"건");
+		return count;
 	}
 	
 //한명 가져오기	
@@ -49,8 +49,8 @@ public class PhoneDao {
 //수정
 	public int personUpdate(PersonVo personVo) {
 		System.out.println("PhoneDao.personUpdate");
-		int connt = sqlSession.update("phonebook.update", personVo);
-		return connt;
+		int count = sqlSession.update("phonebook.update", personVo);
+		return count;
 	}
 	
 /*	public PersonVo getPerson(int personId) {
