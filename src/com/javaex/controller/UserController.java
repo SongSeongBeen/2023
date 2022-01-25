@@ -41,10 +41,11 @@ public class UserController extends HttpServlet {
 			
 			WebUtil.forward(request, response, "/WEB-INF/views/user/joinOk.jsp");
 			
-//조인폼		
+//로그인폼		
 		}else if("loginForm".equals(act)){
 			System.out.println("action=loginForm");	
 			WebUtil.forward(request, response, "/WEB-INF/views/user/loginForm.jsp");
+			
 //글쓰기로그인			
 		}else if("writeLoginForm".equals(act)){
 			System.out.println("action=writeloginForm");	
@@ -54,6 +55,7 @@ public class UserController extends HttpServlet {
 		}else if("joinOk".equals(act)){
 			System.out.println("action=joinOk");	
 			WebUtil.forward(request, response, "/WEB-INF/views/user/joinOk.jsp");	
+			
 //로그인	
 		}else if("login".equals(act)){
 			System.out.println("action=login");
