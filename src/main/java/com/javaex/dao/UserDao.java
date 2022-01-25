@@ -20,11 +20,12 @@ public class UserDao {
 //	
 //		}
 //로그인		
-		public UserVo getUser(UserVo userVo) {
-			System.out.println("UserDao.getuser()");
-			sqlSession.selectOne("user.getUser", userVo);
+		public UserVo selectUser(UserVo userVo) {
+			System.out.println("UserDao.selectUse r");
+			sqlSession.selectOne("user.selectUser", userVo);
 			
 			UserVo authUser = sqlSession.selectOne("UserVo", userVo);
+			
 			
 			return authUser;
 			

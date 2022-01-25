@@ -26,10 +26,10 @@ public class UserController {
 //로그인-확인
 	@RequestMapping(value="/login", method= {RequestMethod.GET, RequestMethod.POST})
 	public String login(@ModelAttribute UserVo userVo) {
-			System.out.println("login");
+			System.out.println("UserController.login()");
 			
-		userDao.getUser(userVo);
-		
+		UserVo authUser = userDao.selectUser(userVo);
+		System.out.println(authUser);
 		return "redirect:/main";
 	}
 

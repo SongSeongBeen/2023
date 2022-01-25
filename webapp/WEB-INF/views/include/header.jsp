@@ -6,7 +6,7 @@
 				<a href="./main">MySite</a>
 			</h1>
 		<c:choose>
-			<c:when test="${empty authUser}">
+			<c:when test="${empty sessionScope.authUser}">
 				<ul>
 					<li><a href="./loginForm" class="btn_s">로그인</a></li>
 					<li><a href="./joinForm" class="btn_s">회원가입</a></li>
@@ -14,7 +14,7 @@
 			</c:when>
 			<c:otherwise>
 				<ul>
-					<li>${authUser.name}님 안녕하세요^^</li>
+					<li>${sessionScope.authUser.name}님 안녕하세요^^</li>
 					<li><a href="./user?action=logout" class="btn_s">로그아웃</a></li>
 					<li><a href="./user?action=modifyForm" class="btn_s">회원정보수정</a></li>
 				</ul>
