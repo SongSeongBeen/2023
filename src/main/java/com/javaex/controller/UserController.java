@@ -13,6 +13,7 @@ import com.javaex.service.UserService;
 import com.javaex.vo.UserVo;
 
 @Controller
+@RequestMapping(value="user")
 public class UserController {
 
 	@Autowired
@@ -88,7 +89,7 @@ public class UserController {
 
 //회원정보수정-확인
 	@RequestMapping(value = "/modify", method = { RequestMethod.GET, RequestMethod.POST })
-	public String modifyOk(@ModelAttribute UserVo userVo) {
+	public String modify(@ModelAttribute UserVo userVo) {
 		System.out.println("modify");
 
 		userService.updateUser(userVo);

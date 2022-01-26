@@ -11,6 +11,8 @@ public class UserService {
 
 	@Autowired
 	private UserDao userDao;
+	private UserVo userVo;
+	private int count = 0;
 
 	public UserVo login(UserVo userVo) {
 		UserVo authUser = userDao.selectUser(userVo);
@@ -18,17 +20,17 @@ public class UserService {
 	}
 
 	public int join(UserVo userVo) {
-		int count = userDao.insertUser(userVo);
+		count = userDao.insertUser(userVo);
 		return count;
 	}
 
 	public UserVo getUser(int no) {
-		UserVo userVo = userDao.getUser(no);
+		userVo = userDao.getUser(no);
 		return userVo;
 	}
 
 	public int updateUser(UserVo userVo) {
-		int count = userDao.insertUser(userVo);
+		count = userDao.insertUser(userVo);
 		return count;
 	}
 

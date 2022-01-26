@@ -12,6 +12,7 @@
 			and password = #{password}
     	]]>
     </select>
+    
 <!-- 회원가입 -->    
      <insert id="insertUser" parameterType="com.javaex.vo.UserVo">
 	   	<![CDATA[

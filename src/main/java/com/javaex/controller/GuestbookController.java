@@ -13,6 +13,7 @@ import com.javaex.dao.GuestbookDao;
 import com.javaex.vo.GuestbookVo;
 
 @Controller
+@RequestMapping(value="guestbook")
 public class GuestbookController {
 	// 필드
 	@Autowired
@@ -26,15 +27,14 @@ public class GuestbookController {
 
 //리스트	
 	@RequestMapping(value = "/gList", method = { RequestMethod.GET, RequestMethod.POST })
-	public String gList(Model model) {
+	public String guestbookList(Model model) {
 		System.out.println("GuestbookController=addList");
 
-		List<GuestbookVo> gList = guestbookDao.getList();
-		System.out.println(gList.toString());
+		List<GuestbookVo> guestbookList = guestbookDao.getList();
 
-		model.addAttribute("gList", gList);
+		model.addAttribute("guestbookList", guestbookList);
 
-		return "addList";
+		return "/guestbook/addList";
 	}
 
 //리스트입력-확인
@@ -42,17 +42,17 @@ public class GuestbookController {
 	public String add(@ModelAttribute GuestbookVo guestboookVo) {
 		System.out.println("GuestbookController=add");
 
-		guestbookDao.guestInsert(guestbookVo);
+		guestbookDao.insert(guestbookVo);
 
 		return "redirect:./gList";
 	}
 
 //삭제-폼
 	@RequestMapping(value = "/deleteForm", method = { RequestMethod.GET, RequestMethod.POST })
-	public String deleteForm(@ModelAttribute GuestbookVo guestboookVo) {
+	public String deleteForm() {
 		System.out.println("GuestbookController=deleteForm");
-
-		return "deleteForm";
+		
+		return "/guestbook/deleteForm";
 	}
 
 //삭제
@@ -60,7 +60,7 @@ public class GuestbookController {
 	public String delete(@ModelAttribute GuestbookVo guestboookVo) {
 		System.out.println("GuestbookController=delete");
 
-		guestbookDao.guestbookDelete(guestboookVo);
+		guestbookDao.delete(guestboookVo);
 
 		return "redirect:./gList";
 	}

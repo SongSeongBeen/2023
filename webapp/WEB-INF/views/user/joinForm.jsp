@@ -1,11 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 
 <html>
 	<head>
-		<!-- title + css -->
-		<c:import url="/WEB-INF/views/head/stylesheet.jsp"></c:import>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="/mysite4/assets/css/mysite.css" rel="stylesheet" type="text/css">
+		<link href="/mysite4/assets/css/user.css" rel="stylesheet" type="text/css">
 	</head>
 	
 	<body>
@@ -41,7 +44,8 @@
 		
 					<div id="user">
 						<div id="joinForm">
-							<form action="${pageContext.request.contextPath}/join" method="get">
+							<form action="/mysite/user" method="get">
+							<input type="hidden" name="action" value="join">
 								<!-- 아이디 -->
 								<div class="form-group">
 									<label class="form-text" for="input-uid">아이디</label> 
