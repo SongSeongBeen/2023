@@ -10,12 +10,15 @@ import com.javaex.vo.BoardVo;
 
 @Repository
 public class BoardDao {
+	
 	@Autowired
 	private SqlSession sqlSession;
 	
 	public List<BoardVo> getList(){
 		System.out.println("BoardDao.getList()");
-		List<BoardVo> boardList = sqlSession.selectList("board.getList");
+		
+		List<BoardVo> boardList = sqlSession.selectList("board.selectList");
+		
 		return boardList;
 	}
 }

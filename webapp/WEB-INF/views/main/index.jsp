@@ -25,7 +25,7 @@
 					<!-- content-head 없음 -->
 					<div id="index"> 
 					
-						<img id="profile-img" src="/mysite4/assets/image/profile.jpg">
+						<img id="profile-img" src="${pageContext.request.contextPath}/assets/image/profile.jpg">
 						
 						<div id="greetings">
 							<p class="text-xlarge">
@@ -43,7 +43,7 @@
 								<br>
 								(자유롭게 꾸며보세요!!)<br>
 								<br><br>
-								<a class="text-xlarge" href="./gbc?action=addList">[방명록에 글 남기기]</a>
+								<a class="text-xlarge" href="./guestbook/gList">[방명록에 글 남기기]</a>
 							</p>	
 						</div>
 						<!-- //greetings -->

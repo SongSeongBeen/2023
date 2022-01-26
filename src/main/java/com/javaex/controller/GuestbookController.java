@@ -18,7 +18,6 @@ public class GuestbookController {
 	// 필드
 	@Autowired
 	private GuestbookDao guestbookDao;
-	private GuestbookVo guestbookVo;
 	// 생성자
 
 	// 메소드gs
@@ -39,7 +38,7 @@ public class GuestbookController {
 
 //리스트입력-확인
 	@RequestMapping(value = "/add", method = { RequestMethod.GET, RequestMethod.POST })
-	public String add(@ModelAttribute GuestbookVo guestboookVo) {
+	public String add(@ModelAttribute GuestbookVo guestbookVo) {
 		System.out.println("GuestbookController=add");
 
 		guestbookDao.insert(guestbookVo);
@@ -57,10 +56,10 @@ public class GuestbookController {
 
 //삭제
 	@RequestMapping(value = "/delete", method = { RequestMethod.GET, RequestMethod.POST })
-	public String delete(@ModelAttribute GuestbookVo guestboookVo) {
+	public String delete(@ModelAttribute GuestbookVo guestbookVo) {
 		System.out.println("GuestbookController=delete");
 
-		guestbookDao.delete(guestboookVo);
+		guestbookDao.delete(guestbookVo);
 
 		return "redirect:./gList";
 	}

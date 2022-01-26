@@ -60,7 +60,7 @@
 									</tr>
 								</thead>
 								<tbody>
-									<c:forEach items="${bList}" var="boardVo" varStatus="status">
+									<c:forEach items="${boardList}" var="boardVo" varStatus="status">
 										<tr>
 											<td>${boardVo.no}</td>
 											<td class="text-left"><a href="./readHit&no=${boardVo.no}">${boardVo.title}</a></td>
