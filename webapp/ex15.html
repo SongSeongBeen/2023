@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<body>
+
+	<h1>자바스크립트 예제</h1>
+
+</body>
+
+<script type="text/javascript">
+	
+	//배열만들기(리스트)
+	var personList = [];
+
+	//정우성
+	var personVo01 = {
+		 name : "정우성"
+		,hp : "010-1111-1111"
+		,company : "02-1111-1111"
+	};
+	console.log(personVo01);
+	//임수정
+	var personVo02 = {};
+		personVo02.name = "임수정"
+		personVo02.hp = "010-2222-2222"
+		personVo02.company = "02-2222-2222"
+		console.log(personVo02);
+	
+	var personVo03={
+		name:"이효리"	
+		,hp:"010-3333-3333"
+	}
+	personVo03.company="02-3333-3333";
+	console.log(personVo03);
+	
+	personList.push(personVo01);
+	personList.push(personVo02);
+	personList.push(personVo03);
+	
+	console.log(personList);
+	
+	//for name 출력
+	for(var i=0; i<personList.length; i++){
+		console.log(personList[i].name);
+	}
+	
+
+	
+	
+</script>
+
+
+</html>

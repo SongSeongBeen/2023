@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="/jqueryex/jquery/jquery-1.12.4.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<ul>
+		<li id="first" class="red">'🎰로또번호 알려드려요🎰<br>'</li>
+	</ul>
+
+</body>
+
+<script type="text/javascript">
+
+/*
+1. 1~45까지의 랜덤한 수를 총 6개 추출하되, 같은 수가 중복도어 추출되면 안됨
+
+2.  배열을 이용
+
+3. 보너스 번호 따로 뽑기, 이것도 중복 불가능
+*/
+
+
+
+let arr = [];
+let cnt = 0;
+for(let i=0; i<6; i++){
+    arr[i] = Math.floor(Math.random()*45)+1; //1부터 45까지의 랜덤한 숫자를 뽑아 arr배열에 6개 담아주기
+    for(let j=0; j<i; j++){
+        if(arr[i] == arr[j]){ //새로운 숫자를 뽑고 그 전 인덱스에 있는 숫자와 같은지 비교
+            i--; //새로운 숫자와 그 전에 있던 숫자들과 같은게 있으면(true) i--; => 다시 그 새로운 숫자 인덱스로 만들어주는 것 : for문 첫번째로 돌아가 i++를 i--로 막아주고 다시 뽑기 위해
+            break;
+        }
+    }
+}
+
+for(let i=0; i<5; i++){ //해당 인덱스의 다음 값부터 비교할거니까 5번만 돌면 됨
+    for(let j=i+1; j<6; j++){ //랜덤한 수가 담겨있는 arr배열의 i번째 값과 i+1,i+2,..i+5째값을 비교해
+        if(arr[i] > arr[j]){ // +1인덱스 값의 더 크다면
+            let tmp = arr[i]; //i번째 값을 tmp에 담아주고
+            arr[i] = arr[j]; //뒤 인덱스의 값을 i번째 인덱스에 담아주고
+            arr[j] = tmp; //i번째였던 값을 j인덱스에 다시 담아주면서 정렬
+            //i번째 값을 뒤의 인덱스값들과 계속 비교하면서 정렬
+        }
+    }
+}
+
+let bonus = Math.floor(Math.random()*45)+1;
+
+// let flag = false;
+// while(true){
+//     flag = false;
+//     for(let i=0; i<arr.length; i++){
+//         if(bonus == arr[i]){ //보너스번호로 뽑힌 값이 arr 배열 내 값과 같은 값이 있다면
+//             bonus = Math.floor(Math.random()*45)+1; //보너스 번호를 다시 뽑아주고
+//             flag = true; //flag를 true로 만들기
+//             break; //for문을 빠져나감
+//         }
+//     }
+//     if(!flag){
+//         break; //while을 빠져나감
+//     }
+// }
+
+    for(let i=0; i<arr.length; i++){
+        if(bonus == arr[i]){ //보너스번호로 뽑힌 값이 arr 배열 내 값과 같은 값이 있다면
+            bonus = Math.floor(Math.random()*45)+1; //보너스 번호를 다시 뽑아주고
+            i = -1; // 다시 원점 해당인덱스로 돌아가 다시 중복 검사하기
+        }
+    }
+
+
+
+	$("li").on("click", function(){
+		var tag = $(this);
+		tag.text(arr);
+	});
+
+
+</script>
+
+
+
+</html>

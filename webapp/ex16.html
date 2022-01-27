@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<body>
+
+	<h1>자바스크립트 예제</h1>
+	
+	<br><br>
+	
+	<div>
+		<button id="btn" type="button">js 테스트</button>
+		<br>
+		<button id="btn" type="button">js 테스트</button>
+		<h1 id="display">이름출력</h1>
+	</div>
+	
+</body>
+
+<script type="text/javascript">
+		window.onload = function(){
+		 
+			var testButton = document.getElementById("btn");
+			var testArea = document.getElementById("display");
+			
+			testButton.onclick = function(){
+				testArea.innerHTML='<font color="red">홍길동</font>';
+			};
+				
+		};
+		
+		window.onload = function(){
+			var testButton = document.getElementById("btn");
+			var testArea = document.getElementById("display");
+			
+			testButton.onclick = function(){
+				testArea.innerHTML='<font color="blue">홍길동</font>';
+			};
+				
+		};
+		
+	
+</script>
+
+
+</html>

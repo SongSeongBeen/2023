@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript" src="/jqueryex/jquery/jquery-1.12.4.js"></script>
+</head>
+
+<body>
+
+	<h1>자바스크립트 예제</h1>
+	
+	<div>
+		<button id="btn" type="button">js 테스트</button>
+		<h1 id="display">이름출력</h1>
+	</div>
+	
+</body>
+
+<script type="text/javascript">
+	$("#btn").on("click", function(){
+		console.log("클릭");
+		$("#display").html('<font color="red">임수정</font>');
+	});
+		
+	
+</script>
+
+
+</html>
