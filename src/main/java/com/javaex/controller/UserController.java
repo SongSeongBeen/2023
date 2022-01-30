@@ -56,7 +56,7 @@ public class UserController {
 		session.removeAttribute("authUser");
 		session.invalidate();
 
-		return "redirect:/loginForm";
+		return "redirect:/user/loginForm";
 	}
 
 //회원가입-폼	
@@ -77,13 +77,17 @@ public class UserController {
 		return "redirect:/loginOk";
 	}
 
-//회원정보수정
+//회원정보수정-폼
 	@RequestMapping(value = "/modifyForm", method = { RequestMethod.GET, RequestMethod.POST })
 	public String modifyForm(HttpSession session, Model model) {
 		System.out.println("UserController.modifyForm()");
+		
 		UserVo authUser = (UserVo) session.getAttribute("authUser");
+		
 		UserVo userVo = userService.getUser(authUser.getNo());
+		
 		model.addAttribute("UserVo", userVo);
+		
 		return "/user/modifyForm";
 	}
 
@@ -93,6 +97,7 @@ public class UserController {
 		System.out.println("modify");
 
 		userService.updateUser(userVo);
+		
 		return "redirect:/modifyForm";
 	}
 

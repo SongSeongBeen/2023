@@ -37,7 +37,9 @@ public class UserDao {
 //회원 1명 번호로	
 	public UserVo getUser(int no) {
 		System.out.println("UserDao.getUser()");
+		
 		return sqlSession.selectOne("user.getUser", no);
+		
 	}
 
 // 회원정보 수정
@@ -45,6 +47,7 @@ public class UserDao {
 		System.out.println("UserDao.updateUser()");
 		
 		count = sqlSession.update("user.updateUser", userVo);
+		
 		System.out.println(count + "건이 수정되었습니다");
 		return count;
 	}

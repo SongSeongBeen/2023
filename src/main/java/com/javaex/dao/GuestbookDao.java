@@ -33,6 +33,22 @@ public class GuestbookDao {
 		
 		return count;
 	}
+//방명록 글저장(selectKey) 리턴성공한 갯수
+	public int insertSelectKey(GuestbookVo guestbookVo) {
+		System.out.println("GuestbookDao.insertSelectKey");
+		
+		System.out.println(guestbookVo);
+		count = sqlSession.insert("guestbook.insertSelectKey", guestbookVo);
+		System.out.println(guestbookVo);
+		
+		return count;
+	}
+//방명록 글1개 가져오기
+	   public GuestbookVo selectGuest(int no) {
+	      System.out.println("guestbookDao/selectGuest");
+	      
+	      return sqlSession.selectOne("guestbook.selectByNo", no);
+	   }
 
 //삭제 영역
 		public int delete(GuestbookVo guestbookVo) {
@@ -42,5 +58,7 @@ public class GuestbookDao {
 		
 		return count;
 	}
+		
+		
 
 }
