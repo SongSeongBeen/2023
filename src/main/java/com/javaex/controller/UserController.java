@@ -79,14 +79,12 @@ public class UserController {
 
 //회원정보수정-폼
 	@RequestMapping(value = "/modifyForm", method = { RequestMethod.GET, RequestMethod.POST })
-	public String modifyForm(HttpSession session, Model model) {
+	public String modifyForm(@ModelAttribute UserVo userVo, HttpSession session) {
 		System.out.println("UserController.modifyForm()");
 		
 		UserVo authUser = (UserVo) session.getAttribute("authUser");
 		
-		UserVo userVo = userService.getUser(authUser.getNo());
-		
-		model.addAttribute("UserVo", userVo);
+		userService.getUser(authUser);
 		
 		return "/user/modifyForm";
 	}

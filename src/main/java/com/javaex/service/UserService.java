@@ -11,7 +11,6 @@ public class UserService {
 
 	@Autowired
 	private UserDao userDao;
-	private UserVo userVo;
 	private int count = 0;
 
 	public UserVo login(UserVo userVo) {
@@ -24,8 +23,8 @@ public class UserService {
 		return count;
 	}
 
-	public UserVo getUser(int no) {
-		userVo = userDao.getUser(no);
+	public UserVo getUser(UserVo userVo) {
+		userVo = userDao.getUser(userVo);
 		return userVo;
 	}
 

@@ -29,16 +29,16 @@ public class UserDao {
 
 		sqlSession.selectOne("user.selectUser", userVo);
 		UserVo authUser = sqlSession.selectOne("user.selectUser", userVo);
-
+		
 		return authUser;
 
 	}
 
 //회원 1명 번호로	
-	public UserVo getUser(int no) {
+	public UserVo getUser(UserVo userVo) {
 		System.out.println("UserDao.getUser()");
 		
-		return sqlSession.selectOne("user.getUser", no);
+		return sqlSession.selectOne("user.getUser", userVo);
 		
 	}
 
