@@ -63,12 +63,12 @@
 									<c:forEach items="${boardList}" var="boardVo" varStatus="status">
 										<tr>
 											<td>${boardVo.no}</td>
-											<td class="text-left"><a href="./readHit&no=${boardVo.no}">${boardVo.title}</a></td>
+											<td class="text-left"><a href="${pageContext.request.contextPath}/board/read?no=${boardVo.no}">${boardVo.title}</a></td>
 											<td>${boardVo.name}</td>
 											<td>${boardVo.hit}</td>
 											<td>${boardVo.regDate}</td>
 											<c:if test="${authUser.no == boardVo.userNo}">
-												<td><a href="./bod?action=delete&no=${boardVo.no}">[삭제]</a></td>
+												<td><a href="${pageContext.request.contextPath}/board/delete?no=${boardVo.no}">[삭제]</a></td>
 											</c:if>
 										</tr>
 									</c:forEach>
@@ -96,7 +96,7 @@
 									<a href="./user?action=writeLoginForm" >글쓰기는 로그인 후 이용 가능합니다.</a>
 								</c:when>
 								<c:otherwise>
-									<a id="btn_write" href="/mysite/bod?action=writeForm">글쓰기</a>
+									<a id="btn_write" href="/mysite4/board/writeForm">글쓰기</a>
 								</c:otherwise>
 							</c:choose>
 						</div>

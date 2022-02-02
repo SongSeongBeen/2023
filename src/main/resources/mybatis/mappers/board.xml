@@ -21,5 +21,55 @@
 		]]>			
    	</select>
    	
+<!-- 게시판 읽기  -->	 	
+   	<select id="boardRead" parameterType="int" resultType="com.javaex.vo.BoardVo"> <!-- 쓰고있는 Vo 위치 적어주기  -->
+	   	<![CDATA[
+		   	select us.name name,
+		           bo.no no,
+		           bo.title title,
+		           bo.content content,
+		           bo.hit hit,
+		           to_char(reg_date, 'YYYY-MM-DD HH:MI:SS') regDate,
+		           bo.user_no userNo
+			from board bo, users us
+			where bo.user_no = us.no
+			and bo.no = #{no}
+		]]>			
+   	</select>
    	
+<!-- 조회수 증가  -->	 	
+   	<update id="hit" parameterType="int" >
+	   	<![CDATA[
+		   	update board
+		   	set hit = hit+1
+		   	where no = #{no}
+		]]>			
+   	</update>
+  	
+<!--글쓰기  -->	
+	<insert id="boardInsert" parameterType="com.javaex.vo.BoardVo">
+		<![CDATA[
+		   insert into board
+		   values(seq_board_no.nextval, #{title}, #{content}, 0, sysdate, #{userNo})
+		]]>	
+	</insert>
+	
+<!--  글수정   -->		
+	<update id="boardUpdate" parameterType="com.javaex.vo.BoardVo">
+		<![CDATA[
+		   update board
+		   set title = #{title},
+		       content = #{content}
+		   where no= #{no}
+		]]>	
+	</update>
+	
+<!-- 글삭제 -->		
+	<delete id="boarbDelete" parameterType="int">
+		<![CDATA[
+		   delete board
+		   where no= #{no}
+		]]>	
+	</delete>
+     
 </mapper>

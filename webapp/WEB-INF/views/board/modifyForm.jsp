@@ -7,8 +7,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
-		<link href="/mysite/assets/css/mysite.css" rel="stylesheet" type="text/css">
-		<link href="/mysite/assets/css/board.css" rel="stylesheet" type="text/css">
+		<link href="${pageContext.request.contextPath}/assets/css/mysite.css" rel="stylesheet" type="text/css">
+		<link href="${pageContext.request.contextPath}/assets/css/board.css" rel="stylesheet" type="text/css">
 	</head>
 	
 	<body>
@@ -41,7 +41,7 @@
 		
 					<div id="board">
 						<div id="modifyForm">
-							<form action="./bod" method="get">
+							<form action="${pageContext.request.contextPath}/board/modify" method="get">
 								<!-- 작성자 -->
 								<div class="form-group">
 									<span class="form-text">작성자</span>
@@ -73,10 +73,9 @@
 									<textarea id="txt-content" name="content" >${boardVo.content}</textarea>
 								</div>
 								
-								<a id="btn_cancel" href="./bod?action=read&no=${boardVo.no}">취소</a>
-								<button id="btn_modify" type="submit" >수정</button>
+								<a id="btn_cancel" href="${pageContext.request.contextPath}/board/read?no=${boardVo.no}">취소</a>
+								<button id="btn_modify" type="submit">수정</button>
 								<input type="hidden" name="no" value="${boardVo.no}">
-								<input type="hidden" name="action" value="modify">
 							</form>
 							<!-- //form -->
 						</div>

@@ -2,14 +2,19 @@ package com.javaex.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.javaex.service.BoardService;
 import com.javaex.vo.BoardVo;
+import com.javaex.vo.UserVo;
 
 @Controller
 @RequestMapping(value="/board")
@@ -28,53 +33,77 @@ public class BoardController {
 		
 		return"/board/list";
 	}
-////글쓰기-폼	
-//	@RequestMapping(value = "/bList", method = { RequestMethod.GET, RequestMethod.POST })
-//	public String writeForm(HttpSession session) {
-//		System.out.println("BoardController.writeForm()");
-//		
-//		UserVo authUser = (UserVo)session.getAttribute("authUser");
-//		if(authUser != null) {
-//			return"/board/writeForm";
-//		}else {
-//			return"redirect:/loginForm";
-//		}
-//	}
-//	
-//	@RequestMapping(value = "/bList", method = { RequestMethod.GET, RequestMethod.POST })
-//	public String write(HttpSession session, @RequestParam("title") String title,
-//			                                 @RequestParam("content") String content) {
-//		System.out.println("BoardController.write()");
-//		
-//		UserVo authUser = (UserVo)session.getAttribute("authUser");
-//		if(authUser != null) {
-//			return"/board/writeForm";
-//		}else {
-//			return"redirect:/loginForm";
-//		}
-//	}
+
+//글읽기
+	@RequestMapping(value = "/read", method = { RequestMethod.GET, RequestMethod.POST })
+	public String read(@RequestParam("no") int no, Model model,HttpSession session) {
+		System.out.println("BoardController.read()");
+		
+			BoardVo boardVo = boardService.boardRead(no);
+			
+			model.addAttribute("boardVo", boardVo);
+			
+			return"/board/read";
+	}
+	
+//글쓰기-폼	
+	@RequestMapping(value = "/writeForm", method = { RequestMethod.GET, RequestMethod.POST })
+	public String writeForm(HttpSession session) {
+		System.out.println("BoardController.writeForm()");
+		
+		UserVo authUser = (UserVo)session.getAttribute("authUser");
+		if(authUser != null) {
+			return"/board/writeForm";
+		}else {
+			return"redirect:/loginForm";
+		}
+	}
+
+//글쓰기-확인	
+	@RequestMapping(value = "/write", method = { RequestMethod.GET, RequestMethod.POST })
+	public String write(@ModelAttribute BoardVo boardVo) {
+		System.out.println("BoardController.write()");
+	
+		boardService.boardWrite(boardVo);
+		
+		return"redirect:/board/bList";
+	}
+
+//글수정-폼
+	@RequestMapping(value = "/modifyForm", method = { RequestMethod.GET, RequestMethod.POST })
+	public String modifyForm(@RequestParam int no, Model model) {
+		System.out.println("BoardController.modifyForm()");
+		
+		BoardVo boardVo = boardService.boardRead(no);
+		
+		model.addAttribute("boardVo", boardVo);
+		
+		return"board/modifyForm";
+	}
+	
+//글 수정-확인
+	@RequestMapping(value = "/modify", method = { RequestMethod.GET, RequestMethod.POST })
+	public String modify(@ModelAttribute BoardVo boardVo) {
+		System.out.println("BoardController.modify()");
+		
+		boardService.boardUpdate(boardVo);
+		
+		return"redirect:/board/modifyForm";
+	}
+	
+//글 수정-확인
+		@RequestMapping(value = "/delete", method = { RequestMethod.GET, RequestMethod.POST })
+		public String delete(@RequestParam int no) {
+			System.out.println("BoardController.delete()");
+			
+			boardService.boardDelete(no);
+			
+			return"redirect:/board/bList";
+		}
+	
 	
 }
-	
-//쓰기폼		
-
-//쓰기확인			
-
-
-//수정폼	
-
-//수정확인			
-
-				
-//게시판 읽기	
-
 			
-//게시판 읽기 조회수 -- 일단 이렇
-
-		
-//삭제	
-
-//				
 
 
 

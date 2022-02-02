@@ -7,8 +7,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
-		<link href="/mysite/assets/css/mysite.css" rel="stylesheet" type="text/css">
-		<link href="/mysite/assets/css/board.css" rel="stylesheet" type="text/css">
+		<link href="${pageContext.request.contextPath}/assets/css/mysite.css" rel="stylesheet" type="text/css">
+		<link href="${pageContext.request.contextPath}/assets/css/board.css" rel="stylesheet" type="text/css">
 	</head>
 	
 	<body>
@@ -41,7 +41,7 @@
 		
 					<div id="board">
 						<div id="writeForm">
-							<form action="/mysite/bod" method="get">
+							<form action="${pageContext.request.contextPath}/board/write" method="get">
 								<!-- 제목 -->
 								<div class="form-group">
 									<label class="form-text" for="txt-title">제목</label>
@@ -54,8 +54,8 @@
 								</div>
 								<a id="btn_cancel" href="./bod">취소</a>
 								<button id="btn_add" type="submit" >등록</button>
-								<input type="hidden" name="no" value="${authUser.no}">
-								<input type="hidden" name="action" value="write">
+								<input type="hidden" name="userNo" value="${authUser.no}">
+								
 							</form>
 							<!-- //form -->
 						</div>
