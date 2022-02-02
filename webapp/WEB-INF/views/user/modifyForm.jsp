@@ -47,12 +47,13 @@
 								<div class="form-group">
 									<label class="form-text" for="input-uid">아이디</label> 
 									<span class="text-large bold" >${authUser.id}</span>
+									<input type="hidden" id="input-id" name="id" value="${authUser.id}" >
 								</div>
 		
 								<!-- 비밀번호 -->
 								<div class="form-group">
 									<label class="form-text" for="input-pass">패스워드</label> 
-									<input type="text" id="input-pass" name="password" value="${authUser.password}" placeholder="비밀번호를 입력하세요"	>
+									<input type="text" id="input-pass" name="password" value="" placeholder="비밀번호를 입력하세요"	>
 								</div>
 		
 								<!-- 이메일 -->
@@ -86,6 +87,7 @@
 								<div class="form-group">
 									<label class="form-text" for="input-no">회원번호</label> 
 									<span class="text-large bold">${authUser.no}</span>
+									<input type="hidden" id="input-id" name="no" value="${authUser.no}" >
 								</div>
 								<!-- 버튼영역 -->
 								<div class="button-area">

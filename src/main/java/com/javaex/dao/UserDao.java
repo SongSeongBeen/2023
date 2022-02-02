@@ -31,24 +31,23 @@ public class UserDao {
 		UserVo authUser = sqlSession.selectOne("user.selectUser", userVo);
 		
 		return authUser;
-
 	}
 
 //회원 1명 번호로	
-	public UserVo getUser(UserVo userVo) {
+	public UserVo getUser(int no) {
 		System.out.println("UserDao.getUser()");
 		
-		return sqlSession.selectOne("user.getUser", userVo);
-		
+		return sqlSession.selectOne("user.getUser", no);
 	}
 
 // 회원정보 수정
 	public int updateUser(UserVo userVo) {
-		System.out.println("UserDao.updateUser()");
+		System.out.println("UserDao.updateUser()"+userVo);
 		
 		count = sqlSession.update("user.updateUser", userVo);
 		
 		System.out.println(count + "건이 수정되었습니다");
+		
 		return count;
 	}
 

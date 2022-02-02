@@ -6,8 +6,6 @@
     <select id="selectUser" parameterType="com.javaex.vo.UserVo" resultType="com.javaex.vo.UserVo">
     	<![CDATA[
     		select   no,
-	        		 id,
-	        		 password,
 	        		 name,
 	        		 gender
 			from users
@@ -36,15 +34,15 @@
 	    	]]>
    	</select>
 <!-- 회원정보수정 -->   	
-   	<select id="updateUser" resultType="com.javaex.vo.UserVo">
+   	<update id="updateUser" parameterType="com.javaex.vo.UserVo">
 	   	<![CDATA[
 	    		update  users
-	        	set     id = #{id},
+	    		set 	id = #{id},
 	        		    password = #{password},
 	        			name = #{name},
 	        			gender = #{gender}
 				where no = #{no}
 	    	]]>
-   	</select>
+   	</update>
 
 </mapper>

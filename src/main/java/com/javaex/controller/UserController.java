@@ -44,7 +44,7 @@ public class UserController {
 			// 로그인-실패
 		} else {
 			System.out.println("실패");
-			return "redirect:/loginForm?result=fail";
+			return "redirect:/user/loginForm?result=fail";
 		}
 	}
 
@@ -74,17 +74,18 @@ public class UserController {
 
 		userService.join(userVo);
 
-		return "redirect:/loginOk";
+		return "redirect:/user/loginForm";
 	}
 
 //회원정보수정-폼
 	@RequestMapping(value = "/modifyForm", method = { RequestMethod.GET, RequestMethod.POST })
-	public String modifyForm(@ModelAttribute UserVo userVo, HttpSession session) {
+	public String modifyForm(Model model, HttpSession session) {
 		System.out.println("UserController.modifyForm()");
 		
-		UserVo authUser = (UserVo) session.getAttribute("authUser");
+		UserVo authUser = (UserVo)session.getAttribute("authUser");
+		UserVo authVo= userService.getUser(authUser.getNo());
 		
-		userService.getUser(authUser);
+		model.addAttribute("authUser", authVo);
 		
 		return "/user/modifyForm";
 	}
@@ -92,11 +93,13 @@ public class UserController {
 //회원정보수정-확인
 	@RequestMapping(value = "/modify", method = { RequestMethod.GET, RequestMethod.POST })
 	public String modify(@ModelAttribute UserVo userVo) {
-		System.out.println("modify");
 
+		
+		System.out.println("modify"+userVo);
+		
 		userService.updateUser(userVo);
 		
-		return "redirect:/modifyForm";
+		return "redirect:/main";
 	}
 
 }
