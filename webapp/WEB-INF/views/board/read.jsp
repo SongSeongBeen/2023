@@ -41,7 +41,7 @@
 		
 					<div id="board">
 						<div id="read">
-							<form action="${pageContext.request.contextPath}/board/modifyForm" method="get">
+							<form action="${pageContext.request.contextPath}/board/modifyForm/${boardVo.no}" method="get">
 								<!-- 작성자 -->
 								<div class="form-group">
 									<span class="form-text">작성자</span>
@@ -70,11 +70,11 @@
 								<div id="txt-content">
 									<span class="form-value">${boardVo.content}</span>
 								</div>
+								<a id="btn_modify" href="${pageContext.request.contextPath}/board/bList">목록</a>
 								<c:if test="${authUser.no == boardVo.userNo }">
 								<button id="btn_modify" type="submit">수정</button>
-								<input type="hidden" name="no" value="${boardVo.no}">
 								</c:if>
-								<a id="btn_modify" href="${pageContext.request.contextPath}/board/bList">목록</a>
+								
 							</form>
 							<!-- //form -->
 						</div>

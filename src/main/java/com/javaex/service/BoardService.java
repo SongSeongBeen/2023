@@ -20,10 +20,16 @@ public class BoardService {
 			return boardDao.getList();
 		}
 
-//게시판 글읽기
-		public BoardVo boardRead(int no) {
+//게시판 글읽기+조회수 증가
+		public BoardVo boardReadHit(int no) {
 			
 			boardDao.hit(no);
+			return boardDao.boardRead(no);
+			
+//게시판 글읽기			
+		}
+		public BoardVo boardRead(int no) {
+			
 			return boardDao.boardRead(no);
 		}
 		

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -34,17 +35,29 @@ public class BoardController {
 		return"/board/list";
 	}
 
-//글읽기
-	@RequestMapping(value = "/read", method = { RequestMethod.GET, RequestMethod.POST })
-	public String read(@RequestParam("no") int no, Model model,HttpSession session) {
+//글읽기+조회수 증가
+	@RequestMapping(value = "/readHit/{no}", method = { RequestMethod.GET, RequestMethod.POST })
+	public String readHit(@PathVariable("no")int no, Model model,HttpSession session) {
 		System.out.println("BoardController.read()");
 		
-			BoardVo boardVo = boardService.boardRead(no);
+			BoardVo boardVo = boardService.boardReadHit(no);
 			
 			model.addAttribute("boardVo", boardVo);
 			
 			return"/board/read";
 	}
+	
+//글읽기
+		@RequestMapping(value = "/read/{no}", method = { RequestMethod.GET, RequestMethod.POST })
+		public String read(@PathVariable("no")int no, Model model,HttpSession session) {
+			System.out.println("BoardController.read()");
+			
+				BoardVo boardVo = boardService.boardRead(no);
+				
+				model.addAttribute("boardVo", boardVo);
+				
+				return"/board/read";
+		}
 	
 //글쓰기-폼	
 	@RequestMapping(value = "/writeForm", method = { RequestMethod.GET, RequestMethod.POST })
@@ -70,8 +83,8 @@ public class BoardController {
 	}
 
 //글수정-폼
-	@RequestMapping(value = "/modifyForm", method = { RequestMethod.GET, RequestMethod.POST })
-	public String modifyForm(@RequestParam int no, Model model) {
+	@RequestMapping(value = "/modifyForm/{no}", method = { RequestMethod.GET, RequestMethod.POST })
+	public String modifyForm(@PathVariable("no")int no, Model model) {
 		System.out.println("BoardController.modifyForm()");
 		
 		BoardVo boardVo = boardService.boardRead(no);
@@ -83,15 +96,15 @@ public class BoardController {
 	
 //글 수정-확인
 	@RequestMapping(value = "/modify", method = { RequestMethod.GET, RequestMethod.POST })
-	public String modify(@ModelAttribute BoardVo boardVo) {
+	public String modify(@ModelAttribute BoardVo boardVo,  Model model) {
 		System.out.println("BoardController.modify()");
 		
 		boardService.boardUpdate(boardVo);
 		
-		return"redirect:/board/modifyForm";
+		return"redirect:/board/bList";
 	}
 	
-//글 수정-확인
+//글 삭제
 		@RequestMapping(value = "/delete", method = { RequestMethod.GET, RequestMethod.POST })
 		public String delete(@RequestParam int no) {
 			System.out.println("BoardController.delete()");

@@ -66,16 +66,13 @@
 									<input type="text" id="txt-title" name="title" value="${boardVo.title}">
 								</div>
 						
-								
-							
 								<!-- 내용 -->
 								<div class="form-group">
 									<textarea id="txt-content" name="content" >${boardVo.content}</textarea>
 								</div>
 								
-								<a id="btn_cancel" href="${pageContext.request.contextPath}/board/read?no=${boardVo.no}">취소</a>
+								<a id="btn_cancel" href="${pageContext.request.contextPath}/board/read/${boardVo.no}">취소</a>
 								<button id="btn_modify" type="submit">수정</button>
-								<input type="hidden" name="no" value="${boardVo.no}">
 							</form>
 							<!-- //form -->
 						</div>
