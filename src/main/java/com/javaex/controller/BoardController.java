@@ -48,16 +48,16 @@ public class BoardController {
 	}
 	
 //글읽기
-		@RequestMapping(value = "/read/{no}", method = { RequestMethod.GET, RequestMethod.POST })
-		public String read(@PathVariable("no")int no, Model model,HttpSession session) {
-			System.out.println("BoardController.read()");
+	@RequestMapping(value = "/read/{no}", method = { RequestMethod.GET, RequestMethod.POST })
+	public String read(@PathVariable("no")int no, Model model, HttpSession session) {
+		System.out.println("BoardController.read()");
+		
+			BoardVo boardVo = boardService.boardRead(no);
 			
-				BoardVo boardVo = boardService.boardRead(no);
-				
-				model.addAttribute("boardVo", boardVo);
-				
-				return"/board/read";
-		}
+			model.addAttribute("boardVo", boardVo);
+			
+			return"/board/read";
+	}
 	
 //글쓰기-폼	
 	@RequestMapping(value = "/writeForm", method = { RequestMethod.GET, RequestMethod.POST })
@@ -113,6 +113,7 @@ public class BoardController {
 			
 			return"redirect:/board/bList";
 		}
+
 	
 	
 }

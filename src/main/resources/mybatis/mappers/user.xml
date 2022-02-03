@@ -44,5 +44,14 @@
 				where no = #{no}
 	    	]]>
    	</update>
+   	
+<!-- 아이디중복체크 -->     	
+   	<select id="idCheck" parameterType="com.javaex.vo.UserVo" resultType="com.javaex.vo.UserVo">
+	   	<![CDATA[
+	    		select id
+				from users
+				where id = #{id}
+	    	]]>
+   	</select>
 
 </mapper>

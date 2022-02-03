@@ -32,7 +32,7 @@ public class GuestbookService {
 		System.out.println("guestbookService.addGuestResultVo");
 		
 		//저장하기
-		int count = guestbookDao.insertSelectKey(guestbookVo);
+		guestbookDao.insertSelectKey(guestbookVo);
 		
 		//저장한 내용 가져오기
 		int no = guestbookVo.getNo();
@@ -46,5 +46,23 @@ public class GuestbookService {
 		
 		return guestbookDao.delete(guestbookVo);
 	}
+	
+//ajax-글삭제	
+	public String remove(GuestbookVo guestbookVo){
+		System.out.println("guestbookService.remove ajax");
+		
+		int count = guestbookDao.delete(guestbookVo);
+		
+		if(count>0) {
+			return "success";
+		}else {
+			return "fail";
+		} 
+		
+	}
+	
+	
+	
+	
 
 }

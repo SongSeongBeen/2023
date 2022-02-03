@@ -50,6 +50,16 @@ public class UserDao {
 		
 		return count;
 	}
+// 회원정보 수정
+		public int idCheck(UserVo userVo) {
+			System.out.println("UserDao.idCheck()"+userVo);
+			
+			sqlSession.selectOne("user.idCheck", userVo);
+			
+			//System.out.println(count + "건이 수정되었습니다");
+			
+			return 0;
+		}
 
 }
 

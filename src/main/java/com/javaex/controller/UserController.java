@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.javaex.service.UserService;
 import com.javaex.vo.UserVo;
@@ -100,6 +101,17 @@ public class UserController {
 		userService.updateUser(userVo);
 		
 		return "redirect:/main";
+	}
+	
+//글 삭제
+
+	@RequestMapping(value = "/idCheck", method = { RequestMethod.GET, RequestMethod.POST })
+	public String idCheck(@ModelAttribute UserVo userVo) {
+		System.out.println("BoardController.idCheck()");
+		System.out.println(userVo);
+		//userService.idCheck(userVo);
+		
+		return"redirect:/user/modifyForm";
 	}
 
 }

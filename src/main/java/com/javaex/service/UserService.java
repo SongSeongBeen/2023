@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.javaex.dao.UserDao;
+import com.javaex.vo.GuestbookVo;
 import com.javaex.vo.UserVo;
 
 @Service
@@ -33,5 +34,17 @@ public class UserService {
 
 		userDao.updateUser(userVo);
 	}
-
+	
+	public String idCheck(UserVo userVo){
+		System.out.println("idCheck");
+		
+		int count = userDao.idCheck(userVo);
+		System.out.println(count);
+		
+		if(count>0) {
+			return "success";
+		}else {
+			return "fail";
+		}   
+	}
 }

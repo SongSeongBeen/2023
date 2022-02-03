@@ -8,6 +8,8 @@
 		<title>Insert title here</title>
 		<link href="${pageContext.request.contextPath}/assets/css/mysite.css" rel="stylesheet" type="text/css">
 		<link href="${pageContext.request.contextPath}/assets/css/user.css" rel="stylesheet" type="text/css">
+		
+		<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/jquery-1.12.4.js"></script>
 	</head>
 	
 	<body>
@@ -48,7 +50,7 @@
 								<div class="form-group">
 									<label class="form-text" for="input-uid">아이디</label> 
 									<input type="text" id="input-uid" name="id" value="" placeholder="아이디를 입력하세요">
-									<button type="button" id="">중복체크</button>
+									<button type="button" id="btn-check">중복체크</button>
 								</div>
 		
 								<!-- 비밀번호 -->
@@ -105,6 +107,68 @@
 		<!-- //wrap -->
 	
 	</body>
+	
+	<script type="text/javascript">
+//회원가입버튼
+	$("#btn-submit").on("click", function(){
+		
+		console.log("회원가입버튼 클릭");	
+		
+		var id = $("#intpu-uid").val();
+		var pw = $("#intpu-pass").val();
+		
+		if(id==null){
+			alert("아이디를 입력해 주세요");
+			return false;
+		}
+		if(pw==null){
+			alert("비밀번호를 입력해 주세요");
+			return false;
+		}
+		return true;
+		
+	});
+	
+//아이디 중복체크		
+	$("#btn-check").on("click", function(){
+		console.log("중복체크 클릭");
+		
+		//데이터 담는다
+		var idCheck = $("#input-uid").val();
+		
+		var userVo ={
+			id = idCheck
+		}
+				
+		console.log(id);
+		
+		//요청
+			$.ajax({
+				//요청할때
+				url : "${pageContext.request.contextPath}/user/idCheck",// 주소.    
+				type : "post",//get, post(어차피 차이 없음)
+				contentType : "application/json",
+			
+				data : userVo,
+				/* 			= {name: guestbookVo.name,
+				 password : guestbookVo.password,
+				 content : guestbookVo.content},  */
+				//데이터를 보낼때 파라미터로 변함
+				
+				//응답받을때
+				dataType : "json",
+				success : function(userVo) {//json --> js로 변환되서 result에 담김
+					
+				},
+				error : function(XHR, status, error) {
+					console.error(status + " : " + error);
+				}
+			});
+		//그려라
+	})
+
+
+	</script>
 	
 	
 </html>
