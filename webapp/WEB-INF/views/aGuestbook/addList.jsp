@@ -275,22 +275,22 @@
 	
 					console.log(state);
 				
-				if(state==='success'){
-						//성공시 처리해야될 코드 작성
-						
-						//해당 테이블 html 삭제
-						$("#t"+no).remove();
-						
-						//모달창 닫기
-						$("#delModal").modal('hide');
-				}else{
-						$("#delModal").modal('hide');
-						alert("비밀번호를 확인해주세요");
-				}
-	
-					for (var i = 0; i < guestbookList.length; i++) {
-						render(guestbookList[i], 'down'); // 방명록리스트 그리기
-					}
+						if(state==='success'){
+								//성공시 처리해야될 코드 작성
+								
+								//해당 테이블 html 삭제
+								$("#t"+no).remove();
+								
+								//모달창 닫기
+								$("#delModal").modal('hide');
+						}else{
+								$("#delModal").modal('hide');
+								alert("비밀번호를 확인해주세요");
+						}
+		
+						for (var i = 0; i < guestbookList.length; i++) {
+							render(guestbookList[i], 'down'); // 방명록리스트 그리기
+						}
 	
 				},
 				error : function(XHR, status, error) {

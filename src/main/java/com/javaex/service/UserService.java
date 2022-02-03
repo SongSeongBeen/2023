@@ -35,10 +35,10 @@ public class UserService {
 		userDao.updateUser(userVo);
 	}
 	
-	public String idCheck(UserVo userVo){
+	public String idCheck(String id){
 		System.out.println("idCheck");
 		
-		int count = userDao.idCheck(userVo);
+		int count = userDao.idCheck(id);
 		System.out.println(count);
 		
 		if(count>0) {

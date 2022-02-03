@@ -112,60 +112,65 @@
 //회원가입버튼
 	$("#btn-submit").on("click", function(){
 		
-		console.log("회원가입버튼 클릭");	
-		
-		var id = $("#intpu-uid").val();
-		var pw = $("#intpu-pass").val();
-		
-		if(id==null){
-			alert("아이디를 입력해 주세요");
-			return false;
-		}
-		if(pw==null){
-			alert("비밀번호를 입력해 주세요");
-			return false;
-		}
-		return true;
+			console.log("회원가입버튼 클릭");	
+			
+			var id = $("#intpu-uid").val();
+			var pw = $("#intpu-pass").val();
+			
+			if(id==null){
+				alert("아이디를 입력해 주세요");
+				return false;
+			}
+			if(pw==null){
+				alert("비밀번호를 입력해 주세요");
+				return false;
+			}
+			return true;
 		
 	});
 	
 //아이디 중복체크		
 	$("#btn-check").on("click", function(){
-		console.log("중복체크 클릭");
-		
-		//데이터 담는다
-		var idCheck = $("#input-uid").val();
-		
-		var userVo ={
-			id = idCheck
-		}
-				
-		console.log(id);
-		
-		//요청
-			$.ajax({
-				//요청할때
-				url : "${pageContext.request.contextPath}/user/idCheck",// 주소.    
-				type : "post",//get, post(어차피 차이 없음)
-				contentType : "application/json",
+			console.log("중복체크 클릭");
 			
-				data : userVo,
-				/* 			= {name: guestbookVo.name,
-				 password : guestbookVo.password,
-				 content : guestbookVo.content},  */
-				//데이터를 보낼때 파라미터로 변함
+			//데이터 담는다
+			var id = $("#input-uid").val();
+			
+			console.log(id);
+			
+			//요청
+			$.ajax({
+					//요청할때
+					url : "${pageContext.request.contextPath}/user/idCheck",// 주소.    
+					type : "post",//get, post(어차피 차이 없음)
+					//contentType : "application/json",
 				
-				//응답받을때
-				dataType : "json",
-				success : function(userVo) {//json --> js로 변환되서 result에 담김
+					data : id,
+					/* 			= {name: guestbookVo.name,
+					 password : guestbookVo.password,
+					 content : guestbookVo.content},  */
+					//데이터를 보낼때 파라미터로 변함
 					
-				},
-				error : function(XHR, status, error) {
-					console.error(status + " : " + error);
-				}
+					//응답받을때
+					dataType : "json",
+					success : function(state) {//json --> js로 변환되서 result에 담김
+						
+						console.log(state);
+					
+							if(state === 'success'){
+					
+								console.log("사용가능");
+							}else{
+							
+								console.log("중복");
+							}
+					},
+					error : function(XHR, status, error) {
+						console.error(status + " : " + error);
+					}
 			});
-		//그려라
-	})
+	
+	});
 
 
 	</script>

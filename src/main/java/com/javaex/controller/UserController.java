@@ -106,10 +106,10 @@ public class UserController {
 //글 삭제
 
 	@RequestMapping(value = "/idCheck", method = { RequestMethod.GET, RequestMethod.POST })
-	public String idCheck(@ModelAttribute UserVo userVo) {
+	public String idCheck(@RequestParam ("id") String id) {
 		System.out.println("BoardController.idCheck()");
-		System.out.println(userVo);
-		//userService.idCheck(userVo);
+		System.out.println(id);
+		userService.idCheck(id);
 		
 		return"redirect:/user/modifyForm";
 	}
