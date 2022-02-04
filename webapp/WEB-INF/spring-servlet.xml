@@ -44,6 +44,10 @@
 	
 	</bean>
 	
+	<!-- url매핑-->
+	<mvc:resources mapping="/upload/**" location="file:C:/javaStudy/upload/" />
+	
+	
 	<mvc:annotation-driven>
 		<mvc:message-converters>
 			<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
