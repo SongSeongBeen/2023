@@ -13,7 +13,7 @@ import com.javaex.dao.GuestbookDao;
 import com.javaex.vo.GuestbookVo;
 
 @Controller
-@RequestMapping(value="guestbook")
+@RequestMapping(value="/guestbook")
 public class GuestbookController {
 	// 필드
 	@Autowired
@@ -33,7 +33,7 @@ public class GuestbookController {
 
 		model.addAttribute("guestbookList", guestbookList);
 
-		return "/guestbook/addList";
+		return "guestbook/addList";
 	}
 
 //리스트입력-확인
@@ -51,7 +51,7 @@ public class GuestbookController {
 	public String deleteForm() {
 		System.out.println("GuestbookController=deleteForm");
 		
-		return "/guestbook/deleteForm";
+		return "guestbook/deleteForm";
 	}
 
 //삭제

@@ -50,10 +50,10 @@ public class UserDao {
 		
 		return count;
 	}
-// 회원정보 수정
+// 아이디 중복체크 
 		public int idCheck(String id) {
 			System.out.println("UserDao.idCheck()"+id);
-			
+
 			count = sqlSession.selectOne("user.idCheck", id);
 			
 			System.out.println(count + "건이 수정되었습니다");

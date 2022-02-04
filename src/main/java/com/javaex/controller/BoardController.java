@@ -32,7 +32,7 @@ public class BoardController {
 		
 		model.addAttribute("boardList", boardList);
 		
-		return"/board/list";
+		return"board/list";
 	}
 
 //글읽기+조회수 증가
@@ -44,7 +44,7 @@ public class BoardController {
 			
 			model.addAttribute("boardVo", boardVo);
 			
-			return"/board/read";
+			return"board/read";
 	}
 	
 //글읽기
@@ -56,7 +56,7 @@ public class BoardController {
 			
 			model.addAttribute("boardVo", boardVo);
 			
-			return"/board/read";
+			return"board/read";
 	}
 	
 //글쓰기-폼	
@@ -66,7 +66,7 @@ public class BoardController {
 		
 		UserVo authUser = (UserVo)session.getAttribute("authUser");
 		if(authUser != null) {
-			return"/board/writeForm";
+			return"board/writeForm";
 		}else {
 			return"redirect:/loginForm";
 		}

@@ -132,24 +132,16 @@
 //아이디 중복체크		
 	$("#btn-check").on("click", function(){
 			console.log("중복체크 클릭");
-			
-			//데이터 담는다
-			var id = $("#input-uid").val();
-			
-			console.log(id);
-			
+	
 			//요청
 			$.ajax({
 					//요청할때
 					url : "${pageContext.request.contextPath}/user/idCheck",// 주소.    
-					type : "post",//get, post(어차피 차이 없음)
+					type : "get",//get, post(어차피 차이 없음)
 					//contentType : "application/json",
-				
-					data : id,
-					/* 			= {name: guestbookVo.name,
-					 password : guestbookVo.password,
-					 content : guestbookVo.content},  */
-					//데이터를 보낼때 파라미터로 변함
+					
+					//파라미터로 보낼때 객체로 보내야 한다
+					data : {id : $("#input-uid").val()},
 					
 					//응답받을때
 					dataType : "json",

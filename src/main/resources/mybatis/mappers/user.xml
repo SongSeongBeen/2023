@@ -46,9 +46,9 @@
    	</update>
    	
 <!-- 아이디중복체크 -->     	
-   	<select id="idCheck" parameterType="String" resultType="com.javaex.vo.UserVo">
+   	<select id="idCheck" parameterType="String" resultType="int">
 	   	<![CDATA[
-	    		select id
+	    		select count(id)
 				from users
 				where id = #{id}
 	    	]]>

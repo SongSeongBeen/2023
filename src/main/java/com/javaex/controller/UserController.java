@@ -14,7 +14,7 @@ import com.javaex.service.UserService;
 import com.javaex.vo.UserVo;
 
 @Controller
-@RequestMapping(value="user")
+@RequestMapping("/user")
 public class UserController {
 
 	@Autowired
@@ -25,7 +25,7 @@ public class UserController {
 	public String loginForm(@ModelAttribute UserVo userVo) {
 		System.out.println("loginForm");
 
-		return "/user/loginForm";
+		return "user/loginForm";
 	}
 
 //로그인-확인
@@ -65,7 +65,7 @@ public class UserController {
 	public String joinForm() {
 		System.out.println("joinForm");
 
-		return "/user/joinForm";
+		return "user/joinForm";
 	}
 
 //회원가입-확인
@@ -88,7 +88,7 @@ public class UserController {
 				
 		model.addAttribute("authUser", authVo);
 		
-		return "/user/modifyForm";
+		return "user/modifyForm";
 	}
 
 //회원정보수정-확인
@@ -103,12 +103,12 @@ public class UserController {
 		return "redirect:/main";
 	}
 	
-//글 삭제
+//아이디중복 체크
 
 	@RequestMapping(value = "/idCheck", method = { RequestMethod.GET, RequestMethod.POST })
 	public String idCheck(@RequestParam ("id") String id) {
-		System.out.println("BoardController.idCheck()");
-		System.out.println(id);
+		System.out.println("BoardController.idCheck()"+id);
+
 		userService.idCheck(id);
 		
 		return"redirect:/user/modifyForm";
