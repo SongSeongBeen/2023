@@ -57,6 +57,16 @@ values (seq_gallery_no.nextval, '4', 'content', 'filePath', 'orgName', 'saveName
 insert into gallery
 values (seq_gallery_no.nextval, '5', 'content', 'filePath', 'orgName', 'saveName', '1234');
 
+select ga.no no,
+       ga.user_no userNo,
+       us.name name,
+       ga.content content,
+       ga.file_path filePath,
+       ga.org_name orgName,
+       ga.save_name saveName,
+       ga.file_size fileSize
+from gallery ga, users us
+where ga.user_no = us.no;
 
 
 commit;

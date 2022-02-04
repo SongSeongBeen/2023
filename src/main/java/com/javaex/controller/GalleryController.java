@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.javaex.service.FileService;
+import com.javaex.service.GalleryService;
 
 @Controller
-@RequestMapping("/fileupload")
-public class FileController {
+@RequestMapping("/gallery")
+public class GalleryController {
 	
 	@Autowired
-	private FileService fileService;
+	private GalleryService fileService;
 	
 	@RequestMapping("/form")
 	public String Form() {
