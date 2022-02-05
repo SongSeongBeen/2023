@@ -142,12 +142,14 @@
 					
 					//파라미터로 보낼때 객체로 보내야 한다
 					data : {id : $("#input-uid").val()},
-					
+				
 					//응답받을때
 					//dataType : "json",
 					success : function(result) {//json --> js로 변환되서 result에 담김
 						
-							if(result == success){
+						console.log(result);
+					
+							if(result == 'success'){
 								console.log(result);
 								console.log("사용가능");
 							}else{

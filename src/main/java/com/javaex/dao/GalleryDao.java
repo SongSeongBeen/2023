@@ -18,7 +18,7 @@ public class GalleryDao {
 	public List<GalleryVo> getGalleryList(){
 		System.out.println("fileDao.getList()");
 		
-		List<GalleryVo> galleryList = sqlSession.selectList("gallery.selectList");
+		List<GalleryVo> galleryList = sqlSession.selectList("gallery.selectGalleryList");
 		
 		return galleryList;
 	}

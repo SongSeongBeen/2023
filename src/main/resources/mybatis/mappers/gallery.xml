@@ -6,7 +6,7 @@
 
 <!-- 전체 리스트 가져오기  -->		
     							                    <!-- resultType  결과값 내보낸다.-->						
-   	<select id="selectList" parameterType="com.javaex.vo.GalleryVo" resultType="com.javaex.vo.GalleryVo"> <!-- 쓰고있는 Vo 위치 적어주기  -->
+   	<select id="selectGalleryList" parameterType="com.javaex.vo.GalleryVo" resultType="com.javaex.vo.GalleryVo"> <!-- 쓰고있는 Vo 위치 적어주기  -->
 	   	<![CDATA[
 		   	select ga.no no,
 			       ga.user_no userNo,

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.javaex.service.UserService;
 import com.javaex.vo.UserVo;
@@ -104,8 +105,8 @@ public class UserController {
 	}
 	
 //아이디중복 체크
-
-	@RequestMapping(value = "/idCheck", method = { RequestMethod.GET, RequestMethod.POST })
+	@ResponseBody
+	@RequestMapping("/idCheck")
 	public String idCheck(@RequestParam ("id") String id) {
 		System.out.println("BoardController.idCheck()"+id);
 
