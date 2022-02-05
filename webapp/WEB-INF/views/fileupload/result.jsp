@@ -47,7 +47,7 @@
 						<img id="resultImg" src="${pageContext.request.contextPath}/upload/${saveName}">
 					</div>
 					<p>
-						<a id="btnUpload" href="${pageContext.request.contextPath}/fileupload/form"> 다시 업로드 하기 </a>
+						<a id="btnUpload" href="${pageContext.request.contextPath}/gallery/form"> 다시 업로드 하기 </a>
 					</p>
 				
 			</div>

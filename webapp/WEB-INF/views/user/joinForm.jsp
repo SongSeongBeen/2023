@@ -56,7 +56,7 @@
 								<!-- 비밀번호 -->
 								<div class="form-group">
 									<label class="form-text" for="input-pass">패스워드</label> 
-									<input type="text" id="input-pass" name="password" value="" placeholder="비밀번호를 입력하세요"	>
+									<input type="password" id="input-pass" name="password" value="" placeholder="비밀번호를 입력하세요"	>
 								</div>
 		
 								<!-- 이메일 -->
@@ -81,7 +81,7 @@
 								<div class="form-group">
 									<span class="form-text">약관동의</span> 
 									
-									<input type="checkbox" id="chk-agree" value="" name="">
+									<input type="checkbox" id="chk-agree" value="" name="agree">
 									<label for="chk-agree">서비스 약관에 동의합니다.</label> 
 								</div>
 								
@@ -114,19 +114,30 @@
 		
 			console.log("회원가입버튼 클릭");	
 			
-			var id = $("#intpu-uid").val();
-			var pw = $("#intpu-pass").val();
-			
-			if(id==null){
-				alert("아이디를 입력해 주세요");
+			if($("#intpu-uid") == null){
+				alert("아이디를 입력해 주세요.");
+				return false;
+			} 
+			if($("#intpu-pass") == ''){
+				alert("비밀번호를 입력해 주세요.");
+				return false;
+			} 
+			if($("#input-name") == ''){
+				alert("이름을 입력해 주세요.");
 				return false;
 			}
-			if(pw==null){
-				alert("비밀번호를 입력해 주세요");
+			if($("#intpu-uid") == false && 
+			   $("#intpu-pass") == false && 
+			   $("#input-name") == false && 
+			   $("#chk-agree") == false && 
+			   $("#rdo-male") == false ||
+			   $("#rdo-female") == false
+			){
+				alert("입력하지 않은 정보가 있습니다.");
 				return false;
 			}
-			return true;
 		
+	
 	});
 	
 //아이디 중복체크		
@@ -151,9 +162,10 @@
 					
 							if(result == 'success'){
 								console.log(result);
+								alert("사용가능한 아이뒤 입니다.");
 								console.log("사용가능");
 							}else{
-					
+								alert("이미 사용중인 아이뒤 입니다.");
 								console.log("중복");
 							}
 					},
