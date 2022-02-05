@@ -109,9 +109,11 @@ public class UserController {
 	public String idCheck(@RequestParam ("id") String id) {
 		System.out.println("BoardController.idCheck()"+id);
 
-		userService.idCheck(id);
+		String result = userService.idCheck(id);
 		
-		return"redirect:/user/modifyForm";
+		System.out.println("BoardController.idCheck()"+result); //success
+		
+		return result;
 	}
 
 }

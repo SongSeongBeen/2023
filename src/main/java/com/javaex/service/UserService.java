@@ -42,9 +42,9 @@ public class UserService {
 		System.out.println(count);
 		
 		if(count>0) {
-			return "success";
-		}else {
 			return "fail";
+		}else {
+			return "success";
 		}   
 	}
 }

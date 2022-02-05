@@ -144,16 +144,14 @@
 					data : {id : $("#input-uid").val()},
 					
 					//응답받을때
-					dataType : "json",
-					success : function(state) {//json --> js로 변환되서 result에 담김
+					//dataType : "json",
+					success : function(result) {//json --> js로 변환되서 result에 담김
 						
-						console.log(state);
-					
-							if(state === 'success'){
-					
+							if(result == success){
+								console.log(result);
 								console.log("사용가능");
 							}else{
-							
+					
 								console.log("중복");
 							}
 					},
