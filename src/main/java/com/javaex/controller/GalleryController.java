@@ -65,13 +65,11 @@ public class GalleryController {
 //삭제
 		@ResponseBody
 		@RequestMapping("/remove")
-		public String remove(@RequestParam("no") int no) {
+		public int remove(@RequestParam("no") int no) {
 			
-			String resultNo = galleryService.remove(no);
-			
-			System.out.println("remove()"+resultNo); //success
-			
-			return resultNo;
+			System.out.println("remove()"); //success
+		
+			return  galleryService.remove(no);
 		}
 		
 		

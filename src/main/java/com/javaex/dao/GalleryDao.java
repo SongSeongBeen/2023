@@ -37,7 +37,7 @@ public class GalleryDao {
 	}
 	
 //삭제
-	public int delete(int no) {
+	public int remove(int no) {
 		count = sqlSession.selectOne("gallery.galleryDelete", no);
 		System.out.println(count+"건이 삭제 되었습니다.");
 		return count;

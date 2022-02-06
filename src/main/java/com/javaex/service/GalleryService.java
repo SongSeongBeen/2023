@@ -80,15 +80,10 @@ public class GalleryService {
 	}
 	
 //삭제
-	public String remove(int no) {
+	public int remove(int no) {
 		
-			int count = galleryDao.delete(no);
+			return galleryDao.remove(no);
 		
-			if(count>0) {
-				return "fail";
-			}else {
-				return "success";
-			}  
 	}
 	
 	/*

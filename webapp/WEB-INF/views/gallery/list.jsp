@@ -121,30 +121,34 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						
 						<h4 class="modal-title">이미지보기</h4>
-					</div>
-					<div class="modal-body">
 						
-						<div class="formgroup" >
-							<img id="viewModelImg" src =""> 
-								<!-- ajax로 처리 : 이미지출력 위치-->
+					</div>
+			
+						<div class="modal-body">
+							<div class="formgroup" >
+								<img id="viewModelImg" src =""> 
+								
+									<!-- ajax로 처리 : 이미지출력 위치-->
+							</div>
+							
+							<div class="formgroup">
+								<p id="viewModelContent"> </p>
+							</div>
+							
 						</div>
-						
-						<div class="formgroup">
-							<p id="viewModelContent"> </p>
+						<form method="" action="">
+							<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+							<c:if test="${!(empty authUser)}">
+							<button type="button" class="btn btn-danger" id="btnDel">삭제</button>
+							</c:if>
 						</div>
-						
-					</div>
-					<form method="" action="">
-						<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
-						<button type="button" class="btn btn-danger" id="btnDel">삭제</button>
-					</div>
-						<input id="modalNo" type="text" name="no" value="">
-					
-					</form>
-					
+						</form>
+							<input id="modalNo" type="text" name="no" value="${galleryVo.no}">
 				</div><!-- /.modal-content -->
+				
 			</div><!-- /.modal-dialog -->
 		</div><!-- /.modal -->	
 	
@@ -183,7 +187,7 @@
 				
 						$("#viewModal").modal("show");
 						$("#viewModelImg").attr("src", "${pageContext.request.contextPath}/upload/"+galleryVo.saveName);
-						$("#viewModelContent").thml(galleryVo.content);
+						$("#viewModelContent").html(galleryVo.content);
 						
 				},
 				error : function(XHR, status, error) {
@@ -196,9 +200,9 @@
 	$("#btnDel").on("click", function(){
 		console.log("삭제");
 		
-		var $this = $("this");
+		var $this = $(this);
 		var no = $this.data("no");
-		
+
 		$.ajax({
 				//요청할때
 				url : "${pageContext.request.contextPath}/gallery/remove",// 주소.    
@@ -206,19 +210,15 @@
 				//contentType : "application/json",
 				
 				//파라미터로 보낼때 객체로 보내야 한다
-				data : {no: no},
+				data : {no : no},
 			
 				//응답받을때
 				//dataType : "json",
-				success : function(resultNo) {//json --> js로 변환되서 result에 담김
+				success : function(result) {//json --> js로 변환되서 result에 담김
 					
-					console.log(resultNo);
-					if(resultNo == "success"){
+						$("#viewModal").modal("hide");
 						$("#li"+no).remove();
-						$("#viewModal").modal("hide");
-					}else{
-						$("#viewModal").modal("hide");
-					}
+					
 				},
 				error : function(XHR, status, error) {
 					console.error(status + " : " + error);
