@@ -142,11 +142,11 @@
 							<div class="modal-footer">
 							<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
 							<c:if test="${!(empty authUser)}">
-							<button type="button" class="btn btn-danger" id="btnDel">삭제</button>
+							<button type="button" class="btn btn-danger" id="btnDel" data-no="">삭제</button>
 							</c:if>
 						</div>
 						</form>
-							<input id="modalNo" type="text" name="no" value="${galleryVo.no}">
+							<input id="modalNo" type="text" name="no" value="">
 				</div><!-- /.modal-content -->
 				
 			</div><!-- /.modal-dialog -->
@@ -200,9 +200,8 @@
 	$("#btnDel").on("click", function(){
 		console.log("삭제");
 		
-		var $this = $(this);
-		var no = $this.data("no");
-
+		console.log($("#modalNo"));
+	
 		$.ajax({
 				//요청할때
 				url : "${pageContext.request.contextPath}/gallery/remove",// 주소.    
@@ -210,7 +209,7 @@
 				//contentType : "application/json",
 				
 				//파라미터로 보낼때 객체로 보내야 한다
-				data : {no : no},
+				data : {no : $("#modalNo").val()},
 			
 				//응답받을때
 				//dataType : "json",
