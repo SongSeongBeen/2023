@@ -4,24 +4,24 @@ public class GalleryVo {
 	
 	//필드
 	private int no;
-	private int user_no;
-	private String nmae;
+	private int userNo;
+	private String name;
 	private String content;
 	private String filePath;
 	private String orgName;
 	private String saveName;
-	private String fileSize;
-	
+	private long fileSize;
 	
 	public GalleryVo() {
 
 	}
 	
-	public GalleryVo(int no, int user_no, String nmae, String content, String filePath, String orgName, String saveName,
-			String fileSize) {
+	public GalleryVo(int no, int userNo, String name, String content, String filePath, String orgName, String saveName,
+			long fileSize) {
+
 		this.no = no;
-		this.user_no = user_no;
-		this.nmae = nmae;
+		this.userNo = userNo;
+		this.name = name;
 		this.content = content;
 		this.filePath = filePath;
 		this.orgName = orgName;
@@ -37,20 +37,20 @@ public class GalleryVo {
 		this.no = no;
 	}
 
-	public int getUser_no() {
-		return user_no;
+	public int getUserNo() {
+		return userNo;
 	}
 
-	public void setUser_no(int user_no) {
-		this.user_no = user_no;
+	public void setUserNo(int userNo) {
+		this.userNo = userNo;
 	}
 
-	public String getNmae() {
-		return nmae;
+	public String getName() {
+		return name;
 	}
 
-	public void setNmae(String nmae) {
-		this.nmae = nmae;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getContent() {
@@ -85,20 +85,23 @@ public class GalleryVo {
 		this.saveName = saveName;
 	}
 
-	public String getFileSize() {
+	public long getFileSize() {
 		return fileSize;
 	}
 
-	public void setFileSize(String fileSize) {
+	public void setFileSize(long fileSize) {
 		this.fileSize = fileSize;
 	}
 
 	@Override
 	public String toString() {
-		return "GalleryVo [no=" + no + ", user_no=" + user_no + ", nmae=" + nmae + ", content=" + content
-				+ ", filePath=" + filePath + ", orgName=" + orgName + ", saveName=" + saveName + ", fileSize="
-				+ fileSize + "]";
+		return "GalleryVo [no=" + no + ", userNo=" + userNo + ", name=" + name + ", content=" + content + ", filePath="
+				+ filePath + ", orgName=" + orgName + ", saveName=" + saveName + ", fileSize=" + fileSize + "]";
 	}
+	
+	
+	
+	
 	
 	
 	
