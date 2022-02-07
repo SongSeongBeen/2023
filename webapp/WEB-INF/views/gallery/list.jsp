@@ -190,7 +190,7 @@
 						$("#viewModal").modal("show");
 						$("#viewModelImg").attr("src", "${pageContext.request.contextPath}/upload/"+galleryVo.saveName);
 						$("#viewModelContent").html(galleryVo.content);
-						$("#modalNo").html(galleryVo.no);
+						$("#modalNo").attr("value", galleryVo.no);
 				},
 				error : function(XHR, status, error) {
 					console.error(status + " : " + error);
@@ -202,8 +202,7 @@
 	$("#btnDel").on("click", function(){
 		console.log("삭제");
 		
-		console.log($("#modalNo"));
-	
+		
 		$.ajax({
 				//요청할때
 				url : "${pageContext.request.contextPath}/gallery/remove",// 주소.    
