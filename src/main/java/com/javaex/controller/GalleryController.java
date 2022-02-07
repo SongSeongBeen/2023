@@ -67,9 +67,10 @@ public class GalleryController {
 		@RequestMapping("/remove")
 		public int remove(@RequestParam("no") int no) {
 			
-			System.out.println("remove()"); 
+			System.out.println("remove()"+no); 
+			int num = galleryService.remove(no);
 			
-			return  galleryService.remove(no);
+			return num;
 		}
 		
 		

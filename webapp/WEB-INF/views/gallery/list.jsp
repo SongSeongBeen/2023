@@ -55,7 +55,7 @@
 							
 							<!-- 이미지반복영역 -->
 							<c:forEach items="${galleryList}" var="galleryVo">
-								<li>
+								<li id="li${galleryVo.no} }">
 									<div class="view" >  
 										<img class="imgItem" src="${pageContext.request.contextPath}/upload/${galleryVo.saveName}" data-no="${galleryVo.no}">
 										<div class="imgWriter">작성자: <strong>${galleryVo.name}</strong></div>
@@ -138,16 +138,15 @@
 							</div>
 							
 						</div>
-						<form method="post" action="${Path}/gallery/remove">
+						<form method="" action="">
 							<div class="modal-footer">
 							<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
 							<c:if test="${!(empty authUser)}">
 							<button type="button" class="btn btn-danger" id="btnDel">삭제</button>
 							</c:if>
 						</div>
-						<input id="modalNo" type="text" name="no" value="" >
 						</form>
-							
+						<input id="modalNo" type="text" name="no" value="" >
 				</div><!-- /.modal-content -->
 				
 			</div><!-- /.modal-dialog -->
@@ -202,6 +201,9 @@
 	$("#btnDel").on("click", function(){
 		console.log("삭제");
 		
+		var no = $("#modalNo").val();
+		
+		console.log(no);
 		
 		$.ajax({
 				//요청할때
@@ -210,15 +212,17 @@
 				//contentType : "application/json",
 				
 				//파라미터로 보낼때 객체로 보내야 한다
-				data : {no : $("#modalNo").val()},
-			
+				data : {no : no},
+				
+				
 				//응답받을때
 				//dataType : "json",
-				success : function(result) {//json --> js로 변환되서 result에 담김
-						
-						$("#viewModal").modal("hide");
+				success : function(num) {//json --> js로 변환되서 result에 담김
+						console.log(num);
+				
 						$("#li"+no).remove();
-					
+						$("#viewModal").modal("hide");
+						
 				},
 				error : function(XHR, status, error) {
 					console.error(status + " : " + error);

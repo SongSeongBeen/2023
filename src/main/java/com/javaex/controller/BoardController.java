@@ -1,6 +1,7 @@
 package com.javaex.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -33,6 +34,20 @@ public class BoardController {
 		model.addAttribute("boardList", boardList);
 		
 		return"board/list";
+	}
+	
+	@RequestMapping("/bList2")
+	public String bList2(Model model, 
+						@RequestParam(value = "crtPage", required = false, defaultValue="1")int crtPage) {
+		System.out.println("BoardController.bList2()");
+		System.out.println(crtPage);
+		
+		//해당페이지에 글 리스트 10개만 줘라
+		Map<String, Object> pMap = boardService.getBoardList2(crtPage);
+		
+		model.addAttribute("pMap", pMap);
+		
+		return "board/list";
 	}
 
 //글읽기+조회수 증가
