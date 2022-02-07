@@ -86,7 +86,7 @@
 									</c:forEach>
 									
 									<c:if test="${requestScope.pMap.next == true}">
-									<li><a href="${pageContext.request.contextPath}/board/bList2?crtPage=${requestScope.pMap.startPageBtnNo+1}">▶</a></li>
+									<li><a href="${pageContext.request.contextPath}/board/bList2?crtPage=${requestScope.pMap.endPageBtnNo+1}">▶</a></li>
 									</c:if>
 								</ul>
 							</div>
