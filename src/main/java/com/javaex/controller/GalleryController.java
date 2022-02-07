@@ -68,7 +68,7 @@ public class GalleryController {
 		public int remove(@RequestParam("no") int no) {
 			
 			System.out.println("remove()"); 
-		
+			
 			return  galleryService.remove(no);
 		}
 		

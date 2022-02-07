@@ -138,15 +138,16 @@
 							</div>
 							
 						</div>
-						<form method="" action="">
+						<form method="post" action="${Path}/gallery/remove">
 							<div class="modal-footer">
 							<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
 							<c:if test="${!(empty authUser)}">
-							<button type="button" class="btn btn-danger" id="btnDel" data-no="">삭제</button>
+							<button type="button" class="btn btn-danger" id="btnDel">삭제</button>
 							</c:if>
 						</div>
+						<input id="modalNo" type="text" name="no" value="" >
 						</form>
-							<input id="modalNo" type="text" name="no" value="">
+							
 				</div><!-- /.modal-content -->
 				
 			</div><!-- /.modal-dialog -->
@@ -166,9 +167,10 @@
 	//사진보기 클릭
 	$(".imgItem").on("click", function(){
 		console.log("사진클릭");
+		
 		var $this = $(this);
 		var no = $this.data("no");
-	
+		
 		//요청
 		$.ajax({
 				//요청할때
@@ -188,7 +190,7 @@
 						$("#viewModal").modal("show");
 						$("#viewModelImg").attr("src", "${pageContext.request.contextPath}/upload/"+galleryVo.saveName);
 						$("#viewModelContent").html(galleryVo.content);
-						
+						$("#modalNo").html(galleryVo.no);
 				},
 				error : function(XHR, status, error) {
 					console.error(status + " : " + error);
@@ -214,7 +216,7 @@
 				//응답받을때
 				//dataType : "json",
 				success : function(result) {//json --> js로 변환되서 result에 담김
-					
+						
 						$("#viewModal").modal("hide");
 						$("#li"+no).remove();
 					
