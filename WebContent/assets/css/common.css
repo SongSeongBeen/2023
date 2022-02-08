@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+/*  div {
+	border:0px solid #d00000;
+}
+  */
+ 
+ 
+/*  네비게이션 로고 보정 */
+.navbar-brand {
+	padding: 7px 10px 0px 15px;
+}
+ 
+ 
+
+
+ 
+ .profile {
+ 	width: 160px;
+ }
+ 
+  .ps {
+ 	width: 800px !important;
+ }
+ 
+ 
+ 
+ .profileName {
+	margin: 0px;
+ 	font-size: 25px;
+ 	font-weight: bold;
+ }
+
+ 
+ .footer {
+ 	border-top: 1px solid #7f7f7f;
+ }
+ 
+ .titlea {
+ 	width: 700px !important;
+ }
+ 
+ 
+/* .navi-default {
+	background: #ffffff;
+	padding: 15px 0px 15px 0px;
+}
+ */
