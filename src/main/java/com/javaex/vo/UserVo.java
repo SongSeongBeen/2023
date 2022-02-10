@@ -1,17 +1,31 @@
 package com.javaex.vo;
 
 public class UserVo {
+	
+	private int userNo;
 	private String id;
-	private String bologTitle;
-	private String logoFile;
+	private String userName;
+	private String password;
+	private String joinDate;
 	
 	public UserVo() {
+		
 	}
 	
-	public UserVo(String id, String bologTitle, String logoFile) {
+	public UserVo(int userNo, String id, String userName, String password, String joinDate) {
+		this.userNo = userNo;
 		this.id = id;
-		this.bologTitle = bologTitle;
-		this.logoFile = logoFile;
+		this.userName = userName;
+		this.password = password;
+		this.joinDate = joinDate;
+	}
+
+	public int getUserNo() {
+		return userNo;
+	}
+
+	public void setUserNo(int userNo) {
+		this.userNo = userNo;
 	}
 
 	public String getId() {
@@ -22,26 +36,39 @@ public class UserVo {
 		this.id = id;
 	}
 
-	public String getBologTitle() {
-		return bologTitle;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setBologTitle(String bologTitle) {
-		this.bologTitle = bologTitle;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
-	public String getLogoFile() {
-		return logoFile;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setLogoFile(String logoFile) {
-		this.logoFile = logoFile;
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getJoinDate() {
+		return joinDate;
+	}
+
+	public void setJoinDate(String joinDate) {
+		this.joinDate = joinDate;
 	}
 
 	@Override
 	public String toString() {
-		return "UserVo [id=" + id + ", bologTitle=" + bologTitle + ", logoFile=" + logoFile + "]";
+		return "UserVo [userNo=" + userNo + ", id=" + id + ", userName=" + userName + ", password=" + password
+				+ ", joinDate=" + joinDate + "]";
 	}
+	
+	
+	
+	
 	
 	
 }

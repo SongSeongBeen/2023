@@ -27,7 +27,7 @@ public class UserController {
 	
 //회원가입-확인
 	@RequestMapping("join")
-	public String joinOk(@ModelAttribute UserVo userVo, HttpSession session) {
+	public String joinOk(@ModelAttribute UserVo userVo) {
 		userService.join(userVo);
 			return "redirect:joinForm";
 		}
