@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import com.javaex.vo.UserVo;
 
 @Repository
-public class UserDoa {
+public class UserDao {
 	
 	@Autowired
 	private SqlSession sqlSession;

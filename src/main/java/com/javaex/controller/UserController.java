@@ -1,11 +1,21 @@
 package com.javaex.controller;
 
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.javaex.service.UserService;
+import com.javaex.vo.UserVo;
 
 @Controller
 @RequestMapping("user")
 public class UserController {
+	
+	@Autowired
+	private UserService userService;
 	
 //회원가입-폼	
 	@RequestMapping("/joinForm")
@@ -17,8 +27,8 @@ public class UserController {
 	
 //회원가입-확인
 	@RequestMapping("join")
-	public String joinOk() {
-			
+	public String joinOk(@ModelAttribute UserVo userVo, HttpSession session) {
+		userService.join(userVo);
 			return "redirect:joinForm";
 		}
 	
