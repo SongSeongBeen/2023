@@ -4,8 +4,9 @@
 <configuration>
     <typeAliases>
     </typeAliases>
-
+    
+	<!-- 사용할 xml 주소 추가 -->
     <mappers>
-        <mapper resource="mybatis/mappers/user.xml" />  
+        <mapper resource="mybatis/mappers/user.xml" />
     </mappers>
 </configuration>

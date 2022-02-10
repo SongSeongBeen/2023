@@ -14,7 +14,7 @@ public class UserDao {
 	
 	public int insertUser(UserVo userVo) {
 		return sqlSession.insert("user.insertUser", userVo);
+		 }
 		 
 		
-	}
 }
