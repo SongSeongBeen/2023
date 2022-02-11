@@ -11,10 +11,13 @@ public class UserDao {
 	
 	@Autowired
 	private SqlSession sqlSession;
-	
+//회원가입	
 	public int insertUser(UserVo userVo) {
 		return sqlSession.insert("user.insertUser", userVo);
-		 }
-		 
+	}
+//로그인	
+	public UserVo getUser(UserVo userVo) {
+		return sqlSession.selectOne("user.getUser",userVo);
+	}
 		
 }

@@ -1,5 +1,7 @@
 package com.javaex.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -27,7 +29,7 @@ public class UserController {
 	@RequestMapping("join")
 	public String joinOk(@ModelAttribute UserVo userVo) {
 		userService.join(userVo);
-			return "redirect:joinForm";
+			return "redirect:loginForm";
 		}
 	
 //로그인-폼	
@@ -39,13 +41,22 @@ public class UserController {
 	
 //로그인-확인
 	@RequestMapping("login")
-	public String login() {
+	public String login(@ModelAttribute UserVo UserVo, HttpSession session) {
+			System.out.println("UserController.login()");
 			
-		//성공
-			return "redirect:/";
-		//실패
-			//다시로그인 하게
-		}
+			UserVo authUser = userService.login(UserVo);
+			// 로그인-성공
+			if (authUser != null) {
+				System.out.println("성공");
+				// 저장
+				session.setAttribute("authUser", authUser);
+				return "redirect:/main";
+				// 로그인-실패
+			} else {
+				System.out.println("실패");
+				return "redirect:/user/loginForm?result=fail";
+			}
+	}
 	
 	
 //로그아웃

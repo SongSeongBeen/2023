@@ -15,8 +15,9 @@ public class UserService {
 	public void join(UserVo userVo) {
 		//회원가입
 		userDao.insertUser(userVo);
-
-		
 	}
-
+	
+	public UserVo login(UserVo userVo) {
+		return userDao.getUser(userVo);
+	}
 }
