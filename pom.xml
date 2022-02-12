@@ -48,7 +48,7 @@
 			<artifactId>ojdbc6</artifactId>
 			<version>11.2.0.4</version>
 		</dependency>
-		
+
 		<!-- spring jdbc -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -91,7 +91,6 @@
 		</dependency>
 		
 	</dependencies>
-
   <build>
     <plugins>
       <plugin>
