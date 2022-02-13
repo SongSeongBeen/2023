@@ -34,9 +34,5 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/송성빈/Desktop/아카이브/ojdbc8.jar"/>
-	<classpathentry kind="lib" path="C:/Users/송성빈/Desktop/아카이브/oraclepki.jar"/>
-	<classpathentry kind="lib" path="C:/Users/송성빈/Desktop/아카이브/osdt_cert.jar"/>
-	<classpathentry kind="lib" path="C:/Users/송성빈/Desktop/아카이브/osdt_core.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
