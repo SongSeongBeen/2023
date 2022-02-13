@@ -88,7 +88,7 @@
 						
 						console.log(idCheck);
 					
-							if(result == 'success'){
+							if(idCheck == 'success'){
 								console.log(result);
 								alert("사용가능한 아이뒤 입니다.");
 								console.log("사용가능");
