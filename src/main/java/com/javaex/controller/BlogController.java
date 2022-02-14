@@ -26,8 +26,7 @@ public class BlogController {
 						   @RequestParam(value = "cateNo", required=false, defaultValue="0")int cateNo, 
 						   @RequestParam(value = "cateNo", required=false, defaultValue="1")int crtpage,
 	                       Model model) {
-	//	List<CategoryVo> categoryList = categorService.getCateList(id);
-		//model.addAttribute("categoryList",categoryList);
+	
 		
 		return "blog/blog-main";
 	}
