@@ -49,13 +49,11 @@ public class UserController {
 			UserVo authUser = userService.login(UserVo);
 			// 로그인-성공
 			if (authUser != null) {
-				System.out.println("성공");
 				// 저장
 				session.setAttribute("authUser", authUser);
-				return "redirect:/main";
+				return "redirect:/";
 				// 로그인-실패
 			} else {
-				System.out.println("실패");
 				return "redirect:/user/loginForm?result=fail";
 			}
 	}
@@ -63,8 +61,10 @@ public class UserController {
 	
 //로그아웃
 	@RequestMapping("logout")
-	public String logout() {
+	public String logout(HttpSession session) {
 			
+		session.removeAttribute("authUser");
+		session.invalidate();
 			return "redirect:/";
 		}
 	

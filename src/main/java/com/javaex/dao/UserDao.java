@@ -21,9 +21,16 @@ public class UserDao {
 	public UserVo getUser(UserVo userVo) {
 		return sqlSession.selectOne("user.getUser",userVo);
 	}
+	
 //아이디중복체크	
-	public int idCheck(String id) {
+	public int idCheck(String id) { 
 		return sqlSession.selectOne("user.idCheck", id);
+	}
+	
+//블로그 유저
+	public UserVo getBlogUser(String id) {
+		return sqlSession.selectOne("user.getBlogUser", id);
+		
 	}
 	
 		

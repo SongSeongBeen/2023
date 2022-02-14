@@ -30,6 +30,14 @@
  			 where id = #{id}
 	     ]]>	
 	</select>      	
+<!-- 블로그유저 -->
+	<select id="getBlogUser" parameterType="String" resultType="com.javaex.vo.UserVo">
+		 <![CDATA[
+		 		select id,
+		 		       userName
+		 		where id = #{id}       
+		  ]]>
+	</select>	
    	
 
 </mapper>
