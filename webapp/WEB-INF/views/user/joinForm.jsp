@@ -148,22 +148,23 @@
 		
 		  if (id.value === "") {
 			  $("#idMsg").html("아이디를 입력해 주세요.");
-			return false;
+			  return false;
 		  }
 		  else if (pw.value === ""){
 			  $("#pwMsg").html("비밀번호를 입력해 주세요.");
-			return false;
+			  return false;
 		  }  
 		  else if (name.value === ""){
 			  $("#userNameMsg").html("이름을 입력해 주세요.");
-			return false;
+			  return false;
 		  }
 		  else if(! $("#chkAgree").is(":checked")){
 			  alert("약관에 동의해주세요");
-			
+			  return false;
 		  }
 		  else if(! $("#chkAgree2").is(":checked")){
 			  alert("개인정보 방침에 동의해 주세요");
+			  return false;
 		  }
     });
 	
