@@ -12,8 +12,8 @@
 			       ga.user_no userNo,
 			       us.name name,
 			       ga.content content,
-			       ga.save_name saveName,
-			       ga.file_size fileSize
+			       ga.saveName saveName,
+			       ga.fileSize fileSize
 			from gallery ga, users us
 			where ga.user_no = us.no
 		]]>			
@@ -31,7 +31,7 @@
 		   	select no,
 			       user_no userNo,
 			       content,
-			       save_name saveName
+			       saveName saveName
 			from gallery
 			where no = #{no}
 		]]>
