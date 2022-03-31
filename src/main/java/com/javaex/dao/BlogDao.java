@@ -15,4 +15,10 @@ public class BlogDao {
 	public BlogVo getBlog(String id) {
 		return sqlSession.selectOne("blog.selectBlog", id);
 	}
+	public void setBlog(BlogVo blogVo) {
+		sqlSession.insert("blog.insertBlog", blogVo);
+	}
+	public void update(BlogVo blogVo) {
+		sqlSession.update("blog.update", blogVo);
+	}
 }
