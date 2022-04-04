@@ -97,13 +97,15 @@ public class BoardService {
 		
 //글쓰기
 		public void boardWrite(BoardVo boardVo) {
-			
-			for(int i=1; i<=123; i++) {
-				boardVo.setTitle(i + "번째 글 제목입니다.");
-				boardVo.setContent(i + "번째 글 내용입니다.");
-				boardVo.setUserNo(1);
+				
 				boardDao.boardWrite(boardVo);
-			}
+				
+//			for(int i=1; i<=123; i++) {
+//				boardVo.setTitle(i + "번째 글 제목입니다.");
+//				boardVo.setContent(i + "번째 글 내용입니다.");
+//				boardVo.setUserNo(1);
+//				boardDao.boardWrite(boardVo);
+//			}
 		}
 		
 //글수정

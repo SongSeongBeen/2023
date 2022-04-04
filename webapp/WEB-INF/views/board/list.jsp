@@ -91,7 +91,7 @@
 											</c:when>
 											<c:otherwise>
 												<li>
-													<a href="${pageContext.request.contextPath}/board/list2?crtPage=${page}">
+													<a href="${pageContext.request.contextPath}/board/bList2?crtPage=${page}">
 														${page}
 													</a>
 												</li>
@@ -100,7 +100,7 @@
 										
 									</c:forEach>
 									<c:if test="${pMap.next}">
-										<li><a href="${pageContext.request.contextPath}/board/list2?crtPage=${pMap.endPageBtnNo+1}">▶</a></li>
+										<li><a href="${pageContext.request.contextPath}/board/bList2?crtPage=${pMap.endPageBtnNo+1}">▶</a></li>
 									</c:if>
 									
 								</ul>

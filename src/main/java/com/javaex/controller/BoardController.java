@@ -94,7 +94,7 @@ public class BoardController {
 	
 		boardService.boardWrite(boardVo);
 		
-		return"redirect:/board/bList";
+		return"redirect:/board/bList2";
 	}
 
 //글수정-폼

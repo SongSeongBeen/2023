@@ -70,7 +70,7 @@
 								<div id="txt-content">
 									<span class="form-value">${boardVo.content}</span>
 								</div>
-								<a id="btn_modify" href="${pageContext.request.contextPath}/board/bList">목록</a>
+								<a id="btn_modify" href="${pageContext.request.contextPath}/board/bList2">목록</a>
 								<c:if test="${authUser.no == boardVo.userNo }">
 								<button id="btn_modify" type="submit">수정</button>
 								</c:if>
