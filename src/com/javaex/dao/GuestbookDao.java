@@ -68,13 +68,13 @@ public class GuestbookDao {
 			try {
 				// 3. SQL문 준비 / 바인딩 / 실행
 				String query = "";
-				query += " SELECT no, ";
+				query += " select   no, ";
 				query += " name, ";
 				query += " password, ";
 				query += " content, ";
-				query += " TO_CHAR(reg_date, 'YYYY-MM-DD hh:mi:ss') reg_date ";
-				query += " FROM guestbook ";
-				query += " ORDER BY reg_date desc ";
+				query += " to_char(reg_date, 'YYYY-MM-DD HH:MI:SS') reg_date ";
+				query += " from guestbook ";
+				query += " order by reg_date desc ";
 				//System.out.println(query);
 	
 				pstmt = conn.prepareStatement(query); // 쿼리로 만들기
@@ -113,8 +113,8 @@ public class GuestbookDao {
 	
 				// 3. SQL문 준비 / 바인딩 / 실행
 				String query = ""; // 쿼리문 문자열만들기, ? 주의
-				query += " INSERT INTO guestbook ";
-				query += " VALUES (seq_guestbook_no.nextval, ?, ?, ?, sysdate) ";
+				query += " insert into guestbook ";
+				query += " values (seq_guestbook_no.nextval, ?, ?, ?, sysdate) ";
 				// System.out.println(query);
 	
 				pstmt = conn.prepareStatement(query); // 쿼리로 만들기

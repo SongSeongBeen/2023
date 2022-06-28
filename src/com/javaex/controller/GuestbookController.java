@@ -65,8 +65,8 @@ public class GuestbookController extends HttpServlet {
 			List<GuestbookVo> guestbookList = new GuestbookDao().getList();
 			
 			// 포워드
-			request.setAttribute("gList", guestbookList); // 주소만 준거다
-
+			request.setAttribute("guestbookList", guestbookList); // 주소만 준거다
+			
 			WebUtil.forward(request, response, "/WEB-INF/views/guestbook/addList.jsp");
 		}
 		

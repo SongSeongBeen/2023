@@ -71,8 +71,8 @@
 						</form>	
 						<!-- 리스트영역 -->
 						
-					<c:forEach items="${guestList}" var="guestVo">
-						
+					
+						<c:forEach items="${guestbookList}" var="guestVo">
 						<table class="guestRead">
 							<colgroup>
 								<col style="width: 10%;">
@@ -91,8 +91,9 @@
 								<td colspan=4 class="text-left">${guestVo.content}</td>
 							</tr>
 						</table>
+						</c:forEach>
 						<br>
-					</c:forEach>
+					
 						<!-- //guestRead -->
 					</div>
 					<!-- //guestbook -->
