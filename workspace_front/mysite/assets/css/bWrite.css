@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+/* 게시판 글쓰기 공통*/
+#bWrite #select-boardType {
+    width: 205px;
+    height: 25px;
+}
+
+#bWrite .form-group {
+    padding: 5px 0px 5px 0px;
+}
+
+#bWrite .form-text {
+    display: inline-block;
+    width: 80px;
+}
+
+/* 아이디 */
+#bWrite #text-title {
+    width: 700px;
+    height: 20px
+}
+
+/* 패스워드 */
+#bWrite #text-password {
+    width: 200px;
+    height: 20px
+}
+
+
+/* 공개범위 & 허용범위 */
+#bWrite input[type="radio"] {
+    width: 15px;
+    height: 15px;
+    margin: 0px 15px 0px 0px;
+}
+
+#bWrite input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    margin: 0px 15px 0px 0px;
+}
+/* 내용 */
+#bWrite #text-content {
+    width: 708px;
+    height: 300px;
+}
+
+.vc {
+    vertical-align: top;
+    height: 300px;
+    line-height: 300px;
+}
+
+#bWrite .btn-area {
+    border-top: 1px solid #000000;
+    padding: 12px 5px 12px 5px;
+    margin: 10px 0px 5px 0px;
+    text-align: center;
+    
+}
+
+
+/* 버튼 */
+.btn {
+    width: 55px;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.btn-gray {
+    cursor: pointer;
+    border: 1px solid #AAAAAA;
+    background-color: #DFDFDF;
+}
+
+.btn-gray:hover {
+    background-color: #DEDEDE;
+}
+
+
+.btn-red {
+    border: 1px solid #880000;
+    background-color: #FF7A7A;
+}
+
+.btn-red:hover {
+    background-color: #F82222;
+}
+
+.btn-blue {
+    border: 1px solid #3f8bee;
+    background-color: #258bdf;
+}
+
+.btn-blue:hover {
+    background-color: #187ead;
+}

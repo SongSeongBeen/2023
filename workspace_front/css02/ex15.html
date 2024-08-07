@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="ko"> <!-- 한국어문서만 검색할때, 음성으로 할때 한국어 음성지원 -->
+
+    <head>
+        <meta charset="UTF-8"> <!-- 브라우저가 문서를 해석할때 필요한 정보 -->
+        <title>스타일시트</title>
+        <!-- 스타일시트자리 -->
+        <style>
+            ol>li {
+                float: left;
+                margin-right: 20px;
+                list-style-type: none;
+            } 
+
+            li:after {
+                content: ">";
+                padding-left: 20px;
+            }
+            .unline {
+                display: inline-block; 
+                color: #000000;
+                text-decoration:none;
+                }
+            ol>li.last:after {
+                content:"";
+            }
+
+
+        </style>
+    </head>
+   
+    <body>
+        <ol>
+            <li>
+                <a class="unline" href="">홈</a>
+            </li>
+            <li>
+                <a class="unline" href="">게시판</a>
+            </li>
+            <li>
+                <a class="unline" href="">일반게시판</a>
+             </li>
+            <li class="last">
+                <a class="unline"  href="">리스트</a>
+            </li>
+        </ol>
+    </body>
+
+</html>

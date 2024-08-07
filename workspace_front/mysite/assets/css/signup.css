@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+/* 회원가입 공통 */
+
+#main {
+    /* float: left; */
+    margin: 0px 100px;
+}
+
+.box-line {
+    padding: 10px 0px 10px 0px;
+    border-top: 1px solid #DDDDDD;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.text-box {
+    width: 80px;
+    height: 20px;
+    display: inline-block;
+}
+
+.text-box2 {
+    width: 150px;
+    height: 15px
+}
+
+
+/* 주소 */
+#text-address2 {
+    width: 500px;
+    height: 15px
+}
+
+/* 이동통신사 */
+#select-boardType {
+    width: 110px;
+    height: 20px;
+}
+
+/* 나이 & 취미 */
+#signup input[type="radio"] {
+    width: 15px;
+    height: 15px;
+    margin: 0px 10px 0px 0px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* 자기소개 */
+#signup #text-content {
+    width: 500px;
+    height: 100px;
+}
+
+#my {
+    float: left;
+}
+
+/* 버튼 */
+.btn-line {
+    padding: 10px 0px 10px 0px;
+    border-top: 1px solid #DDDDDD;
+    text-align: center;
+}
+.btn {
+    width: 55px;
+    padding: 5px 5px 5px 5px;
+    text-align: center;
+    margin: 10px 0px 10px 0px
+}

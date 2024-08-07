@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+/* table 공통 */
+
+table {
+    text-align: center;
+    border-right: 1px none;
+    border-left: 1px none;
+    border-bottom: 1px solid #494949;
+    border-collapse: collapse;
+    margin: 0px 0px 20px 0px;
+    float: right;
+}
+
+.t-unline a:link{color: #0000FF; text-decoration: underline;}
+.t-unline a:visited {color: #000000; text-decoration: underline;} 
+.t-unline a:hover {color: #FF0000; text-decoration: underline;} /*마우스 올렸을때 빨간색 */
+.t-unline a:active {color: #0000FF; text-decoration: none;} /*마우스 키를 눌렀을때 */
+/* thead 영역 */
+
+table>thead>tr {
+    background-color:#DDDDDD;
+    border-top: 1px solid #494949;
+    border-bottom: 1px solid #494949;
+    height: 40px;
+}
+
+/* tbody 영역 */
+
+table>tbody>tr {
+    border-top: 1px dotted;
+    border-bottom: 1px dotted;
+    height: 40px;
+}
+
+#main-body-search {
+    width: 280px;
+    margin: 0px 0px 10px 520px;
+    float: left;
+ }
+
+#search {
+    width: 200px;
+    height: 28px;
+    padding: 5px 5px 5px 0px;
+}
+
+#top-button2 {
+    width: 70px;
+    height: 30px;
+    margin: 0px 0px 0px 0px;
+}
+
+#bar ul>li {
+    float: left; 
+    text-align: center;
+    font-size: 15px;
+    padding: 0px 5px 0px 5px;
+}
+#bar ul {
+    float: left;
+    margin: 0px 0px 0px 280px;
+}
+
+#bar-button {
+    width: 70px;
+    height: 30px;
+    float: right;
+}
+
+
+
