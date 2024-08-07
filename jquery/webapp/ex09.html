@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<body>
+
+	<h1>자바스크립트 예제</h1>
+
+	<script type="text/javascript">
+		
+	//정의
+	//함수는 1차로 먼저 정의된다--> 실행이랑 순서상관없다 
+		function testA(){
+			document.write("기명함수 실행");
+			console.log("기명함수 실행");
+		}
+		//실행
+		testA();
+		
+		//순서대로 진행
+		var testB = function(){
+			document.write("익명함수 실행");
+			console.log("익명함수실행");
+		}
+		//변수이름에 담은것을 실행 ()
+		testB();
+		
+		
+		
+	</script>
+
+
+</body>
+
+
+</html>

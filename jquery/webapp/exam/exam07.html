@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="/jqueryex/jquery/jquery-1.12.4.js"></script>
+
+<title>Insert title here</title>
+</head>
+
+<body>
+	<p id="p1"> abcdefghijklmn </p>
+	<p id="p2"> 학교종이 땡땡땡<br /> abcdefg </p>
+</body>
+
+	<script type="text/javascript">
+		$("#p1").html("<strong>메~~~~~~~~~~~롱</strong>"); //태그가 작동됨
+		
+		$("#p2").text("<strong>메~~~~~~~~~~~롱</strong>"); //글자로 인식   
+		
+		var html = $("#p1").html(); //태그가 작동됨
+		console.log(html)
+		
+		var text = $("#p2").text(); //글자만 불러옴
+		console.log(text)
+		
+	</script>
+	
+
+</html>
